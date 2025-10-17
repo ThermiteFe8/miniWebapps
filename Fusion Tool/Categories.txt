@@ -1,0 +1,40 @@
+activeSun|Active Sun Generation
+sunProducer|Sun Producer
+itemProducer|Other Item Producer
+defensive|Defensive Plant
+instant|Instant Use
+pierce|Piercing Attack
+infinite pierce|Infinite Pierce Attack
+short|Short Plant
+straight|Straight-shot
+lobbed|Lobbed-shot
+homing|Homing Attack
+hovering|Hovering plant
+hypno|Hypno
+lumos|Lumos System
+magnetic|Magnetic System
+poison|Poison System
+tangled|Tangled System
+cryo|Cryo System
+enflamed|Enflamed System
+laneChange|Changes lanes of Zombies
+multiLane|Multi-lane range
+overlapping|Overlaps plants on same tile
+reflector|Deflects projectiles.
+attackBoost|Boosts attacks of other plants.
+splash|Splash damage
+vehicleResist|Anti-Vehicle
+crushResist|Anti-Crush
+cherryResist|Anti-Cherry-Explosion
+jackResist|Anti-Jack-in-the-Box Explosion
+autoHeal|Heals Itself
+aquatic|Aquatic
+manual|Manual Ability
+antiFog|Anti-fog
+antiAir|Anti-air
+spawner|Spawns plants or zombies
+zombieItem|Utilizes Items from Zombies
+stun|Stuns/stops zombies
+changeOverTime|Potency/mechanics change over time
+deathEffect|Death Effect
+sunReturn|Returns Sun on summon/fusion

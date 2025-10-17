@@ -1,0 +1,3052 @@
+[
+  {
+    "Timestamp": "2025/10/02 10:08:53 PM AST",
+    "id": "Peashooter",
+    "properties": "straight",
+    "cost": 100,
+    "recharge": 7.5,
+    "DPS": "20/1.5s",
+    "description": "Peashooters are your first line of defense. They shoot peas at attacking zombies.",
+    "ingredients": ""
+  },
+  {
+    "Timestamp": "2025/10/02 10:09:55 PM AST",
+    "id": "Repeater",
+    "properties": "straight",
+    "cost": "",
+    "recharge": "",
+    "DPS": "20 x 2/1.5s",
+    "description": "Repeater fires two peas at a time",
+    "ingredients": "Peashooter+Peashooter"
+  },
+  {
+    "Timestamp": "2025/10/02 10:11:27 PM AST",
+    "id": "Solar-Shooter",
+    "properties": "activeSun;sunProducer;straight",
+    "cost": "",
+    "recharge": "",
+    "DPS": "30/1.5s",
+    "description": "Solar-shooter can fire Sun shots that have a chance to produce Sun. Sun Output: 25/25s. Special: Shots have a 30% chance to drop 5 sun when hitting zombies.",
+    "ingredients": "Peashooter+Sunflower"
+  },
+  {
+    "Timestamp": "2025/10/02 10:12:38 PM AST",
+    "id": "CherryShooter",
+    "properties": "straight",
+    "cost": "",
+    "recharge": "",
+    "DPS": "40/1.5s",
+    "description": "Cherryshooter fires powerful cherries.",
+    "ingredients": "Peashooter+Cherry Bomb"
+  },
+  {
+    "Timestamp": "2025/10/02 10:14:13 PM AST",
+    "id": "Pea-Nut",
+    "properties": "defensive;pierce;infinite pierce;straight",
+    "cost": "",
+    "recharge": "",
+    "DPS": "20/1.5s",
+    "description": "Pea-nut fires mini-nuts that can penetrate zombies. Toughness: 4000.",
+    "ingredients": "Peashooter+Wall-nut"
+  },
+  {
+    "Timestamp": "2025/10/02 10:18:23 PM AST",
+    "id": "Pea Mine",
+    "properties": "instant;short;straight;multiLane;deathEffect;sunReturn",
+    "cost": "",
+    "recharge": "",
+    "DPS": "30/1.5s",
+    "description": "Pea Mine can attack before unearthing. Special: Short plant (evades straight-firing projectiles), fusion returns 50 sun, and it attacks faster as zombies get closer, with a minimum attack interval of 0.5 seconds. Upon exploding, deals 1800 damage to zombies in a small radius and releases 36 projectiles in all directions.",
+    "ingredients": "Peashooter+Potato Mine"
+  },
+  {
+    "Timestamp": "2025/10/02 10:21:06 PM AST",
+    "id": "Chomp-shooter",
+    "properties": "instant;pierce;infinite pierce;straight",
+    "cost": "",
+    "recharge": "",
+    "DPS": "Instant+30s recharge",
+    "description": "Chomp-shooter can fire parts after biting. \nDamage: Insta-kill (Devour); 80/3s (Zombie part). \nDigestion time: 30s. \nSpecial: Spits out rolling zombie parts while chewing that deal 80 damage each and have infinite pierce.",
+    "ingredients": "Peashooter+Chomper"
+  },
+  {
+    "Timestamp": "2025/10/02 10:24:26 PM AST",
+    "id": "Pea-shroom",
+    "properties": "short;straight;overlapping",
+    "cost": "",
+    "recharge": "",
+    "DPS": "20/2.25s",
+    "description": "Pea-shroom shoots further than Puff-Shroom\nSpecial: Short plant (evades straight-firing projectiles). \nCan be stacked up to three in a single tile, like Puff-Shroom",
+    "ingredients": "Peashooter+Puff-shroom"
+  },
+  {
+    "Timestamp": "2025/10/02 10:37:55 PM AST",
+    "id": "Hypno Pea",
+    "properties": "straight;hypno;spawner",
+    "cost": "",
+    "recharge": "",
+    "DPS": "30/1.5s",
+    "description": "Shoots hypno peas that turn killed zombies into friendly Hypno Pea Zombies. \n\nSpecial:\nSummons a Hypnotized Hypno Pea Zombie upon killing a zombie. \nAbilities don't work in water lanes\nHypno Pea Zombie: 270 HP, fires a 20-damage Hypno Pea every 1.5s",
+    "ingredients": "Peashooter+Hypno-shroom"
+  },
+  {
+    "Timestamp": "2025/10/02 10:39:18 PM AST",
+    "id": "Snow Pea",
+    "properties": "straight;cryo",
+    "cost": "",
+    "recharge": "",
+    "DPS": "20/1.5s",
+    "description": "Snow Peas shoot snow peas that damage and slow the enemy.\n\nCryo System: Each snow pea inflicts chill and adds 10 Cryo points. Deals x4 damage to frozen zombies.",
+    "ingredients": "Peashooter+Ice-shroom"
+  },
+  {
+    "Timestamp": "2025/10/02 10:41:46 PM AST",
+    "id": "Doom Pea",
+    "properties": "straight;changeOverTime",
+    "cost": "",
+    "recharge": "",
+    "DPS": "40/1.5s",
+    "description": "A damage-scaling Peashooter and the perfect partner for Frenzy-shroom\n\nSpecial: Attacks penetrate Type 2 armor. Damage increases by 1 each attack, up to 60. If a Frenzy-shroom is planted 1 tile behind it, Doom Pea gains Frenzy-shroom's attack speed and Frenzy-shroom gains Doom Pea's attack damage.",
+    "ingredients": "Peashooter+Doom-shroom"
+  },
+  {
+    "Timestamp": "2025/10/02 10:44:25 PM AST",
+    "id": "Pea Drone",
+    "properties": "straight;hovering;overlapping;attackBoost",
+    "cost": "",
+    "recharge": "",
+    "DPS": "20/1.5s",
+    "description": "A peashooter drone that enhances firepower when coordinating with straight-shooting plants below.\nSpecial: Hovering plant. If the shooter directly beneath it attacks faster than once every 1.5 seconds, Pea Drone syncs its attack rate to match.",
+    "ingredients": "Peashooter+Blover"
+  },
+  {
+    "Timestamp": "2025/10/02 10:45:22 PM AST",
+    "id": "Sunflower",
+    "properties": "sunProducer",
+    "cost": 50,
+    "recharge": 7.5,
+    "DPS": "25/25s",
+    "description": "Sunflowers are essential for you to produce extra sun. Try planting as many as you can!\nSpecial: First production is 5-8 Seconds after planting.",
+    "ingredients": ""
+  },
+  {
+    "Timestamp": "2025/10/02 10:46:47 PM AST",
+    "id": "Solar Bomb",
+    "properties": "activeSun;sunProducer;instant;multiLane;deathEffect",
+    "cost": "",
+    "recharge": "",
+    "DPS": "1800 (cremator)",
+    "description": "Solar Bomb can produce Sun after killing zombies.\nSpecial: Produces 25 Sun for each zombie killed in the explosion.",
+    "ingredients": "Sunflower+Cherry Bomb"
+  },
+  {
+    "Timestamp": "2025/10/02 10:48:24 PM AST",
+    "id": "Solar-nut",
+    "properties": "activeSun;sunProducer;defensive;deathEffect",
+    "cost": "",
+    "recharge": "",
+    "DPS": "25/15s",
+    "description": "Solar-nut produces Sun while protecting your plants.\nToughness: 4000\nDamage Phases: 1333/2666\nSun Output: 25/15s\nSpecial: Produces 25 Sun on damage phase transitions. Drops 50 Sun on death.",
+    "ingredients": "Sunflower+Wall-nut"
+  },
+  {
+    "Timestamp": "2025/10/02 10:50:30 PM AST",
+    "id": "Solar Mine",
+    "properties": "activeSun;sunProducer;instant;short;deathEffect;sunReturn",
+    "cost": "",
+    "recharge": "",
+    "DPS": "25/15s",
+    "description": "Solar Mine produces Sun until and after its explosion.\nDamage: 1800\nSun Output: 25/15s\nSpecial: \n- Short plant (evades straight-firing projeciles). \n- Fusion returns 25 Sun\n- Drops 50 Sun on explosion.",
+    "ingredients": "Sunflower+Potato Mine"
+  },
+  {
+    "Timestamp": "2025/10/02 10:53:40 PM AST",
+    "id": "Solar Chomper",
+    "properties": "activeSun;sunProducer;instant",
+    "cost": "",
+    "recharge": "",
+    "DPS": "Insta-kill (Devour)+40s Digestion",
+    "description": "Solar Chomper can produce Sun after swallowing zombies.\nDamage: Insta-kill (Devour)\nDigestion Time: 40s\nSpecial: Produces 100 Sun after swallowing a zombie.",
+    "ingredients": "Sunflower+Chomper"
+  },
+  {
+    "Timestamp": "2025/10/02 10:55:14 PM AST",
+    "id": "Sun-shroom",
+    "properties": "sunProducer;short;overlapping;changeOverTime",
+    "cost": "",
+    "recharge": "",
+    "DPS": "15->25/25s",
+    "description": "Sun-shrooms give small sun at first and normal sun later. \nGrowth Time: 120s\nSpecial: Short plant (evades straight-firing projectiles)\nUp to three can be planted on one tile.",
+    "ingredients": "Sunflower+Puff-shroom"
+  },
+  {
+    "Timestamp": "2025/10/02 10:57:26 PM AST",
+    "id": "Sunrise-shroom",
+    "properties": "activeSun;sunProducer",
+    "cost": "",
+    "recharge": "",
+    "DPS": "25/20s",
+    "description": "A visionary sun producer that absorbs and multiplies nearby sun, paying out in bursts.\nSpecial:\nAbsorbs dropped sun within a 5x5 area, multiplies their value by x1.3 and stores them.\nReleases as much sun as possible in batches of 25 along with the next production.",
+    "ingredients": "Sunflower+Fume-shroom"
+  },
+  {
+    "Timestamp": "2025/10/02 10:59:18 PM AST",
+    "id": "Sunny-shroom",
+    "properties": "sunProducer;changeOverTime",
+    "cost": "",
+    "recharge": "",
+    "DPS": "25/25s",
+    "description": "A timid sun producer that tries to work faster until it panics.\n\nSpecial:\nProduction interval gradually shortens to 10s.\nCowers in fear when zombies approach, resetting interval back to 25s and producing 25 Sun immediately.",
+    "ingredients": "Sunflower+Scaredy-shroom"
+  },
+  {
+    "Timestamp": "2025/10/02 11:01:47 PM AST",
+    "id": "Doomflower",
+    "properties": "sunProducer;instant;multiLane;spawner;changeOverTime;deathEffect",
+    "cost": "",
+    "recharge": "",
+    "DPS": "25/25s",
+    "description": "A Sunflower that plants Doom-spores around herself, which grow and detonate remotely.\n\nSpecial:\nEvery 50s, plants one Doom--spore randomly in a 3x3 area around herself.\nDoom-spores take around 30s to grow and once mature, if a zombie enters their blast radius, they detonate like a Doom-shroom.",
+    "ingredients": "Sunflower+Doom-shroom"
+  },
+  {
+    "Timestamp": "2025/10/02 11:03:44 PM AST",
+    "id": "Sunset-shroom",
+    "properties": "sunProducer;short;aquatic;changeOverTime;sunReturn",
+    "cost": "",
+    "recharge": "",
+    "DPS": "15->25->50/15s",
+    "description": "Produces increasing amounts of Sun as it grows.\nSun Output: 15->25->50/15\nGrowth Time: 20 Seconds -> 40s\nSpecial: Short plant.",
+    "ingredients": "Sunflower+Sea-shroom"
+  },
+  {
+    "Timestamp": "2025/10/02 11:06:04 PM AST",
+    "id": "Solar Magnet",
+    "properties": "activeSun;sunProducer;itemProducer;manual;zombieItem",
+    "cost": "",
+    "recharge": "",
+    "DPS": "25/25s",
+    "description": "Produces metal objects and turns metal objects to Sun.\nSpecial: Produces a random metal object every 30 Seconds. Drag a metal object on it and it will produce 25 Sun.Produced metal objects are given automatically to Grenadier Magnet, Hypno Magnet, or Charmatron-shroom directly in front.",
+    "ingredients": "Sunflower+Magnet-shroom"
+  },
+  {
+    "Timestamp": "2025/10/02 11:08:20 PM AST",
+    "id": "Solar-pult",
+    "properties": "activeSun;sunProducer;lobbed;changeOverTime;sunReturn",
+    "cost": "",
+    "recharge": "",
+    "DPS": "50/5s",
+    "description": "Launches solar cabbages to attack zombies and can also generate Sun.\nSpecial: Returns 100 Sun upon fusion. Each shot bounces once after hitting a zombie. For every 200 Sun, it can bounce one ore time; each bounce drops 5 sun.",
+    "ingredients": "Cabbage-pult+Sunflower"
+  },
+  {
+    "Timestamp": "2025/10/02 11:10:35 PM AST",
+    "id": "Sunflower Pot",
+    "properties": "sunProducer;overlapping;sunReturn",
+    "cost": "",
+    "recharge": "",
+    "DPS": "15/25s",
+    "description": "Generates extra Sun for you.\nSun Output: 15/25s.",
+    "ingredients": "Sunflower+Flower Pot"
+  },
+  {
+    "Timestamp": "2025/10/02 11:11:15 PM AST",
+    "id": "Silver Sunflower",
+    "properties": "sunProducer",
+    "cost": "",
+    "recharge": "",
+    "DPS": "25/15s",
+    "description": "Generates Sun faster.",
+    "ingredients": "Sunflower+Marigold"
+  },
+  {
+    "Timestamp": "2025/10/02 11:13:01 PM AST",
+    "id": "Cherry Bomb",
+    "properties": "instant;multiLane;deathEffect",
+    "cost": 150,
+    "recharge": 50,
+    "DPS": "1800 (instant cremator)",
+    "description": "Cherry Bombs can blow up all zombies in an area. They have a short fuse, so plant them near zombies.\nRange: 3x3 (A circle with a radius of 1.375 tiles)",
+    "ingredients": ""
+  },
+  {
+    "Timestamp": "2025/10/02 11:15:21 PM AST",
+    "id": "Cherry-nut",
+    "properties": "defensive;instant;cherryResist;autoHeal;deathEffect",
+    "cost": "",
+    "recharge": "",
+    "DPS": "4000 Toughness",
+    "description": "Cherry-nut can absorb explosion damage and restore Toughness.\nSpecial: Absorbs Cherry explosion damage to restore 200 Toughness.",
+    "ingredients": "Cherry Bomb+Wall-nut"
+  },
+  {
+    "Timestamp": "2025/10/02 11:17:56 PM AST",
+    "id": "Explod-o-tato Mine",
+    "properties": "instant;short;multiLane;spawner;changeOverTime;deathEffect",
+    "cost": "",
+    "recharge": "",
+    "DPS": 1800,
+    "description": "Splits into 8 Potato Mines in surrounding tiles.\nSpecial: Spawns Potato Mines that only need 5s to arm themselves in a 3x3 range upon defeat.",
+    "ingredients": "Potato Mine+Cherry Bomb"
+  },
+  {
+    "Timestamp": "2025/10/02 11:19:58 PM AST",
+    "id": "Cherry Chomper",
+    "properties": "instant;laneChange",
+    "cost": "",
+    "recharge": "",
+    "DPS": "Insta Kill+1800 explosion",
+    "description": "Produces a cherry explosion upon eating a zombie.\nDigestion Time: 40s\nSpecial: Creates a 3x3 Cherry explosion in the tile directly ahead on successful biting.",
+    "ingredients": "Cherry Bomb+Chomper"
+  },
+  {
+    "Timestamp": "2025/10/02 11:22:11 PM AST",
+    "id": "Blasty-shroom",
+    "properties": "instant;straight;multiLane",
+    "cost": "",
+    "recharge": "",
+    "DPS": "40/1.5s",
+    "description": "Frightened easily, but causes an explosion when it happens.\nSpecial: When scared, hides and sets off a Cherry Bomb blast that deals 600 AoE damage.",
+    "ingredients": "Scaredy-shroom+Cherry Bomb"
+  },
+  {
+    "Timestamp": "2025/10/02 11:25:08 PM AST",
+    "id": "Frozen Cherry",
+    "properties": "instant;cryo;multiLane;spawner;deathEffect",
+    "cost": "",
+    "recharge": "",
+    "DPS": "N/A",
+    "description": "A cherry mold made of ice, the Frozen Cherry absorbs projectiles from plants to generate Cherry Bomb seedpackets.\nSpecial: Absorbing cherries, ignited cherries, and explosive cherries grants 1, 2, and 10 energy points respectively. For every 100 energy points collected, a Cherry Bomb seed packet is generated. Upon death, it unleashes a Cherry Bomb explosion and freezes all zombies in its range for 10 seconds.",
+    "ingredients": "Cherry Bomb+Ice-shroom"
+  },
+  {
+    "Timestamp": "2025/10/02 11:27:53 PM AST",
+    "id": "Bamboom",
+    "properties": "instant;multiLane;deathEffect",
+    "cost": "",
+    "recharge": "",
+    "DPS": 300,
+    "description": "Propels himself towards the zombies, causing damage and knocking them back. \nSpecial:\nAfter being planted, waits for 1s before flying forward in his lane, knocking back zombies it encounters and causing 300 area damage each impact.\nDeals x15 damage to Nian zombies.",
+    "ingredients": "Cherry Bomb+Jalapeno"
+  },
+  {
+    "Timestamp": "2025/10/02 11:29:51 PM AST",
+    "id": "Boomwood",
+    "properties": "instant;multiLane;attackBoost;spawner;deathEffect",
+    "cost": "",
+    "recharge": "",
+    "DPS": "N/A",
+    "description": "Spawns explosive cherry drones that seek out zombies.\nSpecial:\nGenerates a homing cherry drone for every 30 peas that pass through.\nConverts any explosive cherry that passes through into a cherry drone.\nThere can be up to 3 cherry drones at once.\nUpon death, it triggers a Cherry Bomb explosion.",
+    "ingredients": "Torchwood+Cherry Bomb"
+  },
+  {
+    "Timestamp": "2025/10/02 11:32:37 PM AST",
+    "id": "Cherry Drone",
+    "properties": "instant;hovering;multiLane;overlapping",
+    "cost": "",
+    "recharge": "",
+    "DPS": "300/15s",
+    "description": "A cheeky cherry delinquent that floats through the air and dive-bombs zombies in style.\nSpecial: Every 15s, targets one zombie in a 3x3 area and dive-bombs them, causing a cherry-style explosion in a 1-tile radius.",
+    "ingredients": "Cherry Bomb+Blover"
+  },
+  {
+    "Timestamp": "2025/10/02 11:34:56 PM AST",
+    "id": "Cherry Pumpkin",
+    "properties": "defensive;overlapping;cherryResist;autoHeal",
+    "cost": "",
+    "recharge": "",
+    "DPS": "4000 Toughness",
+    "description": "A pumpkin that cannot be exploded by cherries!\nToughness: 4000\nSpecial: Immune to explosive cherries and heals 200 toughness instead.",
+    "ingredients": "Cherry Bomb+Pumpkin"
+  },
+  {
+    "Timestamp": "2025/10/02 11:36:50 PM AST",
+    "id": "Grenadier Magnet",
+    "properties": "instant;multiLane;zombieItem",
+    "cost": "",
+    "recharge": "",
+    "DPS": "300/3s",
+    "description": "Transmutes metal objects into explosive cherries!\nSpecial: Attracts metal objects and turns them into explosive cherries. Each object can be turned 5 times before consumption. Metal objects can be actively given to the Grenadier Magnet for it to initiate an attack.",
+    "ingredients": "Magnet-shroom+Cherry Bomb"
+  },
+  {
+    "Timestamp": "2025/10/02 11:40:10 PM AST",
+    "id": "Cherry Pot",
+    "properties": "short;overlapping;attackBoost;cherryResist;autoHeal;sunReturn",
+    "cost": "",
+    "recharge": "",
+    "DPS": "N/A",
+    "description": "A pot with a passion for cherry explosions, using them to heal the plant on her own tile and briefly empower cherry-type shooters.\n\nSpecial:\nImmune to cherry explosions\nHeals the plant on herself by 20HP when affected by cherry explosions\nWhile healing, also grants a 1-second attack speed boost (30%) to cherry shooting plants.\nReturns 25 sun on fusion.",
+    "ingredients": "Cherry Bomb+Flower Pot"
+  },
+  {
+    "Timestamp": "2025/10/02 11:43:02 PM AST",
+    "id": "Bombrella",
+    "properties": "defensive;instant;multiLane;reflector;cherryResist;changeOverTime",
+    "cost": "",
+    "recharge": "",
+    "DPS": "600 Toughness",
+    "description": "When repelling, it causes a small-scale cherry explosion and harnesses the power of cherry explosions to protect surrounding plants.\nSpecial:\nInherits the traits of Umbrella Leaf\nRepels approaching zombies and releases a small-range cherry explosion with 300 damage.\nImmune to explosive basketballs\nFor every instance of Cherry-fused defensive plants or Cherry Pot healing through cherry explosions in the surrounding 3x3 area, it gains 1 level of energy, up to 100 levels.\nBombrella uses 2 levels to absorb any damage in the surrounding 3x3 area",
+    "ingredients": "Cherry Bomb+Umbrella Leaf"
+  },
+  {
+    "Timestamp": "2025/10/03 9:19:01 AM AST",
+    "id": "Wall-nut",
+    "properties": "defensive",
+    "cost": "50",
+    "recharge": "30",
+    "DPS": "4000 Toughness",
+    "description": "Wall-nuts have hard shells which protect your plants. Special: Wall-nut and subsequent fusions prevent splash damage from explosive cherries at difficulty 4 or lower.",
+    "ingredients": ""
+  },
+  {
+    "Timestamp": "2025/10/03 9:19:01 AM AST",
+    "id": "Giant Wall-nut",
+    "properties": "instant;infinite pierce",
+    "cost": "",
+    "recharge": "",
+    "DPS": "600/0.02s",
+    "description": "Giant Wall-nut rolls forward, knocking down all zombies in its path.\nSpecial: Rolls down the lane, killing all the zombies on its path.",
+    "ingredients": "Wall-nut+Wall-nut"
+  },
+  {
+    "Timestamp": "2025/10/03 9:21:20 AM AST",
+    "id": "Mine-nut",
+    "properties": "defensive;instant;short;deathEffect",
+    "cost": "",
+    "recharge": "",
+    "DPS": "4000 Toughness",
+    "description": "Mine-nut can explode while being eaten and once when broken.\nDamage Phases: 1333/2666\nDamage: 500/Phase Transition, 1800/Death\nSpecial: Short plant. Causes singled-tiled explosions on damage phase transitions.",
+    "ingredients": "Wall-nut+Potato Mine"
+  },
+  {
+    "Timestamp": "2025/10/03 9:22:41 AM AST",
+    "id": "Chomp-nut",
+    "properties": "defensive;instant;autoHeal",
+    "cost": "",
+    "recharge": "",
+    "DPS": "4000 Tougness",
+    "description": "Chomp-nut can restore Toughness after eating zombies.\nDamage: Insta-kill (Devour)\nDigestion Time: 40s\nToughness: 4000\nSpecial: Restores 1000 Toughness after digestion.",
+    "ingredients": "Wall-nut+Chomper"
+  },
+  {
+    "Timestamp": "2025/10/03 9:24:22 AM AST",
+    "id": "Nut-shroom",
+    "properties": "defensive;short;overlapping",
+    "cost": "",
+    "recharge": "",
+    "DPS": "2000 Toughness",
+    "description": "Nut-shroom can be your stalwart defender despite its size.\nToughness: 2000\nSpecial: Short plant (evades straight-firing projectiles)\nCan stack up to three in a tile.",
+    "ingredients": "Wall-nut+Puff-shroom"
+  },
+  {
+    "Timestamp": "2025/10/03 9:27:33 AM AST",
+    "id": "Hypno-nut",
+    "properties": "defensive;hypno;autoHeal;spawner",
+    "cost": "",
+    "recharge": "",
+    "DPS": "4000 Toughness",
+    "description": "Hypnotizes zombies and summons a Hypnotized Mystery-box Zombie every 30 Seconds!\nSpecial\nEach time it's bitten, there's a 4% chance to hypnotize the zombie.\nCan recover 100 Toughness when hit by a Trippy-shroom spore, and stores one spore of that color each time it's hit (up to 3)\nWhen it collects 7 different spore colors, it consumes one of each and summons a Golden Mystery-box Zombie, then fully heals.",
+    "ingredients": "Wall-nut+Hypno-shroom"
+  },
+  {
+    "Timestamp": "2025/10/03 9:29:02 AM AST",
+    "id": "Frost Wall-nut",
+    "properties": "defensive;cryo",
+    "cost": "",
+    "recharge": "",
+    "DPS": "4000 Toughness",
+    "description": "Zombies that bite him are slowed down.\nSpecial: Zombies that chew it will be slowed down and will accrue Cryo points. Frost Wall-nuts can be upgraded to Frost Tall-nuts using a Fertilizer",
+    "ingredients": "Wall-nut+Ice-shroom"
+  },
+  {
+    "Timestamp": "2025/10/03 9:32:05 AM AST",
+    "id": "Doom-nut",
+    "properties": "defensive;instant;autoHeal;deathEffect",
+    "cost": "",
+    "recharge": "",
+    "DPS": "Toughness: 4000",
+    "description": "Wall-nut with nuclear potential.\nSpecial:\nImmune to non-physical explosions.\nPrevents Doom-shroom Zombies in a 3x3 area from exploding.\nHeals for 100 HP when a zombie with Ember debuff dies in a 5x5 area\nTriggers Doom-shroom effect on death.",
+    "ingredients": "Wall-nut+Doom-shroom"
+  },
+  {
+    "Timestamp": "2025/10/03 9:33:35 AM AST",
+    "id": "Squash-nut",
+    "properties": "defensive;splash",
+    "cost": "",
+    "recharge": "",
+    "DPS": "4000 Toughness",
+    "description": "A bouncy nut who's all tantrum and impact.\nDamage: 160/1.5s\nSpecial: Bounces in his tile when a zombie gets close, dealing splash damage on each landing. Does not block zombies while airborne.",
+    "ingredients": "Wall-nut+Squash"
+  },
+  {
+    "Timestamp": "2025/10/03 9:34:46 AM AST",
+    "id": "Flame Wall-nut",
+    "properties": "defensive;enflamed",
+    "cost": "",
+    "recharge": "",
+    "DPS": "4000 Toughness",
+    "description": "Spicy-flavored nut that scorches biters\nSpecial: Deals 20 damage to biters and inflicts Enflamed debuff",
+    "ingredients": "Wall-nut+Jalapeno"
+  },
+  {
+    "Timestamp": "2025/10/03 9:36:13 AM AST",
+    "id": "Spike-nut",
+    "properties": "defensive;vehicleResist",
+    "cost": "",
+    "recharge": "",
+    "DPS": "4000 Toughness",
+    "description": "Spike-nut punctures the tires of approaching Zombonis!\nSpecial:\nReflects 50 damage back to zombies biting it.\nPunctures incoming tires in exchange for 500 Toughness. It cannot protect against submarines or being stomped by Gargantuars",
+    "ingredients": "Wall-nut+Spikeweed"
+  },
+  {
+    "Timestamp": "2025/10/03 9:37:04 AM AST",
+    "id": "Nutwood",
+    "properties": "attackBoost;spawner",
+    "cost": "",
+    "recharge": "",
+    "DPS": "N/A",
+    "description": "Capable of producing Roasted Wall-nuts\nSpecial: For every 50 peas lit, a Roasted Wall-nut is spawned in front.",
+    "ingredients": "Wall-nut+Torchwood"
+  },
+  {
+    "Timestamp": "2025/10/03 9:39:12 AM AST",
+    "id": "Sea-nut",
+    "properties": "defensive;instant;autoHeal;changeOverTime",
+    "cost": "",
+    "recharge": "",
+    "DPS": "2000 Toughness, then 6000 Toughness",
+    "description": "Grows bigger by absorbing water, then rolls forward to crush zombies.\n\nToughness: 2000 (initial), 6000 (max)\nSpecial: Grows at 10s and 20s after planting, increasing HP and durability by 2000 each time. At 30s after planting, turns into a bowling nut rolling forward, dealing 600/0.02s on contact.",
+    "ingredients": "Wall-nut+Sea-shroom"
+  },
+  {
+    "Timestamp": "2025/10/03 9:40:29 AM AST",
+    "id": "Thorn-nut",
+    "properties": "defensive;antiAir",
+    "cost": "",
+    "recharge": "",
+    "DPS": "4000 Toughness",
+    "description": "A cactus-covered nut that punishes attackers and disables balloon zombies.\nSpecial: \nReflects 50 damage back to zombies biting it\nCan pop Balloons",
+    "ingredients": "Wall-nut+Cactus"
+  },
+  {
+    "Timestamp": "2025/10/03 9:41:53 AM AST",
+    "id": "Drone-nut",
+    "properties": "defensive;hovering;overlapping;autoHeal",
+    "cost": "",
+    "recharge": "",
+    "DPS": "4000 Toughness",
+    "description": "A hovering nut that shields its tile from damage.\nSpecial\nAbsorbs damage for its own tile\nIf undamaged for 10s, regenerates 50 HP per second.",
+    "ingredients": "Wall-nut+Blover"
+  },
+  {
+    "Timestamp": "2025/10/03 9:43:06 AM AST",
+    "id": "Star-nut",
+    "properties": "defensive;multiLane",
+    "cost": "",
+    "recharge": "",
+    "DPS": "4000 Toughness",
+    "description": "A reactive defender that counters with little stars.\nSpecial: Fires five 20-damage stars in all directions when damaged.",
+    "ingredients": "Wall-nut+Starfruit"
+  },
+  {
+    "Timestamp": "2025/10/03 9:45:40 AM AST",
+    "id": "Mag-nut",
+    "properties": "defensive;multiLane;attackBoost",
+    "cost": "",
+    "recharge": "",
+    "DPS": "4000 Toughness",
+    "description": "Pulls friendly straight-shooting projectiles nearby and makes them orbit him.\nSpecial: Attracts nearby plant straight-shooting projectiles, making them orbit at a radius of 1.5 Tiles; can hold up to 100 projectiles at once, each lasting up to 20s.",
+    "ingredients": "Wall-nut+Magnet-shroom"
+  },
+  {
+    "Timestamp": "2025/10/03 9:48:29 AM AST",
+    "id": "Cabbage-nut",
+    "properties": "defensive;lobbed;changeOverTime",
+    "cost": "",
+    "recharge": "",
+    "DPS": "4000 Toughness",
+    "description": "Grows a temporary shield and retaliates with a cabbage after taking a certain amount of damage.\nSpecial: When taking damage, stores 1x the damage taken as a Retaliation Charge. If the damage exceeds 100/500/1000, it stores 2/3/4* the damage instead.\nRetaliation Meter is capped at max HP.\nWhen the Retaliation Meter exceeds 1000, consumes all charge to launch a cabbage dealing the same amount of damage and gains a shield of equal value that fully decays over 5s.",
+    "ingredients": "Wall-nut+Cabbage-pult"
+  },
+  {
+    "Timestamp": "2025/10/03 9:49:41 AM AST",
+    "id": "Butter-nut",
+    "properties": "defensive;stun",
+    "cost": "",
+    "recharge": "",
+    "DPS": "4000 Toughness",
+    "description": "Zombies are immobilized each time they bite - now that's what you call a \"head-butter awakening.\"\nSpecial: When bitten, immobilizes the attacking Zombie with Butter for 2s.",
+    "ingredients": "Wall-nut+Kernel-pult"
+  },
+  {
+    "Timestamp": "2025/10/03 9:50:58 AM AST",
+    "id": "Foul-nut",
+    "properties": "defensive;poison",
+    "cost": "",
+    "recharge": "",
+    "DPS": "4000 Toughness",
+    "description": "A tough nut with garlic properties, poisonous, and hits instantly.\nSpecial: When bitten, poisons attacker for 10s and gives them 1 Poison point.",
+    "ingredients": "Wall-nut+Garlic"
+  },
+  {
+    "Timestamp": "2025/10/03 9:52:30 AM AST",
+    "id": "Umbrella Shell",
+    "properties": "defensive;multiLane",
+    "cost": "",
+    "recharge": "",
+    "DPS": "4000 Toughness",
+    "description": "Umbrella Shell has the traits of both his fusion ingredients.\nSpecial: Has the characteristics of Umbrella Leaf and Wall-nut. Can repel approaching zombies, dealing 40 damage every time.",
+    "ingredients": "Wall-nut+Umbrella Leaf"
+  },
+  {
+    "Timestamp": "2025/10/03 9:53:27 AM AST",
+    "id": "Silver-nut",
+    "properties": "defensive",
+    "cost": "",
+    "recharge": "",
+    "DPS": "6000 Toughness",
+    "description": "Wall-nut made of silver, with higher toughness.",
+    "ingredients": "Wall-nut+Marigold"
+  },
+  {
+    "Timestamp": "2025/10/03 9:56:00 AM AST",
+    "id": "Melon-nut",
+    "properties": "defensive;lobbed;splash;changeOverTime",
+    "cost": "",
+    "recharge": "",
+    "DPS": "8000 Toughness",
+    "description": "Grows a temporary shield and retaliates with a melon after taking a certain amount of damage.\n\nSpecial:\nWhen taking damage, stores 1.5* the damage taken as Retaliation Charge. If the damage exceeds 100/500/1000, stores 3/4.5/6 x the damage instead.\nRetaliation Meter is capped at max HP\nWhen the Retaliation Meter exceeds 1000, consumes all charges to launch a watermelon dealing the same amount of damage and gains a shield of equal value that fully decays over 5s.",
+    "ingredients": "Wall-nut+Melon-pult"
+  },
+  {
+    "Timestamp": "2025/10/03 9:58:57 AM AST",
+    "id": "Potato Mine",
+    "properties": "instant;short;changeOverTime",
+    "cost": 25,
+    "recharge": 30,
+    "DPS": "1800 Damage",
+    "description": "Potato Mines pack a powerful punch, but they need a while to arm themselves. You should plant them ahead of zombies. They will explode on contact.\nArming Time: 15-17s\nRange: Single tile (A circle with a radius of 0.68 tiles)\nSpecial: Short plant (evades straight-firing projectiles)",
+    "ingredients": ""
+  },
+  {
+    "Timestamp": "2025/10/03 10:00:40 AM AST",
+    "id": "Chomp-mine",
+    "properties": "instant;short;spawner;sunReturn",
+    "cost": "",
+    "recharge": "",
+    "DPS": "Insta-kill (Devour) 20s Digestion",
+    "description": "After swallowing a zombie, the Chomp-mine will grow Potato Mines in front.\nSpecial:\nShort plant (evades straight-firing projectiles)\nFusion returns 75 Sun\nPlants a fully armed Potato Mine in front of it upon finishing digesting a zombie.",
+    "ingredients": "Potato Mine+Chomper"
+  },
+  {
+    "Timestamp": "2025/10/03 10:03:59 AM AST",
+    "id": "Nugget-shroom",
+    "properties": "defensive;short;straight;overlapping;spawner;deathEffect",
+    "cost": "",
+    "recharge": "",
+    "DPS": "20/1.5s",
+    "description": "Can reproduce itself!\nSpecial: Short plant. Spawns a new Nugget-shroom in the same tile after 20 seconds. Each Nugget-shroom can only reproduce once. Upon death, it deals 300 damage to nearby zombies.",
+    "ingredients": "Potato Mine+Puff-shroom"
+  },
+  {
+    "Timestamp": "2025/10/03 10:05:18 AM AST",
+    "id": "Hypno Mine",
+    "properties": "instant;short;hypno",
+    "cost": "",
+    "recharge": "",
+    "DPS": "1800 Damage",
+    "description": "Potato Mine with an explosive charm.\nSpecial\nShort plant (evades straight-firing projectiles).\nHypnotizes the zombies exploded, deals 1800 damage instead if the zombie cannot be hypnotized.",
+    "ingredients": "Potato Mine+Hypno-shroom"
+  },
+  {
+    "Timestamp": "2025/10/03 10:07:42 AM AST",
+    "id": "Spuddy-shroom",
+    "properties": "instant;straight;changeOverTime;deathEffect",
+    "cost": "",
+    "recharge": "",
+    "DPS": "600/3s",
+    "description": "Consumes Toughness to fire high-damage spores!\nSpecial: Each attack costs 75 toughness. If kept alive for 20 seconds after being planted, his red light will turn off with attack power reduced by 90%, but attacks will no longer cost Toughness. Upon death, it deals 600 damage to nearby zombies.",
+    "ingredients": "Scaredy-shroom+Potato Mine"
+  },
+  {
+    "Timestamp": "2025/10/03 10:10:34 AM AST",
+    "id": "Potato-spreader",
+    "properties": "instant;short;straight;multiLane;changeOverTime;deathEffect",
+    "cost": "",
+    "recharge": "",
+    "DPS": "30x3/1.5s",
+    "description": "Potato-spreader resurfaces after exploding and fires potatoes across three lanes.\nSpecial:\nShort plant (evades straight-firing projectiles)\nAttacks faster as zombies get closer (down to 0.5s per attack).\nWhen armed, explodes on contact, dealing 5400 damage, knocks back for 1 tile, and retreats into the ground.\nRe-emerges 15 seconds after exploding.Explodes and disappears immediately upon contact with vehicles.",
+    "ingredients": "Potato Mine+Threepeater"
+  },
+  {
+    "Timestamp": "2025/10/03 10:12:32 AM AST",
+    "id": "Tangle Mine",
+    "properties": "instant;short;aquatic;changeOverTime;deathEffect",
+    "cost": "",
+    "recharge": "",
+    "DPS": "Insta-kill (Drown)",
+    "description": "Potato Mine tangled with kelp.\nSpecial:\nShort plant (evades straight-firing projectiles)\nWhen armed, insta-kills the first approaching zombie and triggers a Potato Mine explosion.",
+    "ingredients": "Tangle Kelp+Potato Mine"
+  },
+  {
+    "Timestamp": "2025/10/03 10:14:47 AM AST",
+    "id": "Chili Mine",
+    "properties": "instant;short;spawner;changeOverTime;deathEffect",
+    "cost": "",
+    "recharge": "",
+    "DPS": 1800,
+    "description": "Splits into 7 Potato Mines in her lane.\nSpecial: Spawns up to 7 Potato Mines that only need 5s to arm themselves in her lane upon defeat.",
+    "ingredients": "Potato Mine+Jalapeno"
+  },
+  {
+    "Timestamp": "2025/10/03 10:16:31 AM AST",
+    "id": "Pumpkin Mine",
+    "properties": "defensive;instant;short;overlapping;changeOverTime",
+    "cost": "",
+    "recharge": "",
+    "DPS": "4000 Toughness",
+    "description": "A shorter Pumpkin.\nSpecial: Short plant (evades straight-firing projectiles). However, non-\"short\" plants inside it will be hit. Each time it is damaged, a small explosion will occur, causing 500 points of damage to zombies.",
+    "ingredients": "Potato Mine+Pumpkin"
+  },
+  {
+    "Timestamp": "2025/10/03 10:17:55 AM AST",
+    "id": "Chomper",
+    "properties": "instant",
+    "cost": 150,
+    "recharge": 7.5,
+    "DPS": "Insta-kill (devour) Digestion Time 30s",
+    "description": "Chompers can devour a zombie whole, but they are vulnerable while chewing.\nSpecial: Deals 40 damage each bite to zombies that are immune to being devoured.",
+    "ingredients": ""
+  },
+  {
+    "Timestamp": "2025/10/03 10:19:39 AM AST",
+    "id": "Doom Chomper",
+    "properties": "instant;multiLane",
+    "cost": "",
+    "recharge": "",
+    "DPS": "Insta-kill (devour) Digestion time 40s",
+    "description": "Devours a zombie to produce a doom explosion.\nSpecial: Each time it successfully bites a zombie, a Doom-shroom explosion is released, causing a crater to appear in front of it.",
+    "ingredients": "Chomper+Doom-shroom"
+  },
+  {
+    "Timestamp": "2025/10/03 10:21:31 AM AST",
+    "id": "Lumos Angler",
+    "properties": "instant;lumos;laneChange;multiLane",
+    "cost": "",
+    "recharge": "",
+    "DPS": "Insta-kill (devour) Digestion Time 40s",
+    "description": "Lures in zombies to snack on with his lophos.\nLumos system: Each Lumos level reduces digestion time by 10s to a minimum of 10s. \nSpecial: Upon successful digestion, pulls a nearby zombie from adjacent lanes into its own lane.",
+    "ingredients": "Chomper+Plantern"
+  },
+  {
+    "Timestamp": "2025/10/03 10:22:49 AM AST",
+    "id": "Plant Giftbox",
+    "properties": "instant;spawner",
+    "cost": 100,
+    "recharge": 15,
+    "DPS": "N/A",
+    "description": "The Plant Giftbox can be planted to produce random plants or fusions.\nSpecial: When placed on soil or on a Lily Pad, produces a random plant. Placing it on top of an eligible plant can produce a random fusion.",
+    "ingredients": ""
+  },
+  {
+    "Timestamp": "2025/10/03 10:24:32 AM AST",
+    "id": "Tall-nut",
+    "properties": "defensive",
+    "cost": 175,
+    "recharge": 50,
+    "DPS": "8000 Toughness",
+    "description": "Tall-nuts are heavy-duty wall plants that can't be vaulted or jumped over.\nSpecial: Tall plant. Blocks Pole-vaulting Zombies, Dolphin Riders and Pogo Zombies. Cannot block Yeti Riders and charged Pogo jumps.",
+    "ingredients": "Wall-nut"
+  },
+  {
+    "Timestamp": "2025/10/03 10:25:34 AM AST",
+    "id": "Endoflame",
+    "properties": "activeSun;sunProducer;itemProducer;deathEffect",
+    "cost": 125,
+    "recharge": 50,
+    "DPS": "N/A",
+    "description": "Endoflame can absorb projectiles and produce Sun.\nSpecial: Absorbs at most 6 projectiles, each producing 25 Sun. Produces a Fertilizer upon death.",
+    "ingredients": ""
+  },
+  {
+    "Timestamp": "2025/10/03 10:27:34 AM AST",
+    "id": "Puff-shroom",
+    "properties": "short;straight;overlapping;spawner",
+    "cost": 0,
+    "recharge": 7.5,
+    "DPS": "20/1.5s",
+    "description": "Puff-shrooms are cheap, but can only fire a short distance.\nRange: 2.5 tiles ahead.\nSpecial:\nCan atack up to three times in a single tile.\nShort plant (evades straight-firing projectiles)\nSpreading: Plant Fume-shroom or Scaredy-shroom on 1/2/3 Puff-shrooms to spread it ahead/in a fan shape, spawning 1/3/6 Puff-shrooms",
+    "ingredients": ""
+  },
+  {
+    "Timestamp": "2025/10/03 10:28:50 AM AST",
+    "id": "Gnome-shroom",
+    "properties": "instant;short;hypno;overlapping",
+    "cost": "",
+    "recharge": "",
+    "DPS": "N/A",
+    "description": "Shrinks a zombie and makes it fight for you!\nSpecial: Short plant. Makes a zombie smaller (cuts Toughness to 70%) and fight for you.",
+    "ingredients": "Hypno-shroom+Puff-shroom"
+  },
+  {
+    "Timestamp": "2025/10/03 10:30:08 AM AST",
+    "id": "Hail-shroom",
+    "properties": "instant;short;cryo;overlapping;stun;deathEffect",
+    "cost": "",
+    "recharge": "",
+    "DPS": "N/A",
+    "description": "Hail-shroom can temporarily freeze zombies they come into contact with.\nSpecial: Short plant. Freezes zombies that eat it in place.",
+    "ingredients": "Ice-shroom+Puff-shroom"
+  },
+  {
+    "Timestamp": "2025/10/03 10:32:21 AM AST",
+    "id": "Boom-shroom",
+    "properties": "instant;short;multiLane;overlapping;deathEffect",
+    "cost": "",
+    "recharge": "",
+    "DPS": 1800,
+    "description": "Boom-shroom will explode when it comes into contact with a zombie.\nSpecial: Short plant. Will explode when zombies get close.\nYou can have up to three in a single tile",
+    "ingredients": "Doom-shroom+Puff-shroom"
+  },
+  {
+    "Timestamp": "2025/10/03 10:34:06 AM AST",
+    "id": "Twinkle-shroom",
+    "properties": "short;straight;multiLane;overlapping",
+    "cost": "",
+    "recharge": "",
+    "DPS": "20x5/2.25",
+    "description": "A small mushroom that shoots mini-stars.\nSpecial: Short plant (evades straight-firing projectiles).",
+    "ingredients": "Starfruit+Puff-shroom"
+  },
+  {
+    "Timestamp": "2025/10/03 10:36:09 AM AST",
+    "id": "Sprout-pult",
+    "properties": "pierce;short;lobbed;overlapping",
+    "cost": "",
+    "recharge": "",
+    "DPS": "40/3s",
+    "description": "Lobs sprouts capable of passing on the shrinking effect.\nSpecial:\nShort plant (evades straight-firing projectiles).\nShots bounce twice. If a shot hits a shrunken zombie, it gains the ability to shrink the next zombies hit.",
+    "ingredients": "Cabbage-pult+Puff-shroom"
+  },
+  {
+    "Timestamp": "2025/10/03 10:38:16 AM AST",
+    "id": "Popcorn-pult",
+    "properties": "short;lobbed;overlapping;stun",
+    "cost": "",
+    "recharge": "",
+    "DPS": "20/3s",
+    "description": "A tiny Kernel-pult, with a chance to throw a small butter that shrinks zombies.\nSpecial: Short plant. Has a 25% chance to throw a small butter that deals 40 damage, which shrinks the size and health of a non-shrunken zombie by a factor of 0.7, otherwise it'll be stunned for 1.5 seconds, while Imps are killed instantly. Prioritizes zombies that are not shrunken.",
+    "ingredients": "Kernel-pult+Puff-shroom"
+  },
+  {
+    "Timestamp": "2025/10/03 10:39:54 AM AST",
+    "id": "Slice-pult",
+    "properties": "short;lobbed",
+    "cost": "",
+    "recharge": "",
+    "DPS": "80/3s",
+    "description": "Melon slices lose the ability to do splash, but are now twice as effective against shrunken zombies. \nSpecial:\nShort plant (evades straight-firing projectiles)\nMelon slices no longer do splash damage, but deal double the damage to shrunken zombies.",
+    "ingredients": "Melon-pult+Puff-shroom"
+  },
+  {
+    "Timestamp": "2025/10/03 10:41:41 AM AST",
+    "id": "Fume-shroom",
+    "properties": "pierce;infinite pierce;spawner",
+    "cost": 75,
+    "recharge": 7.5,
+    "DPS": "20/1.5s (piercing)",
+    "description": "Fume-shrooms shoot fumes that can pass through screen doors.\nRange: 4 tiles ahead\nSpecial:\nHas infinite pierce, ignores handheld armor (type 2).\nPuff-shroom spreader.",
+    "ingredients": ""
+  },
+  {
+    "Timestamp": "2025/10/03 10:44:17 AM AST",
+    "id": "Perfume-shroom",
+    "properties": "pierce;infinite pierce;hypno;deathEffect",
+    "cost": "",
+    "recharge": "",
+    "DPS": "40/1.5s (Piercing)",
+    "description": "Perfume-shroom sprays fumes that can hypnotize zombies.\nSpecial:\nChance to hypnotize zombies with less than 50% toughness. The lower the zombie's HP, the higher the chance, up to 25%. \nHypnotization threshold is removed for zombies already hit by Trippy-shroom. \nWhen bitten, hypnotizes the attacker, then reverts to a Fume-shroom",
+    "ingredients": "Fume-shroom+Hypno-shroom"
+  },
+  {
+    "Timestamp": "2025/10/03 10:46:11 AM AST",
+    "id": "Gutsy-shroom",
+    "properties": "pierce;infinite pierce;straight",
+    "cost": "",
+    "recharge": "",
+    "DPS": "30x2/1.5s (Long range) 30/1.5s (Short range, piercing)",
+    "description": "Gusty-shroom is ready to take on the zombies, near or far!\nSpecial:\nShoots 2 spores at once. When zombies get within 4 tiles in range, sprays piercing fumes instead.",
+    "ingredients": "Fume-shroom+Scaredy-shroom"
+  },
+  {
+    "Timestamp": "2025/10/03 10:47:38 AM AST",
+    "id": "Frost-shroom",
+    "properties": "pierce;infinite pierce;cryo",
+    "cost": "",
+    "recharge": "",
+    "DPS": "40/1.5s (Piercing)",
+    "description": "Frost-shroom's fumes can pass through and freeze zombies.\nCryo System: Attacks inflict chill and add 5 Cryo points.",
+    "ingredients": "Fume-shroom+Ice-shroom"
+  },
+  {
+    "Timestamp": "2025/10/03 10:48:56 AM AST",
+    "id": "Soot-shroom",
+    "properties": "pierce;infinite pierce;manual",
+    "cost": "",
+    "recharge": "",
+    "DPS": "1800/30s",
+    "description": "Soot-shroom can destroy most zombies in front of it. \nSpecial:\nClick manually to attack all zombies in the row in front.",
+    "ingredients": "Fume-shroom+Doom-shroom"
+  },
+  {
+    "Timestamp": "2025/10/03 10:49:57 AM AST",
+    "id": "Flame-shroom",
+    "properties": "pierce;infinite pierce;enflamed",
+    "cost": "",
+    "recharge": "",
+    "DPS": "33/1.5s (Piercing)",
+    "description": "Flamethrower incarnated.\nSpecial:\nDeals fire damage and inflicts Enflamed debuff.",
+    "ingredients": "Fume-shroom+Jalapeno"
+  },
+  {
+    "Timestamp": "2025/10/03 10:52:14 AM AST",
+    "id": "Shark-shroom",
+    "properties": "pierce;infinite pierce;aquatic;manual",
+    "cost": "",
+    "recharge": "",
+    "DPS": "20/1.5s",
+    "description": "A cannibalistic Fume-shroom that \"feeds\" on Sea-shrooms, borrowing the menace of Leviathan-shroom to drive away enemies.\nSpecial:\nUsing a Sea-shroom seedpacked on him extends his range to the full lane for 10s\nKnocks back zombies knocked back by Leviathan-shroom within the last 3s",
+    "ingredients": "Fume-shroom+Sea-shroom"
+  },
+  {
+    "Timestamp": "2025/10/03 10:53:18 AM AST",
+    "id": "Morph-shroom",
+    "properties": "pierce;infinite pierce",
+    "cost": "",
+    "recharge": "",
+    "DPS": "40/1.5s",
+    "description": "Putting an Iron Bucket on him might have interesting results.\nSpecial: Deals x2 damage to Metal Zombies.",
+    "ingredients": "Fume-shroom+Magnet-shroom"
+  },
+  {
+    "Timestamp": "2025/10/03 10:54:46 AM AST",
+    "id": "Foul-shroom",
+    "properties": "pierce;infinite pierce;poison;laneChange",
+    "cost": "",
+    "recharge": "",
+    "DPS": "30/1.5s (Piercing)",
+    "description": "Sprays poison gas at zombies!\nPoison System: Attacks add 1 Poison point to zombies.\nSpecial: Zombies that bite it are forced to switch lanes.",
+    "ingredients": "Fume-shroom+Garlic"
+  },
+  {
+    "Timestamp": "2025/10/03 10:56:15 AM AST",
+    "id": "Spring Melon",
+    "properties": "lobbed;changeOverTime",
+    "cost": "",
+    "recharge": "",
+    "DPS": "120/4s",
+    "description": "A big shroom with coiling vines that lob watermelons after charging.\nRange: 4 tiles ahead. \nSpecial: Charges when not attacking for at least 4.5s to increase damage to (1+charge time x 0.5) times the base damage. Maximum charge time: 30s.",
+    "ingredients": "Fume-shroom+Melon-pult"
+  },
+  {
+    "Timestamp": "2025/10/03 10:57:21 AM AST",
+    "id": "Hypno-shroom",
+    "properties": "hypno;deathEffect",
+    "cost": 75,
+    "recharge": 30,
+    "DPS": "N/A",
+    "description": "When eaten, Hypno-shrooms will make a zombie turn around and fight for you.\nSpecial: Makes a single zombie fight for you.",
+    "ingredients": ""
+  },
+  {
+    "Timestamp": "2025/10/03 10:59:43 AM AST",
+    "id": "Trippy-shroom",
+    "properties": "straight;hypno;deathEffect",
+    "cost": "",
+    "recharge": "",
+    "DPS": "40/1.5s",
+    "description": "Trippy-shroom can fires spores in 7 colors.\nSpecial:\nRandomly fires 1 of 7 types of spores. When a zombie is hit by all 7 types of spores, it will be hypnotized. Each time it is hit by a type of spore, the hypnotize probability of the Perfume-shroom will increase.\nWhen bitten, hypnotizes the attacker, then reverts to a Scaredy-shroom",
+    "ingredients": "Hypno-shroom+Scaredy-shroom"
+  },
+  {
+    "Timestamp": "2025/10/03 11:01:12 AM AST",
+    "id": "Cryonic-shroom",
+    "properties": "hypno;cryo;stun;deathEffect",
+    "cost": "",
+    "recharge": "",
+    "DPS": "N/A",
+    "description": "When a zombie eats a Cryonic-shroom, it will transform into a Frost Tall-nut zombie that will fight for you.\nSpecial: Upon contact, turns a zombie into a Frost Tall-nut zombie that will fight for you. Also freezes the full field.",
+    "ingredients": "Hypno-shroom+Ice-shroom"
+  },
+  {
+    "Timestamp": "2025/10/03 11:03:03 AM AST",
+    "id": "Curse-shroom",
+    "properties": "instant;hypno;multiLane;deathEffect",
+    "cost": "",
+    "recharge": "",
+    "DPS": "N/A",
+    "description": "Zombies that eat the Curse-shroom will get hypnotizes and explode after death.\nSpecial: Zombies that eat the Curse-shroom will be hypnotized and cursed. The cursed zombie will explode like a Doom-shroom upon death/leaving the lawn.",
+    "ingredients": "Hypno-shroom+Doom-shroom"
+  },
+  {
+    "Timestamp": "2025/10/03 11:05:48 AM AST",
+    "id": "Hypno Squash",
+    "properties": "instant;hypno;deathEffect",
+    "cost": "",
+    "recharge": "",
+    "DPS": 1800,
+    "description": "Squash that overwhelmes zombies with charm.\n\nSpecial: Hypnotizes the zombies he crushes, dealing 1800 damage instead if the zombie cannot be hypnotized.",
+    "ingredients": "Squash+Hypno-shroom"
+  },
+  {
+    "Timestamp": "2025/10/03 11:06:57 AM AST",
+    "id": "Mind-blover",
+    "properties": "instant;hypno;multiLane",
+    "cost": "",
+    "recharge": "",
+    "DPS": "N/A",
+    "description": "Can pull back hypnotized zombies!\nSpecial: Pulls all hypnotized zombies back, lasting for 5 seconds, but reduces their HP by 10% max Toughness.",
+    "ingredients": "Hypno-shroom+Blover"
+  },
+  {
+    "Timestamp": "2025/10/03 11:08:16 AM AST",
+    "id": "Hypno Pumpkin",
+    "properties": "defensive;hypno;overlapping",
+    "cost": "",
+    "recharge": "",
+    "DPS": "4000 Toughness",
+    "description": "Hypno Pumpkin makes a hypnotized zombie stay by your side.\nSpecial: Has a 4% chance to hypnotize zombies eating him. Forces up to 1 hypnotized zombie to stay in his tile, and uses that zombie as a shield first when under attack.",
+    "ingredients": "Hypno-shroom+Pumpkin"
+  },
+  {
+    "Timestamp": "2025/10/03 11:10:02 AM AST",
+    "id": "Hypno Magnet",
+    "properties": "hypno;spawner;zombieItem",
+    "cost": "",
+    "recharge": "",
+    "DPS": "N/A",
+    "description": "Consumes metal objects and summon the corresponding zombies to fight for you.\nSpecial:\nUses metal objects to spawn hypnotized zombies with 40% HP\nAuto-uses metals generated from Solar Magnet behind itself and those consumed by Magnet-shrooms in the same Magnetic System.",
+    "ingredients": "Hypno-shroom+Magnet-shroom"
+  },
+  {
+    "Timestamp": "2025/10/03 11:11:53 AM AST",
+    "id": "Hypno Garlic",
+    "properties": "short;hypno;laneChange;deathEffect",
+    "cost": "",
+    "recharge": "",
+    "DPS": "N/A",
+    "description": "Garlic with a shroomy hypno-cap mushroom on its head.\n\nSpecial:\nShort plant (evades straight-firing projectiles). \nCauses hypnotized zombies that touch him to switch lanes. \nWhen bitten, hypnotizes the attacker, forces it to switch lanes, then reverts to a regular Garlic.",
+    "ingredients": "Garlic+Hypno-shroom"
+  },
+  {
+    "Timestamp": "2025/10/03 11:13:16 AM AST",
+    "id": "Hypno Melon",
+    "properties": "lobbed;hypno;splash;deathEffect",
+    "cost": "",
+    "recharge": "",
+    "DPS": "120/3s",
+    "description": "Lobs hypno melons capable of hypnotizing hordes of zombies.\nSpecial:\nBoth direct hits and splash damage have a 25% chance to hypnotize zombies with less than 50% max HP\nWhen bitten, hypnotizes the attacker, then reverts to a Melon-pult.",
+    "ingredients": "Melon-pult+Hypno-shroom"
+  },
+  {
+    "Timestamp": "2025/10/03 11:15:00 AM AST",
+    "id": "Scaredy-shroom",
+    "properties": "straight;spawner",
+    "cost": 25,
+    "recharge": 7.5,
+    "DPS": "20/1.5s",
+    "description": "Scaredy-shrooms are long-ranged shooters that hide when enemies get near them.\nRange: Single lane\nSpecial: Gets scared and stops attacking when there are zombies in the 3x3 surrounding area.\nPuff-shroom spreader.",
+    "ingredients": ""
+  },
+  {
+    "Timestamp": "2025/10/03 11:16:09 AM AST",
+    "id": "Shivery-shroom",
+    "properties": "straight;cryo;stun",
+    "cost": "",
+    "recharge": "",
+    "DPS": "40/1.5s",
+    "description": "Shivery-shroom fires freezing spores.\nCryo system: Attacks inflict chill, add 10 cryo points, and deal x4 damage to frozen zombies.\nSpecial: Freeze nearby zombies when they get near.",
+    "ingredients": "Scaredy-shroom+Ice-shroom"
+  },
+  {
+    "Timestamp": "2025/10/03 11:18:00 AM AST",
+    "id": "Frenzy-shroom",
+    "properties": "instant;straight;multiLane;changeOverTime;deathEffect",
+    "cost": "",
+    "recharge": "",
+    "DPS": "20/1.5s (0.25 min)",
+    "description": "Frenzy-shroom's attack speed increases as it attacks.\nSpecial: Each attack will shorten the attack interval by 0.1 seconds, to a minimum of 0.25 seconds. Hides and resets when zombies get near. Will explode when zombies get near while peak attack speed is reached.",
+    "ingredients": "Scaredy-shroom+Doom-shroom"
+  },
+  {
+    "Timestamp": "2025/10/03 11:19:17 AM AST",
+    "id": "Hermit-shroom",
+    "properties": "straight;aquatic;manual",
+    "cost": "",
+    "recharge": "",
+    "DPS": "20/0.5s",
+    "description": "Too shy to attack until he sees a Sea-shroom dive.\nSpecial: Hides himself by default. Using a sea-shroom seedpacket on him makes him attack for 10s, after which he cowers again.",
+    "ingredients": "Scaredy-shroom+Sea-shroom"
+  },
+  {
+    "Timestamp": "2025/10/03 11:20:48 AM AST",
+    "id": "Camo-shroom",
+    "properties": "defensive;hovering;multiLane;overlapping",
+    "cost": "",
+    "recharge": "",
+    "DPS": "N/A",
+    "description": "Floats above ground, providing camoflage to nearby scaredy-shrooms hiding from zombies.\nSpecial:\nHovering plant. \nZombies won't eat hiding Scaredy-type plants in a 3x3 area around the Camo-shroom.",
+    "ingredients": "Scaredy-shroom+Blover"
+  },
+  {
+    "Timestamp": "2025/10/03 11:22:10 AM AST",
+    "id": "Starry-shroom",
+    "properties": "straight;multiLane",
+    "cost": "",
+    "recharge": "",
+    "DPS": "20 x 5/0.75s",
+    "description": "Starry-shroom shoots stars faster and in 5 directions, but also gets frightened more often.",
+    "ingredients": "Starfruit+Scaredy-shroom"
+  },
+  {
+    "Timestamp": "2025/10/03 11:23:41 AM AST",
+    "id": "Scareless Pumpkin",
+    "properties": "defensive;overlapping;attackBoost",
+    "cost": "",
+    "recharge": "",
+    "DPS": "2000 Toughness",
+    "description": "A pumpkin with the color of the Scaredy-shroom. Scaredy plants inside the pumpkin will not be afraid.\nSpecial: Scaredy plants inside the pumpkin will not be afraid (Frenzy-shroom and Gatling Frenzy-shroom will not self-destruct).",
+    "ingredients": "Scaredy-shroom+Pumpkin"
+  },
+  {
+    "Timestamp": "2025/10/03 11:38:04 AM AST",
+    "id": "Ice-shroom",
+    "properties": "instant;cryo;multiLane;stun;deathEffect",
+    "cost": 75,
+    "recharge": 50,
+    "DPS": 20,
+    "description": "Ice-shroom temporarily immobilizes all zombies on the screen.\nSpecial: Freezes all zombies in place for 4 seconds, inflicts Chill for 10 seconds, and deals 20 damage to all non-flying zombies.",
+    "ingredients": ""
+  },
+  {
+    "Timestamp": "2025/10/03 11:39:50 AM AST",
+    "id": "Doomise-shroom",
+    "properties": "instant;cryo;multiLane;stun;deathEffect",
+    "cost": "",
+    "recharge": "",
+    "DPS": 1800,
+    "description": "Doomise-shroom can destroy zombies in the entire screen and freeze time.\nSpecial: Freezes surviving zombies for 5 seconds. Also freezes the level temporarily - no new zombies will appear for 10 seconds.",
+    "ingredients": "Ice-shroom+Doom-shroom"
+  },
+  {
+    "Timestamp": "2025/10/03 11:41:22 AM AST",
+    "id": "Frost Tall-nut",
+    "properties": "defensive;cryo;autoHeal",
+    "cost": "",
+    "recharge": "",
+    "DPS": "8000 Toughness",
+    "description": "Tall-nuts with a minty taste. They slow down zombies that bite them.\nCryo System: Zombies that bite it are chilled and accumulate 10 Cryo points. \nSpecial: Tall plant. When affected by the Ice-shroom, heals 1000 Toughness.",
+    "ingredients": "Ice-shroom+Tall-nut"
+  },
+  {
+    "Timestamp": "2025/10/03 11:44:03 AM AST",
+    "id": "Frost Gloom-shroom",
+    "properties": "pierce;infinite pierce;cryo;multiLane",
+    "cost": "",
+    "recharge": "",
+    "DPS": "40 x 4/1.9s (piercing)",
+    "description": "Releases cold fumes around that can freeze zombies.\nCryo system: Each attack adds 5 Cryo points.",
+    "ingredients": "Ice-shroom+Gloom-shroom"
+  },
+  {
+    "Timestamp": "2025/10/03 11:46:22 AM AST",
+    "id": "Spike-ice",
+    "properties": "pierce;infinite pierce;cryo;vehicleResist;crushResist;stun",
+    "cost": "",
+    "recharge": "",
+    "DPS": "40x2/1s",
+    "description": "Can puncture tires and freeze zombies.\nToughness: 450\nCryo System: Attacks inflict Chill and add 5 Cryo points.\nSpecial: Inherits traits from Spikerock.",
+    "ingredients": "Ice-shroom+Spikerock"
+  },
+  {
+    "Timestamp": "2025/10/03 11:47:52 AM AST",
+    "id": "Frost Cattail",
+    "properties": "homing;cryo;multiLane;aquatic;antiAir",
+    "cost": "",
+    "recharge": "",
+    "DPS": "40 x 2/1.5s",
+    "description": "Frost Cattail can attack any zombie in the lane and deal extra damage to chilled targets.\nSpecial: Deals x2 damage to chilled zombies. Deals x4 damage to frozen zombies.",
+    "ingredients": "Ice-shroom+Cattail"
+  },
+  {
+    "Timestamp": "2025/10/03 11:49:43 AM AST",
+    "id": "Cryo Cannon",
+    "properties": "instant;cryo;multiLane;manual;stun",
+    "cost": "",
+    "recharge": "",
+    "DPS": 3240,
+    "description": "Use manually to fire a freezing projectile that damages zombies and infuses plants with Ice-shroom.\n\nSpecial: Inflicts chill and infuses plants in its blast radius with Ice-shroom (except Flower Pots).",
+    "ingredients": "Cob Cannon+Ice-shroom"
+  },
+  {
+    "Timestamp": "2025/10/03 11:51:23 AM AST",
+    "id": "Icy Squash",
+    "properties": "instant;cryo;multiLane;splash;stun;deathEffect",
+    "cost": "",
+    "recharge": "",
+    "DPS": 1800,
+    "description": "Squash imbued with freezing power.\nSpecial: Upon landing, deals 600 damage to zombies in a 3x4 area and freezes them for 4s.",
+    "ingredients": "Squash+Ice-shroom"
+  },
+  {
+    "Timestamp": "2025/10/03 11:54:39 AM AST",
+    "id": "Spicicle",
+    "properties": "defensive;instant;cryo;multiLane;changeOverTime;deathEffect",
+    "cost": "",
+    "recharge": "",
+    "DPS": 1800,
+    "description": "Has both the properties of Ice-shroom and Jalapeno!\nToughness: 32000\nSpecial: Loses 20% Toughness every 3 seconds. While present, absorbs damage for all plants. Upon death, triggers Jalapeno in his row and fullscreen Ice-shroom",
+    "ingredients": "Jalapeno+Ice-shroom"
+  },
+  {
+    "Timestamp": "2025/10/03 11:56:12 AM AST",
+    "id": "Frostweed",
+    "properties": "pierce;infinite pierce;cryo;vehicleResist",
+    "cost": "",
+    "recharge": "",
+    "DPS": "40/1s",
+    "description": "Frostweed can slow down zombies that walk on it. \nCryo System: Each hit inflicts Chill and adds 10 Cryo points.",
+    "ingredients": "Spikeweed+Ice-shroom"
+  },
+  {
+    "Timestamp": "2025/10/03 11:58:29 AM AST",
+    "id": "Frostburn-wood",
+    "properties": "cryo;attackBoost;splash",
+    "cost": "",
+    "recharge": "",
+    "DPS": "N/A",
+    "description": "Can turn normal peas into snow peas or polar ice peas.\nSpecial: Turns the normal peas that pass through into snow peas, and the snow peas that pass through into polar ice peas for x2 damage and x2 Cryo points.",
+    "ingredients": "Torchwood+Ice-shroom"
+  },
+  {
+    "Timestamp": "2025/10/03 11:59:48 AM AST",
+    "id": "Breeze Blover",
+    "properties": "instant;enflamed;attackBoost",
+    "cost": "",
+    "recharge": "",
+    "DPS": "N/A",
+    "description": "Blover of a freezing breeze that constantly applies chill.\nSpecial:\nLasts for 10s before disappearing\nEvery second, deals 1 damage and applies 20 Cryo points to all zombies on the lawn. Converts all snow peas onscreen to polar ice peas.",
+    "ingredients": "Blover+Ice-shroom"
+  },
+  {
+    "Timestamp": "2025/10/03 12:01:23 PM AST",
+    "id": "Ice Pot",
+    "properties": "short;overlapping;spawner;changeOverTime",
+    "cost": "",
+    "recharge": "",
+    "DPS": "N/A",
+    "description": "Can materialize plants forged in fire.\nSpecial: Every 10s, transforms a specific Roasted plant on its tile into its base form usable for fusion.",
+    "ingredients": "Ice-shroom+Flower Pot"
+  },
+  {
+    "Timestamp": "2025/10/03 12:02:16 PM AST",
+    "id": "Winter Melon",
+    "properties": "lobbed;cryo;splash",
+    "cost": "",
+    "recharge": "",
+    "DPS": "80/3s",
+    "description": "Launches frosty melons that slow zombies.",
+    "ingredients": "Melon-pult+Ice-shroom"
+  },
+  {
+    "Timestamp": "2025/10/03 12:42:12 PM AST",
+    "id": "Doom-shroom",
+    "properties": "instant;multiLane;deathEffect",
+    "cost": 125,
+    "recharge": 50,
+    "DPS": 1800,
+    "description": "Doom-shroom destroys everything in a large area and leaves a crater that can't be planted on.\nRange: 5x5 (A circle with a radius of 3.75 tiles)\nSpecial: After explosion, leaves a crater that lasts for 180 seconds. Does not leave crater when planted on water.",
+    "ingredients": ""
+  },
+  {
+    "Timestamp": "2025/10/03 12:46:42 PM AST",
+    "id": "Doomwood",
+    "properties": "multiLane;attackBoost;splash;changeOverTime",
+    "cost": "",
+    "recharge": "",
+    "DPS": "N/A",
+    "description": "Doomwood keeps burning even after a Doom-shroom explosion and it takes burning to the next level.\nSpecial:\nWhen its Ember value is 0, it behaves the same as Torchwood\nWhen the Ember value is not 0, it turns peas and regular ignited peas into ember peas, with+30 damage and a no falloff 1/3rd splash damage. Ember peas inflict the Ember debuff.\nCan also use 10 Ember values to strengthen Doom peas or Mini Doom-shroom projectiles, x2 or x6 their damage respectively, and to enhance their splash effect to be the same as the large bullet of doom. \nEmber value:\nInitial: 60, Maximum: 60, 1 point is lost per second.\nGains 60 points for every 60 projectiles ignited, 30 points when affected by Doom-shroom explosions, and 10 points when any zombie within a 5x5 area dies with the Ember debuff. \nEmber debuff will be cleared by cold/frozen/poisoned status and coexists with the Enflamed debuff.",
+    "ingredients": "Doom-shroom+Torchwood"
+  },
+  {
+    "Timestamp": "2025/10/03 12:48:47 PM AST",
+    "id": "Doom Cactus",
+    "properties": "straight;multiLane;antiAir",
+    "cost": "",
+    "recharge": "",
+    "DPS": "40/1.5s",
+    "description": "Fires destructive thorns. \nSpecial: Each attack has a 0% starting chance of unleashing an Ultimate attack. If it fails, the chance is increased by 5% for the next attack.\nUltimate: Shoots a large number of thorns forward, which can hit airborne units.",
+    "ingredients": "Cactus+Doom-shroom"
+  },
+  {
+    "Timestamp": "2025/10/03 12:50:19 PM AST",
+    "id": "Fallout Blover",
+    "properties": "instant;multiLane",
+    "cost": "",
+    "recharge": "",
+    "DPS": "N/A",
+    "description": "Blasts zombies with high-temp wind laced with ash and nuclear fallout.\nSpecial:\nLasts for 10s before disappearing\nEvery second, deals 180 Cremator damage to all zombies on the lawn. Damage is doubled against zombies with the Ember debuff.",
+    "ingredients": "Blover+Doom-shroom"
+  },
+  {
+    "Timestamp": "2025/10/03 12:52:01 PM AST",
+    "id": "Death Star",
+    "properties": "instant;multiLane;deathEffect",
+    "cost": "",
+    "recharge": "",
+    "DPS": "N/A",
+    "description": "Transforms himself into a Doom Meteor and crashes into the ground.\nSpecial: Disappears after 3s and summons a Doom Meteor that deals 1800 area damage on impact and splits into 180 spore stars each dealing 20 damage.",
+    "ingredients": "Starfruit+Doom-shroom"
+  },
+  {
+    "Timestamp": "2025/10/03 12:52:59 PM AST",
+    "id": "Dormant-shroom",
+    "properties": "instant;manual;zombieItem",
+    "cost": "",
+    "recharge": "",
+    "DPS": "N/A",
+    "description": "Dormant-shroom is stabilized by magnetic force and can be fused with metal to transform into a corresponding form.\nSpecial: Does not explode until further fusion.",
+    "ingredients": "Doom-shroom+Magnet-shroom"
+  },
+  {
+    "Timestamp": "2025/10/03 12:53:41 PM AST",
+    "id": "Silver Doom-shroom",
+    "properties": "instant",
+    "cost": "",
+    "recharge": "",
+    "DPS": "N/A",
+    "description": "A Doom-shroom that swapped bang for bling.\nSpecial: Does not explode.",
+    "ingredients": "Doom-shroom+Marigold"
+  },
+  {
+    "Timestamp": "2025/10/03 12:55:05 PM AST",
+    "id": "Zombie Giftbox",
+    "properties": "activeSun;sunProducer;spawner",
+    "cost": -100,
+    "recharge": 50,
+    "DPS": "N/A",
+    "description": "Earns 100 Sun, but spawns a Gold-box Zombie.\nSpecial: Grants 100 sun, but spawns a Golden Mystery-box Zombie. (Regular/Conehead/Buckethead Ducky Tube Zombie in water lanes).",
+    "ingredients": ""
+  },
+  {
+    "Timestamp": "2025/10/03 12:58:05 PM AST",
+    "id": "Gloom-shroom",
+    "properties": "pierce;infinite pierce;multiLane",
+    "cost": 200,
+    "recharge": 50,
+    "DPS": "20x4/1.9s (Piercing)",
+    "description": "Gloom-shrooms fire heavy fumes in an area around them.\nDamage: 20x4/1.9s (Piercing)",
+    "ingredients": "Fume-shroom"
+  },
+  {
+    "Timestamp": "2025/10/03 12:59:12 PM AST",
+    "id": "Grave Buster",
+    "properties": "instant",
+    "cost": 75,
+    "recharge": 7.5,
+    "DPS": "N/A",
+    "description": "Plant Grave Busters on Graves to remove the graves.\nSpecial: Plant Grave Buster on a gravestone to remove it, taking 5s. Drops itself as a seedpacket if not planted on a grave.",
+    "ingredients": ""
+  },
+  {
+    "Timestamp": "2025/10/03 1:00:44 PM AST",
+    "id": "Lily Pad",
+    "properties": "overlapping;aquatic;spawner",
+    "cost": 25,
+    "recharge": 7.5,
+    "DPS": "N/A",
+    "description": "Lily Pads let you plant non-aquatic plants on top of them.\nSpecial: Non-aquatic plants can be planted on it. When specific plants are placed, Lily Pad transforms into a variant of it that can automatically plant the plant that transformed it every 90 seconds.\nVariants: Sunflower, Threepeater, Squash, Torchwood, Jalapeno",
+    "ingredients": ""
+  },
+  {
+    "Timestamp": "2025/10/03 1:01:42 PM AST",
+    "id": "Squash",
+    "properties": "instant;deathEffect",
+    "cost": 50,
+    "recharge": 30,
+    "DPS": 1800,
+    "description": "Squashes will smash the first zombie that gets close to it.\nSpecial: Squashed zombies do not trigger their on-death effects.",
+    "ingredients": ""
+  },
+  {
+    "Timestamp": "2025/10/03 1:02:47 PM AST",
+    "id": "Squash-spreader",
+    "properties": "straight;multiLane;splash",
+    "cost": "",
+    "recharge": "",
+    "DPS": "40x3/3s",
+    "description": "Squash-spreader can fire small bouncing squashes.\nSpecial: Every time a mini-squash hits the ground, it inflicts 40 points of damage to nearby zombies.",
+    "ingredients": "Squash+Threepeater"
+  },
+  {
+    "Timestamp": "2025/10/03 1:04:22 PM AST",
+    "id": "Strangle Kelp",
+    "properties": "instant;splash;aquatic;deathEffect",
+    "cost": "",
+    "recharge": "",
+    "DPS": "Insta-kill x 3",
+    "description": "Strangle Kelp can drag three zombies into the water.\nSpecial: Drags three zombies into the water. Each drag also deals 600 zombies to nearby zombies.",
+    "ingredients": "Squash+Tangle Kelp"
+  },
+  {
+    "Timestamp": "2025/10/03 1:05:20 PM AST",
+    "id": "Spicy Squash",
+    "properties": "instant;deathEffect",
+    "cost": "",
+    "recharge": "",
+    "DPS": "1800 (tile)+1800 (lane)",
+    "description": "Spicy Squash can burn a whole row of zombies.\nSpecial: Releases Jalapeno effect when crushing zombies.",
+    "ingredients": "Squash+Jalapeno"
+  },
+  {
+    "Timestamp": "2025/10/03 1:11:48 PM AST",
+    "id": "Squashweed",
+    "properties": "pierce;infinite pierce;short;stun",
+    "cost": "",
+    "recharge": "",
+    "DPS": "20/1.5s",
+    "description": "Zombies will be knocked back every time it attacks.\nSpecial: Each attack will knock back zombies and fire 1 bouncing mini-squash.",
+    "ingredients": "Squash+Spikeweed"
+  },
+  {
+    "Timestamp": "2025/10/03 1:12:43 PM AST",
+    "id": "Squashwood",
+    "properties": "instant;attackBoost;spawner",
+    "cost": "",
+    "recharge": "",
+    "DPS": "N/A",
+    "description": "Produces a Squash in front for every 60 peas that pass through it.\nSpecial: For every 60 peas lit, a Roasted Squash is spawned in front.",
+    "ingredients": "Squash+Torchwood"
+  },
+  {
+    "Timestamp": "2025/10/03 1:15:41 PM AST",
+    "id": "Squash Pumpkin",
+    "properties": "defensive;overlapping;spawner",
+    "cost": "",
+    "recharge": "",
+    "DPS": "4000 Toughness",
+    "description": "The cozy nest of Squashes. When there are specific plants in the shell, it can spawn squashes.\nDamage: 225\nSpecial:\nSquash plants in Squash Pumpkins lose their ability to detect enemies.\nWhen there are Squash or Squashwood plants in Squash Pumpkin, a baby squash with 1/8th damage (minimum 225) and a maximum jump distance of 1.5 Tiles is spawned. It disappears after 6 jumps and regenerates after 3 seconds. Baby squashes spawned from Infernal Squashwood releases the Jalapeno effect when it lands.\nAbilities do not work in water lanes.",
+    "ingredients": "Squash+Pumpkin"
+  },
+  {
+    "Timestamp": "2025/10/03 1:16:50 PM AST",
+    "id": "Threepeater",
+    "properties": "straight;multiLane",
+    "cost": 275,
+    "recharge": 7.5,
+    "DPS": "20x3/1.5s",
+    "description": "Threepeaters shoot peas in three lanes.\nSpecial: Threepeater and subsequent fusions redirect projectiles that would be lost off-map onto topmost/bottommost lanes to their own lane.",
+    "ingredients": ""
+  },
+  {
+    "Timestamp": "2025/10/03 1:19:07 PM AST",
+    "id": "Kelp-spreader",
+    "properties": "instant;tangled;aquatic;changeOverTime;deathEffect",
+    "cost": "",
+    "recharge": "",
+    "DPS": "20x3/1.5s+Insta-kill",
+    "description": "Can fire kelps that slow down aquatic zombies.\nSpecial: Each attack adds 1 Tangle value.\nTangled Debuff: Slows targets and stackable with Chill. Zombies affected receive more and more additional percentage damage from kelps based on the zombie's Tangle Value, until they're insta-killed when the Tangle Value is full (30).",
+    "ingredients": "Threepeater+Tangle Kelp"
+  },
+  {
+    "Timestamp": "2025/10/03 1:20:21 PM AST",
+    "id": "Scorched Threepeater",
+    "properties": "instant;straight;multiLane",
+    "cost": "",
+    "recharge": "",
+    "DPS": "40x3/1.5s",
+    "description": "A Threepeater who can't fuse because he's scorched.\nSpecial: Produces a line of flames that deal 1800 (Cremator) damage in three lanes when planted or fused.",
+    "ingredients": "Threepeater+Jalapeno"
+  },
+  {
+    "Timestamp": "2025/10/03 1:22:16 PM AST",
+    "id": "Weed-spreader",
+    "properties": "pierce;straight;multiLane;vehicleResist",
+    "cost": "",
+    "recharge": "",
+    "DPS": "5x3/1.5s (Piercing)",
+    "description": "Fires 3 weeds that deal enhanced damage to vehicles.\nSpecial: Weeds deal 30% maximum Toughness damage to vehicles at the cost of themselves.",
+    "ingredients": "Threepeater+Spikeweed"
+  },
+  {
+    "Timestamp": "2025/10/03 1:23:44 PM AST",
+    "id": "Torchtree",
+    "properties": "multiLane;attackBoost;splash",
+    "cost": "",
+    "recharge": "",
+    "DPS": "N/A",
+    "description": "Splits flaming peas into, at most, 3 lanes.\nSpecial:\nIgnites peas:\n1st ignition is exactly like Torchwood;\n2nd ignition splits into two peas on the rows above and below;\n3rd ignition splits into three peas across all three rows;\nThe cycle repeats",
+    "ingredients": "Threepeater+Torchwood"
+  },
+  {
+    "Timestamp": "2025/10/03 1:25:32 PM AST",
+    "id": "Tangle Kelp",
+    "properties": "instant;short;aquatic;deathEffect",
+    "cost": 25,
+    "recharge": 50,
+    "DPS": "Insta-Kill (Drown)",
+    "description": "Tangle Kelp are aquatic plants that pull the first zombie that nears them underwater. \nSpecial: Short plant (evades straight-firing projectiles).",
+    "ingredients": ""
+  },
+  {
+    "Timestamp": "2025/10/03 1:26:53 PM AST",
+    "id": "Spicy Kelp",
+    "properties": "instant;short;aquatic;deathEffect",
+    "cost": "",
+    "recharge": "",
+    "DPS": "Insta-kill (Drown)+1800 (Cremator)",
+    "description": "Spicy Kelp will burn the entire row of zombies upon contact.",
+    "ingredients": "Jalapeno+Tangle Kelp"
+  },
+  {
+    "Timestamp": "2025/10/03 1:28:23 PM AST",
+    "id": "Spike-kelp",
+    "properties": "pierce;infinite pierce;vehicleResist;aquatic",
+    "cost": "",
+    "recharge": "",
+    "DPS": "20/1s",
+    "description": "Spikeweed but aquatic and tangly.\nSpecial: Attacks add 1 Tangle Value. Takes 10 damage every time he attacks a vehicle.",
+    "ingredients": "Spikeweed+Tangle Kelp"
+  },
+  {
+    "Timestamp": "2025/10/03 1:30:16 PM AST",
+    "id": "Torch-kelp",
+    "properties": "instant;short;tangled;attackBoost;splash;spawner",
+    "cost": "",
+    "recharge": "",
+    "DPS": "Insta-kill (Drown)",
+    "description": "Ignites kelp shots and drags one zombie into the water.\nSpecial: Ignites peas and kelp shots for+20 damage. Ignited kelp shots can add 1 Tangle Value to all zombies in the splash range. For every 100 shots lit, a Roasted Kelp is spawned in front.",
+    "ingredients": "Torchwood+Tangle Kelp"
+  },
+  {
+    "Timestamp": "2025/10/03 1:31:39 PM AST",
+    "id": "Jalapeno",
+    "properties": "instant;deathEffect",
+    "cost": 125,
+    "recharge": 50,
+    "DPS": "1800 (Cremator)",
+    "description": "Jalapenos destroy an entire row of zombies.\nRange: Single lane\nSpecial: Instantly eliminates Zombonis and their ice trails.",
+    "ingredients": ""
+  },
+  {
+    "Timestamp": "2025/10/03 1:33:18 PM AST",
+    "id": "Scorchweed",
+    "properties": "pierce;infinite pierce;short;enflamed;vehicleResist",
+    "cost": "",
+    "recharge": "",
+    "DPS": "40/1s",
+    "description": "Scorchweed pops tires and enflames zombies that step on them.\nSpecial: Attacks inflict Enflamed Debuff.\nEnflamed Debuff: Damage taken increases by 50%; zombies with this debuff explode on death, spreading it further.",
+    "ingredients": "Jalapeno+Spikeweed"
+  },
+  {
+    "Timestamp": "2025/10/03 1:35:20 PM AST",
+    "id": "Scorchwood",
+    "properties": "instant;attackBoost;splash;deathEffect",
+    "cost": "",
+    "recharge": "",
+    "DPS": "N/A",
+    "description": "Projectiles ignited by the Scorchwood has greatly increased power. \nSpecial:\nExplodes like a Jalapeno upon death.\nIgnites projectiles for the following effects:\nPeas,Potatoes,and Low-tier Ignited Peas:+30 damage\nSnow Peas: Turns into regular peas.",
+    "ingredients": "Jalapeno+Torchwood"
+  },
+  {
+    "Timestamp": "2025/10/03 1:37:09 PM AST",
+    "id": "Flame Tall-nut",
+    "properties": "defensive;enflamed;autoHeal",
+    "cost": "",
+    "recharge": "",
+    "DPS": "8000 Toughness",
+    "description": "Zombies will get enflamed when it is bitten.\nSpecial: When affected by the Jalapeno, heals 3000 Toughness. Inflicts Enflamed debuff and deals 20 damage to zombies that bite him.",
+    "ingredients": "Jalapeno+Tall-nut"
+  },
+  {
+    "Timestamp": "2025/10/03 1:38:10 PM AST",
+    "id": "Flame Gloom-shroom",
+    "properties": "pierce;infinite pierce;enflamed;multiLane",
+    "cost": "",
+    "recharge": "",
+    "DPS": "40x4/1.9s (Piercing)",
+    "description": "Releases high-damaging fire fumes around it.\nEnflamed debuff: Inflicts the Enflamed debuff when attacking zombies.",
+    "ingredients": "Jalapeno+Gloom-shroom"
+  },
+  {
+    "Timestamp": "2025/10/03 1:39:45 PM AST",
+    "id": "Spike-hearth",
+    "properties": "pierce;infinite pierce;short;enflamed;vehicleResist;crushResist",
+    "cost": "",
+    "recharge": "",
+    "DPS": "40x2/1s",
+    "description": "Enflame zombies that step on it and also puncture vehicles.\nToughness: 450\nEnflamed Debuff: Applies the Enflamed Debuff when attacking zombies.\nSpecial: Inherits traits from Spikerock.",
+    "ingredients": "Jalapeno+Spikerock"
+  },
+  {
+    "Timestamp": "2025/10/03 1:41:09 PM AST",
+    "id": "Flame Cattail",
+    "properties": "homing;enflamed;multiLane;aquatic;antiAir",
+    "cost": "",
+    "recharge": "",
+    "DPS": "40x2/1.5s",
+    "description": "Flame Cattail can attack zombies in any lane and deal high damage.\nSpecial: Deals x3 damage to Enflamed zombies.",
+    "ingredients": "Jalapeno+Cattail"
+  },
+  {
+    "Timestamp": "2025/10/03 1:42:59 PM AST",
+    "id": "Pyro Cannon",
+    "properties": "instant;enflamed;multiLane;manual",
+    "cost": "",
+    "recharge": "",
+    "DPS": "3240 (Cremator)",
+    "description": "Use manually to fire an explosive, high-damage flaming projectile that scorches zombies and infuses nearby plants with Jalapeno.\nSpecial: Inflicts Enflamed debuff and then does damage, and infuses plants in its blast radius with Jalapeno.",
+    "ingredients": "Cob Cannon+Jalapeno"
+  },
+  {
+    "Timestamp": "2025/10/03 1:44:26 PM AST",
+    "id": "Spicy Starfruit",
+    "properties": "instant;straight;multiLane;deathEffect",
+    "cost": "",
+    "recharge": "",
+    "DPS": "600x25",
+    "description": "Explodes and releases high-damage spicy stars.\nSpecial: Does not trigger the Jalapeno effect immediately when fused. Explodes instead 1 second after fusion, releasing Jalapeno effect and exploding into 25 spicy stars.",
+    "ingredients": "Jalapeno+Starfruit"
+  },
+  {
+    "Timestamp": "2025/10/03 1:45:23 PM AST",
+    "id": "Summer Melon",
+    "properties": "lobbed;enflamed;splash",
+    "cost": "",
+    "recharge": "",
+    "DPS": "120/3s",
+    "description": "Lobs blazingly hot melons!\nSpecial: Inflicts the Enflamed debuff.",
+    "ingredients": "Melon-pult+Jalapeno"
+  },
+  {
+    "Timestamp": "2025/10/03 1:46:31 PM AST",
+    "id": "Spikeweed",
+    "properties": "pierce;infinite pierce;short;vehicleResist",
+    "cost": 100,
+    "recharge": 7.5,
+    "DPS": "20/1s",
+    "description": "Spikeweeds pop tires and hurt any zombies that step on them.\nSpecial:\nShort plant (evades straight-firing projectiles).\nDoes not block regular zombies.\nInstantly kills vehicles and disappears.",
+    "ingredients": ""
+  },
+  {
+    "Timestamp": "2025/10/03 1:48:17 PM AST",
+    "id": "Torchweed",
+    "properties": "attackBoost;splash;vehicleResist;antiAir;spawner",
+    "cost": "",
+    "recharge": "",
+    "DPS": "40/1s",
+    "description": "Torchweed can ignite small peas and puncture vehicles.\nSpecial:\nIgnite small peas for increased and splashed damage.\nFor every 100 small peas lit, a Roasted Spikeweed is spawned in front.\nCan also pop the balloons of regular Balloon Zombies.",
+    "ingredients": "Spikeweed+Torchwood"
+  },
+  {
+    "Timestamp": "2025/10/03 1:49:21 PM AST",
+    "id": "Torchwood",
+    "properties": "attackBoost;splash;antiFog",
+    "cost": 175,
+    "recharge": 7.5,
+    "DPS": "N/A",
+    "description": "Torchwoods turn peas that pass through them into fireballs that deal twice as much damage.",
+    "ingredients": ""
+  },
+  {
+    "Timestamp": "2025/10/03 1:50:45 PM AST",
+    "id": "Sparkwood",
+    "properties": "multiLane;attackBoost;splash;antiFog",
+    "cost": "",
+    "recharge": "",
+    "DPS": "N/A",
+    "description": "A Torchwood shaped like a Starfruit, ignites star projectiles.\nSpecial: Ignites passing star-shaped projectiles (except thorn stars and jack-in-the-box stars), adding 20 damage and removing their other traits. Ignited stars do splash damage in a similar way to ignited peas.",
+    "ingredients": "Torchwood+Starfruit"
+  },
+  {
+    "Timestamp": "2025/10/03 1:53:06 PM AST",
+    "id": "Pumpkin Brazier",
+    "properties": "defensive;overlapping;attackBoost;splash;spawner",
+    "cost": "",
+    "recharge": "",
+    "DPS": "4000 Toughness",
+    "description": "Can ignite peas and produce Roasted Pumpkins.\nSpecial: For every 50 peas lit, a Roasted Pumpkin is spawned in front.",
+    "ingredients": "Torchwood+Pumpkin"
+  },
+  {
+    "Timestamp": "2025/10/03 1:54:35 PM AST",
+    "id": "Spikerock",
+    "properties": "pierce;infinite pierce;vehicleResist;crushResist",
+    "cost": 225,
+    "recharge": 50,
+    "DPS": "20x2/1s",
+    "description": "Spikerocks pop multiple tires and hurt any zombies that step on them.\nToughness: 450\nSpecial: Can puncture tires, but deducts 50 Toughness. Loses 50 Toughness when slammed by Gargantuars and loses 150 when stomped on by Mech Gargs.",
+    "ingredients": "Spikeweed"
+  },
+  {
+    "Timestamp": "2025/10/03 3:35:32 PM AST",
+    "id": "Sea-shroom",
+    "properties": "short;straight;aquatic;sunReturn",
+    "cost": 0,
+    "recharge": 7.5,
+    "DPS": "20/1.5",
+    "description": "Sea-shrooms are aquatic plants that shoot short ranged spores.\nRange: 2.5 tiles ahead\nSpecial:\nShort plant (evades straight-firing projectiles)\nRetursn 50 sun after fusions",
+    "ingredients": ""
+  },
+  {
+    "Timestamp": "2025/10/03 3:37:30 PM AST",
+    "id": "Beacon-shroom",
+    "properties": "short;lumos;aquatic;antiFog;changeOverTime;sunReturn",
+    "cost": "",
+    "recharge": "",
+    "DPS": "N/A",
+    "description": "Dispels fog and gives off light, growing in size after a while.\nGrowth Time: 60s\nLumos System: Gives 1 Lumos Level to a 3x3 area, then 5x5 after growth.\nSpecial: Short plant. Inherits traits from Plantern.",
+    "ingredients": "Plantern+Sea-shroom"
+  },
+  {
+    "Timestamp": "2025/10/03 3:39:01 PM AST",
+    "id": "Urchin-shroom",
+    "properties": "short;straight;aquatic;antiAir;changeOverTime;sunReturn",
+    "cost": "",
+    "recharge": "",
+    "DPS": "20 -> 20x4/1.5s",
+    "description": "Attacks flying zombies and airships, growing in size after a while.\nGrowth Time: 120s\nSpecial: Short plant.",
+    "ingredients": "Cactus+Sea-shroom"
+  },
+  {
+    "Timestamp": "2025/10/03 3:41:25 PM AST",
+    "id": "Tide-shroom",
+    "properties": "instant;short;aquatic;antiFog;deathEffect",
+    "cost": "",
+    "recharge": "",
+    "DPS": "N/A",
+    "description": "Dispels fog and blows back zombies in the water.\nSpecial: Dispels fog and pushes the zombies in his lane to the rightmost column.",
+    "ingredients": "Blover+Sea-shroom"
+  },
+  {
+    "Timestamp": "2025/10/03 3:42:55 PM AST",
+    "id": "Sea Star",
+    "properties": "short;straight;multiLane;aquatic;changeOverTime;sunReturn",
+    "cost": "",
+    "recharge": "",
+    "DPS": "20x5 -> 20x5x2/1.5",
+    "description": "Attacks twice when fully grown.\nGrowth Time: 60s.",
+    "ingredients": "Starfruit+Sea-shroom"
+  },
+  {
+    "Timestamp": "2025/10/03 3:44:39 PM AST",
+    "id": "Anchor-shroom",
+    "properties": "short;magnetic;aquatic;changeOverTime;sunReturn",
+    "cost": "",
+    "recharge": "",
+    "DPS": "N/A",
+    "description": "Magnet Interval: 15 Seconds -> 10s\nSpecial: Grows after attracting 3 times.",
+    "ingredients": "Magnet-shroom+Sea-shroom"
+  },
+  {
+    "Timestamp": "2025/10/03 3:46:29 PM AST",
+    "id": "Plantern",
+    "properties": "lumos;crushResist;antiFog",
+    "cost": 25,
+    "recharge": 15,
+    "DPS": "N/A",
+    "description": "Planterns light up an area to let you see through fog, and give Lumos levels to plants.\nSpecial: Dispels fog (5x7 except the corners)\nPlantern fusions dispel fog in a smaller 1-tile radius.\nLumos System: Provides 1 Lumos Level in a 3x3 Grid, which can be stacked to provide strength to other Lumos plants. Refer to its fusions for the list of affected plants.",
+    "ingredients": ""
+  },
+  {
+    "Timestamp": "2025/10/03 3:48:47 PM AST",
+    "id": "Lumos Cactus",
+    "properties": "pierce;infinite pierce;straight;lumos;antiFog;antiAir",
+    "cost": "",
+    "recharge": "",
+    "DPS": "30/1.5s",
+    "description": "Fires piercing spikes and lasers, depending on the Lumos level.\nLumos System: Gets the following buffs, depending on the Lumos Level:\nLevel 1 = Pierce 2 Times\nLevel 2 = Infinite Pierce Laser, Air Damage x 3\nLevel 3 = Base Laser Damage -> 40\nSpecial: Shoots 2 times at once when attacking flying zombies.",
+    "ingredients": "Plantern+Cactus"
+  },
+  {
+    "Timestamp": "2025/10/03 3:50:15 PM AST",
+    "id": "Glowver",
+    "properties": "instant;lumos;multiLane;antiFog;deathEffect",
+    "cost": "",
+    "recharge": "",
+    "DPS": "N/A",
+    "description": "Dispels fog and increases the Lumos level of Lumos plants present.\nLumos System: Gives 1 Lumos Level for Lumos plants in the entire field for 30 seconds.",
+    "ingredients": "Plantern+Blover"
+  },
+  {
+    "Timestamp": "2025/10/03 3:52:17 PM AST",
+    "id": "Starglow",
+    "properties": "straight;homing;lumos;multiLane;antiFog",
+    "cost": "",
+    "recharge": "",
+    "DPS": "60x5/3s",
+    "description": "Shoots stars that can track zombies if there's light.\nLumos System: Gets the following Buffs:\nLevel 1 = Stars can now track zombies in the same row.\nLevel 2 = Stars are fired continuously, regardless of zombies.\nLevel 3 = Stars track zombies everywhere.",
+    "ingredients": "Plantern+Starfruit"
+  },
+  {
+    "Timestamp": "2025/10/03 3:53:36 PM AST",
+    "id": "Jack O' Lantern",
+    "properties": "defensive;lumos;overlapping;autoHeal;antiFog",
+    "cost": "",
+    "recharge": "",
+    "DPS": "4000 Toughness",
+    "description": "In a small area, dispels fog like a Plantern and increases the Lumos Level for the Lumos plants inside.\nLumos System: Gives 1 Lumos Level in a 3x3 Grid. Restores 150 Toughness per Lumos Level every 15 seconds.",
+    "ingredients": "Plantern+Pumpkin"
+  },
+  {
+    "Timestamp": "2025/10/03 3:55:53 PM AST",
+    "id": "Lumos Magnet",
+    "properties": "lumos;magnetic;multiLane;antiFog",
+    "cost": "",
+    "recharge": "",
+    "DPS": "N/A",
+    "description": "Attraction range and cooldown time improves depending on the Lumos Level.\nMagnet Interval: 15 Seconds (LLO) -> 11 Seconds -> 6.5 Seconds -> 5 Seonds (LL3)\nLumos System: Higher Lumos Levels will significantly shorten the attraction interval and increase the attraction range. When it's Lumos Level 2, the attraction will cause 200 damage to zombies near the attraction target.",
+    "ingredients": "Plantern+Magnet-shroom"
+  },
+  {
+    "Timestamp": "2025/10/03 3:56:48 PM AST",
+    "id": "Lumos Pot",
+    "properties": "short;lumos;overlapping;antiFog",
+    "cost": "",
+    "recharge": "",
+    "DPS": "N/A",
+    "description": "A Flower Pot that can be used as a small Plantern, providing 1 Lumos level for its tile. \nSpecial: Dispels a small patch of fog, providing 1 Lumos level for its tile.",
+    "ingredients": "Flower Pot+Plantern"
+  },
+  {
+    "Timestamp": "2025/10/03 3:59:39 PM AST",
+    "id": "Lumos Umbrella",
+    "properties": "defensive;lumos;reflector;antiFog",
+    "cost": "",
+    "recharge": "",
+    "DPS": "N/A",
+    "description": "It can dispel fog and block bullets.\nEnergy limit: 2000\nShield & Light Range: 3x3\nSpecial: Lumos System\nProvides 1 Lumos Level and dispels fog like a Plantern.\nConsumes Energy to block projectiles. Each block consumes Energy based on the damage of the projectile (excluding basketballs)\nRestores (25 x Lumos Level) Energy every second, pausing to rest for 5 seconds when it is completely exhausted\nReduces Energy first to absorb damage, where 5 Energy = 1 Toughness.",
+    "ingredients": "Plantern+Umbrella Leaf"
+  },
+  {
+    "Timestamp": "2025/10/03 4:00:37 PM AST",
+    "id": "Cactus",
+    "properties": "straight;antiAir",
+    "cost": 125,
+    "recharge": 7.5,
+    "DPS": "20/1.5s",
+    "description": "Cacti shoot spikes that can hit both ground and air targets.\nDamage: 20/1.5s\nSpecial: Prioritizes flying zombies.",
+    "ingredients": ""
+  },
+  {
+    "Timestamp": "2025/10/03 4:02:08 PM AST",
+    "id": "Cactus Drone",
+    "properties": "hovering;overlapping;antiAir",
+    "cost": "",
+    "recharge": "",
+    "DPS": "30 x 2/1.5s (stationary), 30 x 2/1s (Wingman)",
+    "description": "Spits out thorns to attack zombies in the sky. Does not occupy any grid.\nSpecial: Hovering plant. Can be planted on top of another plant.",
+    "ingredients": "Cactus+Blover"
+  },
+  {
+    "Timestamp": "2025/10/03 4:03:01 PM AST",
+    "id": "Starthorn",
+    "properties": "homing;multiLane;antiAir",
+    "cost": "",
+    "recharge": "",
+    "DPS": "20 x 5/1.5s",
+    "description": "Can only attack zombies in the sky.\nSpecial: Thorny stars track flying zombies across the board.",
+    "ingredients": "Cactus+Starfruit"
+  },
+  {
+    "Timestamp": "2025/10/03 4:03:48 PM AST",
+    "id": "Thorny Pumpkin",
+    "properties": "defensive;overlapping",
+    "cost": "",
+    "recharge": "",
+    "DPS": "4000 Toughness",
+    "description": "Counterattacks the zombies that bite it.\nSpecial: Reflects 50 damage back to zombies biting it.",
+    "ingredients": "Cactus+Pumpkin"
+  },
+  {
+    "Timestamp": "2025/10/03 4:06:23 PM AST",
+    "id": "Magnethorn",
+    "properties": "straight;magnetic;antiAir",
+    "cost": "",
+    "recharge": "",
+    "DPS": "40/1.5s",
+    "description": "Can cause high damage to flying objects.\nSpecial:\nDeals double the damage to metallic armor\nDeals 500 damage to Bucknut-copter Zombies.\nDealing a certain amount of damage to Airships can cause it to crash, dealing 1000 damage to zombies near the crash site. Zomppelin = 10 Hits, Kirov Drone = 3 Hits, Kirov Zomppelin = 20 Hits.",
+    "ingredients": "Cactus+Magnet-shroom"
+  },
+  {
+    "Timestamp": "2025/10/03 4:07:15 PM AST",
+    "id": "Umbrella Thorn",
+    "properties": "defensive;antiAir",
+    "cost": "",
+    "recharge": "",
+    "DPS": "N/A",
+    "description": "Can shoot down flying zombies and repel airships.",
+    "ingredients": "Cactus+Umbrella Leaf"
+  },
+  {
+    "Timestamp": "2025/10/03 4:08:52 PM AST",
+    "id": "Blover",
+    "properties": "instant;antiFog;antiAir;deathEffect",
+    "cost": 100,
+    "recharge": 15,
+    "DPS": "N/A",
+    "description": "Blover blows away all balloon zombies and fog, except Bucket-copter Zombies and Zomppelins.",
+    "ingredients": ""
+  },
+  {
+    "Timestamp": "2025/10/03 4:11:07 PM AST",
+    "id": "Starblover",
+    "properties": "homing;multiLane;attackBoost",
+    "cost": "",
+    "recharge": "",
+    "DPS": "N/A",
+    "description": "Attracts stars to rotate around itself and launch them out.\nSpecial: Attracts nearby star projectiles. After 1.5 seconds, shoots them out as tracking projectiles with twice the speed. If the projectiles already have tracking abilities before the acceleration, their damage is increased by 50% instead. Attracts up to 20 stars maximum.",
+    "ingredients": "Blover+Starfruit"
+  },
+  {
+    "Timestamp": "2025/10/03 4:14:14 PM AST",
+    "id": "Windy Pumpkin",
+    "properties": "defensive;overlapping;antiFog;spawner",
+    "cost": "",
+    "recharge": "",
+    "DPS": "4000 Toughness",
+    "description": "Every so often, a Blover will spawn to blow away the fog.\nSpecial: Produces a Blover every 30 seconds.",
+    "ingredients": "Blover+Pumpkin"
+  },
+  {
+    "Timestamp": "2025/10/03 4:15:37 PM AST",
+    "id": "Magnet Blover",
+    "properties": "instant;magnetic;multiLane;deathEffect",
+    "cost": "",
+    "recharge": "",
+    "DPS": "N/A",
+    "description": "Sucks away all the iron objects present.\nSpecial: Attracts up to 10 metal objects across the whole field. Takes 1 second to process each. Lasts for 10s before disappearing.",
+    "ingredients": "Blover+Magnet-shroom"
+  },
+  {
+    "Timestamp": "2025/10/03 4:21:14 PM AST",
+    "id": "Disguster",
+    "properties": "poison;laneChange;multiLane;antiFog",
+    "cost": "",
+    "recharge": "",
+    "DPS": "N/A",
+    "description": "Disguster can poison zombies.\nPoison System: Inflicts 5 Poison Points to every zombie in the screen and applies the Poisoned debuff. It also increases the time the debuff stays by 5 more seconds.\nSpecial: Forces Zombies to change lanes.",
+    "ingredients": "Garlic+Blover"
+  },
+  {
+    "Timestamp": "2025/10/03 4:22:26 PM AST",
+    "id": "Hoverleaf",
+    "properties": "defensive;hovering;overlapping;reflector",
+    "cost": "",
+    "recharge": "",
+    "DPS": "N/A",
+    "description": "A smaller floating Umbrella Leaf that can only protect the 1 Tile below.\nSpecial: Hovering plant. He shares the same traits as Umbrella Leaf, but can only protect the plant right below it.",
+    "ingredients": "Umbrella Leaf+Blover"
+  },
+  {
+    "Timestamp": "2025/10/03 4:23:55 PM AST",
+    "id": "Starfruit",
+    "properties": "straight;multiLane",
+    "cost": 125,
+    "recharge": 7.5,
+    "DPS": "20x25/1.5s",
+    "description": "Starfruits shoot stars in 5 directions.",
+    "ingredients": ""
+  },
+  {
+    "Timestamp": "2025/10/03 4:25:48 PM AST",
+    "id": "Starry Pumpkin",
+    "properties": "defensive;overlapping;attackBoost",
+    "cost": "",
+    "recharge": "",
+    "DPS": "4000 Toughness",
+    "description": "Helps Starblover retain more stars.\nSpecial: Increases the storage limit of Starblover to 80, and Gravitron to 240.",
+    "ingredients": "Starfruit+Pumpkin"
+  },
+  {
+    "Timestamp": "2025/10/03 4:27:38 PM AST",
+    "id": "Starmorph",
+    "properties": "straight;magnetic;multiLane",
+    "cost": "",
+    "recharge": "",
+    "DPS": "40x5/1.5s",
+    "description": "Can fuse with iron materials from zombies to absorb their properties.\nSpecial: Metal plant. Deals double damage to iron zombies.",
+    "ingredients": "Starfruit+Magnet-shroom"
+  },
+  {
+    "Timestamp": "2025/10/03 4:30:12 PM AST",
+    "id": "Pumpkin",
+    "properties": "defensive;overlapping;cherryResist",
+    "cost": 125,
+    "recharge": 30,
+    "DPS": "4000 Toughness",
+    "description": "Pumpkins protect plants that are within their shells.\nSpecial: Pumpkin and subsequent fusions prevent splash damage from explosive cherries at difficulty 4 or lower.\nFusion Priority: Lowest, hold left shift key while fusing to forcibly fuse with Pumpkins (with Better Pumpkin Fusions mod, included by default)",
+    "ingredients": ""
+  },
+  {
+    "Timestamp": "2025/10/03 4:32:17 PM AST",
+    "id": "Pumpkin Morph",
+    "properties": "defensive;magnetic;overlapping;zombieItem",
+    "cost": "",
+    "recharge": "",
+    "DPS": "4000 Toughness",
+    "description": "Can fuse with iron materials from zombies to absorb their properties.\nMagnetic System: This plant will deal (20*Amount of Magnetic Plants in System * Zombie Speed) to specific zombies every 6s. Only zombies with magnetable materials OR mechanical vehicles can be damaged this way. Also, they must not be on the sky or underground. This trait carries into further fusions.",
+    "ingredients": "Magnet-shroom+Pumpkin"
+  },
+  {
+    "Timestamp": "2025/10/03 4:35:47 PM AST",
+    "id": "Magnet-shroom",
+    "properties": "magnetic;multiLane;zombieItem",
+    "cost": 100,
+    "recharge": 7.5,
+    "DPS": "N/A",
+    "description": "Magnet-shrooms can absorb metallic objects. \nSpecial: Attracts metla objects within a radius of 3 tiles. Takes 15 seconds to process. Drops unprocessed objects on death or fusion. \nIf there is a magnetic plant in the 8-direction vicinity of another magnetic plant, they are then connected through the Magnetic System. The Magnetic System has no limit to its number of connections, and will boost the resngth of some magnetic plants based on its amount.Refer to its fusions for the list of affected plants.",
+    "ingredients": ""
+  },
+  {
+    "Timestamp": "2025/10/03 4:37:49 PM AST",
+    "id": "Kernel Morph",
+    "properties": "lobbed;magnetic;zombieItem;stun",
+    "cost": "",
+    "recharge": "",
+    "DPS": "60/3s",
+    "description": "The Kernel Morph can fuse with metal objects and changes into the corresponding form based on the type.\nSpecial: Has a 25% chance to throw a magnetic butter with 80 damage, and stuns the target for 4 seconds.",
+    "ingredients": "Kernel-pult+Magnet-shroom"
+  },
+  {
+    "Timestamp": "2025/10/03 4:40:44 PM AST",
+    "id": "Gold Magnet",
+    "properties": "itemProducer;magnetic;multiLane;reflector",
+    "cost": "",
+    "recharge": "",
+    "DPS": "N/A",
+    "description": "Attracts projectiles!\nSpecial: Attracts straight-shooting projectiles from adjacent lanes and produces a 25 coin for every projectile attracted.",
+    "ingredients": "Magnet-shroom+Marigold"
+  },
+  {
+    "Timestamp": "2025/10/03 4:43:09 PM AST",
+    "id": "Cattail",
+    "properties": "homing;multiLane;aquatic;antiAir",
+    "cost": 150,
+    "recharge": 50,
+    "DPS": "20x2/1.5s",
+    "description": "Cattails can attack any lane and shoot down balloon zombies.",
+    "ingredients": "Lily Pad"
+  },
+  {
+    "Timestamp": "2025/10/03 10:43:23 PM AST",
+    "id": "Cabbage-pult",
+    "properties": "lobbed",
+    "cost": 100,
+    "recharge": 7.5,
+    "DPS": "40/3s",
+    "description": "Launches cabbages to attack zombies.\nRange: Single lane\nSpecial: Lobbed projectiles ignore handheld armor (Type 2)",
+    "ingredients": ""
+  },
+  {
+    "Timestamp": "2025/10/03 10:44:46 PM AST",
+    "id": "Cabbe Pot",
+    "properties": "short;overlapping;attackBoost",
+    "cost": "",
+    "recharge": "",
+    "DPS": "N/A",
+    "description": "Provides attack speed bonus to Cabbage-type plants above it.\nSpecial: Lowers the attack intervals of Wither-pult and Helios Cabbage above it to 1.5s, and reduces the attack interval of other Cabbage plants by 33%.",
+    "ingredients": "Cabbage-pult+Flower Pot"
+  },
+  {
+    "Timestamp": "2025/10/03 10:46:08 PM AST",
+    "id": "Taco-pult",
+    "properties": "pierce;lobbed;stun",
+    "cost": "",
+    "recharge": "",
+    "DPS": "40/3s",
+    "description": "Launches tacos that can bounce once, and can also throw butter.\nSpecial: Projectiles bounce once. Has a 1/4th chance to throw butter, dealing 60 damage and immobilizing zombies for 4 seconds.",
+    "ingredients": "Cabbage-pult+Kernel-pult"
+  },
+  {
+    "Timestamp": "2025/10/03 10:48:13 PM AST",
+    "id": "Garbage-pult",
+    "properties": "pierce;lobbed;poison",
+    "cost": "",
+    "recharge": "",
+    "DPS": "40/3s",
+    "description": "Launches stinky, garbage cabbages at the zombies.\nPoison System:\nSee Clove-pult for details on the Poison System.\nEach time it hits a zombie with Poison Points greater than 0, it can bounce again. There is no limit to the amount of times it can bounce.\nEach hit receives bonus damage proportionate to a zombie's Poison value and then adds 1 Poison point.\nSpecial: Launches a projectile that bounces once.",
+    "ingredients": "Cabbage-pult+Garlic"
+  },
+  {
+    "Timestamp": "2025/10/03 10:49:52 PM AST",
+    "id": "Umbrella Kale",
+    "properties": "defensive;reflector;attackBoost",
+    "cost": "",
+    "recharge": "",
+    "DPS": "1000 Toughness",
+    "description": "Can bounce catapult-type projectiles to increase their damage.\nSpecial:\nPrioritized by catapults for targeting. Increases projectile damage by 75%.\nIf there are no zombies, it can store projectiles for a while.\nKnocks back zombies at the cost of Toughness. See Umbrella Husk.",
+    "ingredients": "Cabbage-pult+Umbrella Leaf"
+  },
+  {
+    "Timestamp": "2025/10/03 10:50:37 PM AST",
+    "id": "Silver Cabbage",
+    "properties": "lobbed",
+    "cost": "",
+    "recharge": "",
+    "DPS": "60/3s",
+    "description": "Launches silver cabbages to attack zombies.",
+    "ingredients": "Marigold+Cabbage-pult"
+  },
+  {
+    "Timestamp": "2025/10/03 10:51:26 PM AST",
+    "id": "Cracked Melon",
+    "properties": "pierce;lobbed;splash",
+    "cost": "",
+    "recharge": "",
+    "DPS": "80/3s",
+    "description": "Fires melons that bounce once.",
+    "ingredients": "Cabbage-pult+Melon-pult"
+  },
+  {
+    "Timestamp": "2025/10/03 10:52:41 PM AST",
+    "id": "Flower Pot",
+    "properties": "short;overlapping",
+    "cost": 25,
+    "recharge": 7.5,
+    "DPS": "N/A",
+    "description": "Allows planting plants above it. \nSpecial:\nEnables plants to be planted on bare ground/roof.\nShort plant (evades straight-firing projectiles).\nFusion Priority: Lowest, hold Left Alt key while fusing to forcibly fuse with Flower Pot (with Better Pot Fusions mod, included by default).",
+    "ingredients": ""
+  },
+  {
+    "Timestamp": "2025/10/03 10:53:49 PM AST",
+    "id": "Kernel Pot",
+    "properties": "short;overlapping;attackBoost;stun",
+    "cost": "",
+    "recharge": "",
+    "DPS": "N/A",
+    "description": "Increases the butter chance of all Kernel-type plants above it from 25% to 50%.\nSpecial: Raises the butter chance from 1/4 to 1/2",
+    "ingredients": "Kernel-pult+Flower Pot"
+  },
+  {
+    "Timestamp": "2025/10/03 10:56:17 PM AST",
+    "id": "Garlic Pot",
+    "properties": "defensive;short;laneChange;multiLane;overlapping",
+    "cost": "",
+    "recharge": "",
+    "DPS": "N/A",
+    "description": "Reduces the biting damage taken by garlic-type plants on top, and has a garlic effect itself.\nSpecial: Forces zombies to move towards the middle row.",
+    "ingredients": "Garlic+Flower Pot"
+  },
+  {
+    "Timestamp": "2025/10/03 10:57:59 PM AST",
+    "id": "Umbrella Pot",
+    "properties": "short;overlapping;attackBoost",
+    "cost": "",
+    "recharge": "",
+    "DPS": "N/A",
+    "description": "Enhances umbrella-type plants.\nUmbrella Husk:+2 Seconds immobilization,+50% knockback distance\nUmbrella Rind: Doubles damage of reflected projectiles\nUmbrella Kale: Can attack zombies on adjacent lanes\nOther Umbrellas: Doubles knockback distance.",
+    "ingredients": "Umbrella Leaf+Flower Pot"
+  },
+  {
+    "Timestamp": "2025/10/03 10:58:28 PM AST",
+    "id": "Silver Pot",
+    "properties": "itemProducer;short;overlapping",
+    "cost": "",
+    "recharge": "",
+    "DPS": "25/25s",
+    "description": "Generates extra Coins for you.",
+    "ingredients": "Marigold+Flower Pot"
+  },
+  {
+    "Timestamp": "2025/10/03 11:00:16 PM AST",
+    "id": "Melon Pot",
+    "properties": "short;overlapping;attackBoost;splash;sunReturn",
+    "cost": "",
+    "recharge": "",
+    "DPS": "N/A",
+    "description": "Enhances melon-type plants.\nSpecial:\nReturns an extra 150 Sun on fusion. \nDoubles the splash damage of Melons above it, with no falloff; damage remains at 2/3 of base damage.",
+    "ingredients": "Melon-pult+Flower Pot"
+  },
+  {
+    "Timestamp": "2025/10/03 11:01:23 PM AST",
+    "id": "Kernel-pult",
+    "properties": "lobbed;stun",
+    "cost": 100,
+    "recharge": 7.5,
+    "DPS": "20/3s",
+    "description": "Throw corn kernels to attack zombies and can also throw butter to immobilize them.\nRange: Single lane. \nSpecial: Has a 1/4 chance to throw butter, dealing 40 damage and immobilizing zombies for 4 seconds.",
+    "ingredients": ""
+  },
+  {
+    "Timestamp": "2025/10/03 11:03:22 PM AST",
+    "id": "Clove-pult",
+    "properties": "lobbed;poison;stun",
+    "cost": "",
+    "recharge": "",
+    "DPS": "40/3s",
+    "description": "Throws small cloves at the zombies; sometimes they're buttered.\nPoison System:\nEach attack receives bonus damage proportionate to a zombie's Poison value and then accumulates 1 Poison point. \nAt 5 points, the Poisoned Debuff is applied. \nHas a 1/4 chance to throw garlic butter with 60 damage, immobilizing zombies for 4s, immediately poisoning the zombie for 9s and raising the Poison value cap to 30 points. \nPoisoned Debuff: Zombies lose (20xPoison point) Toughness per second while poisoned.",
+    "ingredients": "Kernel-pult+Garlic"
+  },
+  {
+    "Timestamp": "2025/10/03 11:04:26 PM AST",
+    "id": "Umbrella Husk",
+    "properties": "defensive;multiLane;reflector;stun",
+    "cost": "",
+    "recharge": "",
+    "DPS": "1000 Toughness",
+    "description": "Knocks back zombies that try to approach and immobilizes them with butter.",
+    "ingredients": "Kernel-pult+Umbrella Leaf"
+  },
+  {
+    "Timestamp": "2025/10/03 11:05:33 PM AST",
+    "id": "Silver Kernel",
+    "properties": "itemProducer;lobbed;stun",
+    "cost": "",
+    "recharge": "",
+    "DPS": "40/3s",
+    "description": "Fires silver kernels and silver money bags to attack zombies, with a chance to earn Coins. \nSpecial: Has a 1/4 chance to throw a silver money bag, dealing 60 damage, immobilizing the zombie for 4 seconds, and dropping 25 Coins.",
+    "ingredients": "Kernel-pult+Marigold"
+  },
+  {
+    "Timestamp": "2025/10/03 11:06:54 PM AST",
+    "id": "Corn-pult",
+    "properties": "lobbed;splash;stun",
+    "cost": "",
+    "recharge": "",
+    "DPS": "120/3s",
+    "description": "Throws large corns at the zombies; sometimes they're buttered.\nDamage: 120/3s\nSpecial: Has a 1/4th chance to throw a buttered Corn with 140 damage, immobilizing the main target for 4 seconds, and zombies in the splash range for (4/total splash spread) seconds (minimum of 0.5)",
+    "ingredients": "Melon-pult+Kernel-pult"
+  },
+  {
+    "Timestamp": "2025/10/03 11:07:55 PM AST",
+    "id": "Garlic",
+    "properties": "defensive;short;laneChange",
+    "cost": 50,
+    "recharge": 7.5,
+    "DPS": "N/A",
+    "description": "Any zombie that tries to bite him will switch lanes.\nSpecial: \nZombies that bite him will change lanes.\nReceives no more than 15 damage each bite.\nShort plant (evades straight-firing projectiles).",
+    "ingredients": ""
+  },
+  {
+    "Timestamp": "2025/10/03 11:09:11 PM AST",
+    "id": "Umbrella Clove",
+    "properties": "defensive;laneChange;multiLane;reflector",
+    "cost": "",
+    "recharge": "",
+    "DPS": "1000 Toughness",
+    "description": "Knocks back zombies and forces them to switch lanes.\nSpecial: Knocks back nearby zombies, dealing 40 damage, at the cost of Toughness, forcing them to change lanes. See Umbrella Husk.",
+    "ingredients": "Garlic+Umbrella Leaf"
+  },
+  {
+    "Timestamp": "2025/10/03 11:10:05 PM AST",
+    "id": "Silver Garlic",
+    "properties": "defensive;short;laneChange",
+    "cost": "",
+    "recharge": "",
+    "DPS": "600 Toughness",
+    "description": "Possibly an even more pungent garlic? Maybe.",
+    "ingredients": "Marigold+Garlic"
+  },
+  {
+    "Timestamp": "2025/10/03 11:11:43 PM AST",
+    "id": "Garlic-pult",
+    "properties": "lobbed;poison;splash",
+    "cost": "",
+    "recharge": "",
+    "DPS": "100/3s",
+    "description": "Lobs large garlics on the zombies that break on impact.\nPoison System:\nSee Clove-pult for details on the Poison System.\nEach Poison point adds bonus damage to direct hits and splash attacks. Accumulates 1 Poison point for all zombies within the garlic's splash radius.",
+    "ingredients": "Garlic+Melon-pult"
+  },
+  {
+    "Timestamp": "2025/10/03 11:13:35 PM AST",
+    "id": "Umbrella Leaf",
+    "properties": "defensive;multiLane;reflector",
+    "cost": 100,
+    "recharge": 7.5,
+    "DPS": "1000 Toughness",
+    "description": "Deflects incoming basketballs.\nSpecial:\nProtects plants from catapult projectiles and Bungees within a 3x3 area.\nProtects plants from explosive basketballs but each protection costs 100 Toughness.\nStops Mecha-nut Zombies in their tracks.",
+    "ingredients": ""
+  },
+  {
+    "Timestamp": "2025/10/03 11:14:57 PM AST",
+    "id": "Silver Umbrella",
+    "properties": "itemProducer;defensive;multiLane;reflector",
+    "cost": "",
+    "recharge": "",
+    "DPS": "1000 Toughness",
+    "description": "Generates extra money for you when it deflects basketballs.\nSpecial: Drops 25 Coins each time it activates and knocks back approaching zombies, dealing 40 damage, at the cost of Toughness. See Umbrella Husk",
+    "ingredients": "Umbrella Leaf+Marigold"
+  },
+  {
+    "Timestamp": "2025/10/03 11:17:24 PM AST",
+    "id": "Umbrella Rind",
+    "properties": "defensive;lobbed;multiLane;reflector;splash",
+    "cost": "",
+    "recharge": "",
+    "DPS": "2000 Toughness",
+    "description": "Deflects basketballs and returns a catapulted melon. \nSpecial: \nCan reflect zombie projectiles except tridents (return as melons if they are lobbed projectiles): loses 200 HP for reflecting projectiles that explode. \nEach reflection of projectiles stores energy equal to the projectile's damage, releasing it all on zombies for extra damage when the next knockback occurs. \nKnocks back and deals 80 damage to zombies at the cost of Toughness. See Umbrella Husk.",
+    "ingredients": "Umbrella Leaf+Melon-pult"
+  },
+  {
+    "Timestamp": "2025/10/03 11:18:32 PM AST",
+    "id": "Marigold",
+    "properties": "itemProducer",
+    "cost": 25,
+    "recharge": 7.5,
+    "DPS": "N/A",
+    "description": "Produces Silver Coins, Gold Coins, and Diamonds. \nProduction Interval: 25s. \nCoins Amount: \n75% Chance = 100 Coins\n20% Chance = 300 Coins\n5% Chance = 1000 Coins",
+    "ingredients": ""
+  },
+  {
+    "Timestamp": "2025/10/03 11:19:16 PM AST",
+    "id": "Twin Marigold",
+    "properties": "itemProducer",
+    "cost": "",
+    "recharge": "",
+    "DPS": "N/A",
+    "description": "Produces double the amount of Coins! \nCoin Output: generates Coins twice every 20 seconds, otherwise identical to Marigold.",
+    "ingredients": "Marigold+Marigold"
+  },
+  {
+    "Timestamp": "2025/10/03 11:19:55 PM AST",
+    "id": "Silver Melon",
+    "properties": "lobbed;splash",
+    "cost": "",
+    "recharge": "",
+    "DPS": "100/3s",
+    "description": "Launches silver melons to attack zombies.",
+    "ingredients": "Marigold+Melon-pult"
+  },
+  {
+    "Timestamp": "2025/10/03 11:21:27 PM AST",
+    "id": "Melon-pult",
+    "properties": "lobbed;splash",
+    "cost": 300,
+    "recharge": 7.5,
+    "DPS": "80/3s",
+    "description": "Launches melons at zombies to deal damage. \nRange: Single lane\nSpecial: Melons deal splash damage in a 1-tile radius with falloff, calculated as bullet damage x 8 /(number of zombies hit), capped at 1/3rd of the projectile's base damage.",
+    "ingredients": ""
+  },
+  {
+    "Timestamp": "2025/10/03 11:22:58 PM AST",
+    "id": "Cob Cannon",
+    "properties": "instant;multiLane;manual",
+    "cost": 500,
+    "recharge": 50,
+    "DPS": 1800,
+    "description": "Can be manually operated to launch deadly corn cobs that cause cremator damage.\nArming Time: 36s\nSpecial: Must be planted on top of two Kernel-pults.",
+    "ingredients": "Kernel-pult+Kernel-pult"
+  },
+  {
+    "Timestamp": "2025/10/03 11:24:29 PM AST",
+    "id": "Jicamagic",
+    "properties": "spawner",
+    "cost": 50,
+    "recharge": 30,
+    "DPS": "N/A",
+    "description": "Catalyst for Titan fusions.\nUnlock Conditions: Beat Titan Pea Turret's showcase in Fusion Showcase\nSpecial: A fusion catalyst for Titan plants.Place it in the middle plant to start the fusion. Titan fusions are indicated with \"infinity\".",
+    "ingredients": ""
+  },
+  {
+    "Timestamp": "2025/10/03 11:27:16 PM AST",
+    "id": "Titan Pea Turret",
+    "properties": "straight;changeOverTime",
+    "cost": "",
+    "recharge": "",
+    "DPS": "(20x3x2.25)/0.5s",
+    "description": "Unleashes pure pea hell onto zombies!\nToughness: 1000\nSpecial:\nFires 3 peas at once. \nFiring speed increases the longer the turret fires and has 3 stages. After shooting 100 rounds, attack speed is increased by 50% (to 150%). \nAfter shooting another 200 rounds, attack speed is increased by another 50% (to 225% the original). \nFiring speed returns to normal when its attack resets.\nPeas may miss Imps due to the turret's height.",
+    "ingredients": "Repeater+Threepeater+Repeater+Jicamagic"
+  },
+  {
+    "Timestamp": "2025/10/03 11:28:48 PM AST",
+    "id": "Pumpkin Bunker",
+    "properties": "defensive;overlapping;cherryResist;jackResist",
+    "cost": "",
+    "recharge": "",
+    "DPS": "12000 Toughness",
+    "description": "Protect two tiles at once! \nSpecial: Heals when affected by Cherry and Jack-In-the-Box explosions. Can only be placed on Titan plants or other 2-tiled plants.",
+    "ingredients": "Joker Pumpkin+Magnet-shroom+Cherry Pumpkin+Jicamagic"
+  },
+  {
+    "Timestamp": "2025/10/03 11:31:19 PM AST",
+    "id": "Chomper Maw",
+    "properties": "instant;pierce",
+    "cost": "",
+    "recharge": "",
+    "DPS": "Insta-kill (Devour)",
+    "description": "Swallows all zombies that get too close!\nDigestion Time:\n8+3ln(Sum toughness of zombies)\nFor reference: Zombie - 24.8 Seconds | Buckethead - 29.9 Seconds | Giga Gargantuar - 34 Seconds | 10 Giga Gargantuars - 41s.\nSpecial:\nCan swallow all zombies in a 1.5 tile range, including Gargantuars. Unable to swallow other zombies that have immunity to Chompers.",
+    "ingredients": "Chomper+Chomper+Chomper+Jicamagic"
+  },
+  {
+    "Timestamp": "2025/10/03 11:33:04 PM AST",
+    "id": "Melon Mortar",
+    "properties": "instant;multiLane;splash;manual",
+    "cost": "",
+    "recharge": "",
+    "DPS": "400/Melon",
+    "description": "Use manually to launch a barrage of melons from above. \nDamage: 200/Melon. Up to 40 melons in a 3x3 area without splash falloff. Randomly hits within a 5x3 grid. \nArming Time: 36s.",
+    "ingredients": "Melon-pult+Kernel-pult+Melon-pult+Jicamagic"
+  },
+  {
+    "Timestamp": "2025/10/03 11:34:42 PM AST",
+    "id": "Leviathan-shroom",
+    "properties": "defensive;straight;tangled;aquatic",
+    "cost": "",
+    "recharge": "",
+    "DPS": "20x2/1.5s",
+    "description": "Can repel zombies in front.\nToughness: 1000\nTangled Debuff: Adds 1 Tangle Value per hit, dealing additional damage based on the Tangle Value.\nSpecial: Repels approaching zombies (single target) and deals 100 damage.",
+    "ingredients": "Tangle Kelp+Sea-shroom+Tangle Kelp+Jicamagic"
+  },
+  {
+    "Timestamp": "2025/10/03 11:37:04 PM AST",
+    "id": "Jugger-nut",
+    "properties": "defensive;vehicleResist;crushResist",
+    "cost": "",
+    "recharge": "",
+    "DPS": "32000 Toughness",
+    "description": "The more types of defensive plants are on the field, the higher its own defense.\nToughness: 32000.\nSpecial: Tall plant. \nAnti-Crush, damage received is capped at 1/3 Toughness.\nAfter Damage Cap, damage is reduced by dividing it by (1+0.1 x number of defensive plant types on the field)",
+    "ingredients": "Wall-nut+Tall-nut+Wall-nut+Jicamagic"
+  },
+  {
+    "Timestamp": "2025/10/03 11:43:29 PM AST",
+    "id": "Split Pea",
+    "properties": "straight",
+    "cost": "",
+    "recharge": "",
+    "DPS": "20 x 3/1.5s",
+    "description": "Split peas shoot peas forward and backwards. \nSpecial: Peas shot backwards will rebound upon reaching the edge of the screen.",
+    "ingredients": "Repeater+Peashooter"
+  },
+  {
+    "Timestamp": "2025/10/03 11:44:03 PM AST",
+    "id": "Gatling Pea",
+    "properties": "straight",
+    "cost": "",
+    "recharge": "",
+    "DPS": "20 x 4/1.5s",
+    "description": "Gatling Pea shoots four peas at a time. \nDamage: 20 x 4/1.5s",
+    "ingredients": "Split Pea+Peashooter"
+  },
+  {
+    "Timestamp": "2025/10/03 11:47:04 PM AST",
+    "id": "Gatling Cherry",
+    "properties": "straight",
+    "cost": "",
+    "recharge": "",
+    "DPS": "40 x 4/1.5s",
+    "description": "Cherryshooter's final form!",
+    "ingredients": "Gatling Pea+Cherry Bomb"
+  },
+  {
+    "Timestamp": "2025/10/03 11:48:57 PM AST",
+    "id": "Cherrypeater",
+    "properties": "straight;manual",
+    "cost": "",
+    "recharge": "",
+    "DPS": "40 x 2/1.5s",
+    "description": "Cherrypeater can fire two cherries at a time.\nSpecial: Tap to auto-fuse with a free Peashooter 15s after planting.",
+    "ingredients": "Repeater+Cherry Bomb"
+  },
+  {
+    "Timestamp": "2025/10/03 11:50:15 PM AST",
+    "id": "Split Cherry",
+    "properties": "straight;manual",
+    "cost": "",
+    "recharge": "",
+    "DPS": "40 x 3/1.5s",
+    "description": "Split Cherry shoots cherries forward and backwards.\nSpecial: Tap to auto-fuse with a free Peashooter 15s after planting.",
+    "ingredients": "Split Pea+Cherry Bomb"
+  },
+  {
+    "Timestamp": "2025/10/03 11:51:57 PM AST",
+    "id": "Snow Repeater",
+    "properties": "straight;cryo;manual",
+    "cost": "",
+    "recharge": "",
+    "DPS": "20 x 2/1.5s",
+    "description": "Shoots two snow peas in succecssion. \nCryo System: Each attack adds 5 Cryo points. \nSpecial: Tap to auto-fuse with a free Peashooter 15s after planting.",
+    "ingredients": "Repeater+Ice-shroom"
+  },
+  {
+    "Timestamp": "2025/10/04 9:52:12 AM AST",
+    "id": "Split Snow",
+    "properties": "straight;cryo;manual",
+    "cost": "",
+    "recharge": "",
+    "DPS": "20 x 3/1.5s",
+    "description": "Shoots snow peas forwards and backwards.\nCryo System: Each attack adds 5 Cryo points.\nSpecial: Tap to auto-fuse with a free Peashooter 15s after planting.",
+    "ingredients": "Split Pea+Ice-shroom"
+  },
+  {
+    "Timestamp": "2025/10/04 9:52:54 AM AST",
+    "id": "Gatling Snow",
+    "properties": "straight;cryo",
+    "cost": "",
+    "recharge": "",
+    "DPS": "20 x 4/1.5s",
+    "description": "Gatling Snow shoots four snow peas at a time.\nCryo System: Each attack adds 5 Cryo points.",
+    "ingredients": "Gatling Pea+Ice-shroom"
+  },
+  {
+    "Timestamp": "2025/10/04 9:53:48 AM AST",
+    "id": "Hypno Repeater",
+    "properties": "straight;hypno;spawner",
+    "cost": "",
+    "recharge": "",
+    "DPS": "30 x 2/1.5s",
+    "description": "Repeater that fires Hypno Peas\nSpecial: Summons a Hypnotized Hypno Pea Zombie upon kill.",
+    "ingredients": "Repeater+Hypno-shroom"
+  },
+  {
+    "Timestamp": "2025/10/04 9:54:48 AM AST",
+    "id": "Split Hypno",
+    "properties": "straight;hypno;spawner",
+    "cost": "",
+    "recharge": "",
+    "DPS": "30 x 3/1.5s",
+    "description": "Split Pea that fires Hypno Peas. \nSpecial: Summons a Hypnotized Hypno Pea Zombie upon kill.",
+    "ingredients": "Split Pea+Hypno-shroom"
+  },
+  {
+    "Timestamp": "2025/10/04 9:55:36 AM AST",
+    "id": "Gatling Hypno",
+    "properties": "straight;hypno;spawner",
+    "cost": "",
+    "recharge": "",
+    "DPS": "30 x 4/1.5s",
+    "description": "Gatling Pea that fires Hypno Peas. \nSpecial: Summons a Hypnotized Hypno Pea Zombie upon kill.",
+    "ingredients": "Gatling Pea+Hypno-shroom"
+  },
+  {
+    "Timestamp": "2025/10/04 9:56:59 AM AST",
+    "id": "Icicle-shroom",
+    "properties": "pierce;short;straight;cryo;overlapping",
+    "cost": "",
+    "recharge": "",
+    "DPS": "20/1.5s",
+    "description": "Icicle-shroom fires icicles that slow down enemies. \nCryo System: Inflicts chill and adds 5 cryo points for every icicle hit. Pierce 2 times. Deals x4 damage to frozen zombies. \nSpecial: Short plant (evades straight-firing projectiles). \nUp to three can be planted in one place.",
+    "ingredients": "Snow Pea+Puff-shroom"
+  },
+  {
+    "Timestamp": "2025/10/04 9:58:01 AM AST",
+    "id": "Repeat-shroom",
+    "properties": "short;straight;overlapping",
+    "cost": "",
+    "recharge": "",
+    "DPS": "20x2/2.25",
+    "description": "Repeat-shroom can fire two small peas at a time. \nSpecial: Short plant (evades straight-firing projectiles).",
+    "ingredients": "Repeater+Puff-shroom"
+  },
+  {
+    "Timestamp": "2025/10/04 9:59:09 AM AST",
+    "id": "Split Pea-shroom",
+    "properties": "short;straight;overlapping",
+    "cost": "",
+    "recharge": "",
+    "DPS": "20 x 3/2.25s",
+    "description": "Shoots peas both forward and backward. \nSpecial: Short plant. Backward peas rebound if no zombie is hit. \nUp to three can be placed in a tile.",
+    "ingredients": "Split Pea+Puff-shroom"
+  },
+  {
+    "Timestamp": "2025/10/04 9:59:56 AM AST",
+    "id": "Gatling Pea-shroom",
+    "properties": "short;straight;overlapping",
+    "cost": "",
+    "recharge": "",
+    "DPS": "20 x 4/2.25s",
+    "description": "Can be stacked three times to shoot 12 small peas at once!\nSpecial: Short plant (evades straight-firing projectiles).",
+    "ingredients": "Gatling Pea+Puff-shroom"
+  },
+  {
+    "Timestamp": "2025/10/04 10:01:05 AM AST",
+    "id": "Bucket",
+    "properties": "zombieItem",
+    "cost": 0,
+    "recharge": 0,
+    "DPS": "N/A",
+    "description": "A Bucket. Buck-nut zombies drop these on death. You can also magnet-shroom a buckethead zombie to get one of these.",
+    "ingredients": ""
+  },
+  {
+    "Timestamp": "2025/10/04 10:02:36 AM AST",
+    "id": "Buckshooter",
+    "properties": "defensive;straight;cherryResist",
+    "cost": "",
+    "recharge": "",
+    "DPS": "80/1.5s",
+    "description": "Buckshooter has the ability to crack armor. \nToughness: 2000\nSpecial: \nMetal plant. Recovers 500 Toughness when fed metal objects. \nTakes half damage from explosive cherries. \nProjectiles knock back zombies and instantly break Type 2 armor.",
+    "ingredients": "Bucket+Peashooter"
+  },
+  {
+    "Timestamp": "2025/10/04 10:04:05 AM AST",
+    "id": "Buck-nut",
+    "properties": "defensive;magnetic;cherryResist",
+    "cost": "",
+    "recharge": "",
+    "DPS": "8000 Toughness",
+    "description": "Blocks the zombies' advance with a wall of iron. \nSpecial: Metal plant. Can be fed corresponding metal objects to restore 500 Toughness. This also applies to other Metal Plants. All metal plants receive half the damage from explosive cherries.",
+    "ingredients": "Bucket+Wall-nut"
+  },
+  {
+    "Timestamp": "2025/10/04 10:05:00 AM AST",
+    "id": "Starsteel",
+    "properties": "defensive;straight;magnetic;multiLane;cherryResist",
+    "cost": "",
+    "recharge": "",
+    "DPS": "80x5/1.5s",
+    "description": "Fires stars lined with a metallic coating. \nToughness: 2000\nSpecial: Metal plant. Breaks Type 2 armor instantly.",
+    "ingredients": "Bucket+Starmorph"
+  },
+  {
+    "Timestamp": "2025/10/04 10:06:10 AM AST",
+    "id": "Steel Pumpkin",
+    "properties": "defensive;magnetic;overlapping;cherryResist",
+    "cost": "",
+    "recharge": "",
+    "DPS": "8000 Toughness",
+    "description": "Protects your plants with sturdy iron. \nSpecial: Metal plant. Can be fed corresponding objects to restore 500 toughness. Receives half the damage from explosive cherries.",
+    "ingredients": "Bucket+Pumpkin Morph"
+  },
+  {
+    "Timestamp": "2025/10/04 10:07:11 AM AST",
+    "id": "Rust-shroom",
+    "properties": "defensive;pierce;infinite pierce;magnetic;cherryResist",
+    "cost": "",
+    "recharge": "",
+    "DPS": "50/1.5s",
+    "description": "There could be another twist if you give him a Football Helmet?\nToughness: 2000\nSpecial: Deals x3 damage to Type 1 armor.",
+    "ingredients": "Bucket+Morph-shroom"
+  },
+  {
+    "Timestamp": "2025/10/04 10:08:30 AM AST",
+    "id": "Bolt-pult",
+    "properties": "defensive;lobbed;magnetic;cherryResist;stun",
+    "cost": "",
+    "recharge": "",
+    "DPS": "80/3s",
+    "description": "Bolt-pult throws Iron kernels or Iron butter that is miraculously effective against Type 1 armor. \nToughness: 2000\nSpecial: Metal plant. Has a 25% chance to throw an iron butter with 100 damage, which stuns the target for 4 seconds and removes their Type 1 armor instantly.",
+    "ingredients": "Bucket+Kernel Morph"
+  },
+  {
+    "Timestamp": "2025/10/04 10:09:39 AM AST",
+    "id": "Doomplate-shroom",
+    "properties": "itemProducer;instant;magnetic;deathEffect",
+    "cost": "",
+    "recharge": "",
+    "DPS": 3240,
+    "description": "Powerful Doom-shroom that turns the ashes from his explosion into Buckets. \nSpecial: Every zombie he kills drops a Bucket.",
+    "ingredients": "Bucket+Dormant-shroom"
+  },
+  {
+    "Timestamp": "2025/10/04 10:10:54 AM AST",
+    "id": "Iron Squash",
+    "properties": "defensive;instant;magnetic;cherryResist;deathEffect",
+    "cost": "",
+    "recharge": "",
+    "DPS": 3240,
+    "description": "A metal-plated squash with terrifying weight. \nToughness: 1000\nSpecial: Metal plant. Can be fed corresponding metal objects to restore 500 Toughness. Receives half the damage from explosive cherries.",
+    "ingredients": "Bucket+Squash"
+  },
+  {
+    "Timestamp": "2025/10/04 10:13:22 AM AST",
+    "id": "Chrono Core",
+    "properties": "zombieItem",
+    "cost": 0,
+    "recharge": 0,
+    "DPS": "N/A",
+    "description": "Zombie item! This one's dropped by Chrono Pea zombotanies, so it's a little rare.",
+    "ingredients": ""
+  },
+  {
+    "Timestamp": "2025/10/04 10:17:04 AM AST",
+    "id": "Chrono Pea",
+    "properties": "straight;changeOverTime",
+    "cost": "",
+    "recharge": "",
+    "DPS": "N/A",
+    "description": "A Peashooter with the power to warp space and time, firing neutron peas that inflict the chronoshift effect, erasing every trace of the target from the time-space continuum. \nSpecial: Attacks deal no damage, but apply chronoshift for 1.5 seconds, or extend the duration by 1 second if the target is already affected. Deals only 100 damage to mini-bosses. \nChronoshift: Zombies under this effect receive a countdown of (HP/30) seconds, after which they are instantly erased. If the effect ends early, they take 30 x (elapsed second) points worth of damage.",
+    "ingredients": "Chrono Core+Peashooter"
+  },
+  {
+    "Timestamp": "2025/10/04 10:18:37 AM AST",
+    "id": "Doomwarp-shroom",
+    "properties": "instant;multiLane;changeOverTime;deathEffect",
+    "cost": "",
+    "recharge": "",
+    "DPS": 1800,
+    "description": "Doomwarp-shroom possesses the power of hyperspace bending. Its explosion inflicts chronoshift to any foe unfortunate enough to be caught in its effects. \nSpecial: Inherits the traits of Doom-shroom. \nExplosion reduces the countdown of zombies with the chronoshift effect by 30 seconds.",
+    "ingredients": "Chrono Core+Dormant-shroom"
+  },
+  {
+    "Timestamp": "2025/10/04 10:21:10 AM AST",
+    "id": "Portal-pult",
+    "properties": "instant;lobbed;stun;changeOverTime",
+    "cost": "",
+    "recharge": "",
+    "DPS": "80/3s",
+    "description": "Portal-pult has a chance to throw a neutron butter that generates a mini black hole. \nSpecial: Metal plant. Has a 25% chance to throw a neutron butter with 100 damage, which generates a mini black hole when it hits. The mini black hole massively slow zombies down and explodes after 2 seconds, causing 100 damage and reducing the countdown of zombies with the chronoshift effect by 30 seconds.",
+    "ingredients": "Chrono Core+Kernel Morph"
+  },
+  {
+    "Timestamp": "2025/10/04 10:23:07 AM AST",
+    "id": "Chrono-nut",
+    "properties": "defensive;autoHeal;changeOverTime",
+    "cost": "",
+    "recharge": "",
+    "DPS": "4000 Toughness",
+    "description": "A Wall-nut with spacetime powers. He has a chance to teleport back attackers and can rewind health once near death. \nSpecial:\n25% chance to teleport biters to the far right of the same row (10s cooldown). \nWhen taking lethal damage, rewinds HP to what it was 3s ago and becomes invulnerable for 3s (single use ability).",
+    "ingredients": "Chrono Core+Wall-nut"
+  },
+  {
+    "Timestamp": "2025/10/04 10:23:50 AM AST",
+    "id": "Jack-in-the-Box",
+    "properties": "zombieItem",
+    "cost": 0,
+    "recharge": 0,
+    "DPS": "N/A",
+    "description": "Zombie item! Dropped by jack-in-the-box zombies on death.",
+    "ingredients": ""
+  },
+  {
+    "Timestamp": "2025/10/04 10:24:58 AM AST",
+    "id": "Starjoker",
+    "properties": "straight;magnetic;multiLane;splash;cherryResist",
+    "cost": "",
+    "recharge": "",
+    "DPS": "40 x 5/1.5s",
+    "description": "Shoots out stars that explode on contact. \nSpecial: Metal plant. Stars explode on contact, dealing low splash damage with no falloff.",
+    "ingredients": "Jack-in-the-Box+Starmorph"
+  },
+  {
+    "Timestamp": "2025/10/04 10:26:08 AM AST",
+    "id": "Joker Pumpkin",
+    "properties": "defensive;magnetic;overlapping;cherryResist;jackResist",
+    "cost": "",
+    "recharge": "",
+    "DPS": "4000 Toughness",
+    "description": "Can block explosions caused by Jack-in-the-Box zombies. \nSpecial: Metal plant. Nullifies Jack-in-the-Box explosion damage, protecting the plant inside.",
+    "ingredients": "Jack-in-the-Box+Pumpkin Morph"
+  },
+  {
+    "Timestamp": "2025/10/04 10:27:40 AM AST",
+    "id": "Doombox-shroom",
+    "properties": "instant;multiLane;deathEffect",
+    "cost": "",
+    "recharge": "",
+    "DPS": 3240,
+    "description": "Doom-shroom with enhanced explosive powers able to cause chain explosions. \nSpecial: For every zombie eliminated, creates a Jack-in-the-Box explosion that deals 1800 damage at its position.",
+    "ingredients": "Jack-in-the-Box+Dormant-shroom"
+  },
+  {
+    "Timestamp": "2025/10/04 10:28:22 AM AST",
+    "id": "Football Helmet",
+    "properties": "zombieItem",
+    "cost": 0,
+    "recharge": 0,
+    "DPS": "N/A",
+    "description": "Zombie item! Dropped by football and tall-nut football zombies.",
+    "ingredients": ""
+  },
+  {
+    "Timestamp": "2025/10/04 10:29:29 AM AST",
+    "id": "Football-shroom",
+    "properties": "defensive;pierce;infinite pierce;magnetic;cherryResist",
+    "cost": "",
+    "recharge": "",
+    "DPS": "60/1.5s",
+    "description": "Sprays fumes that penetrates all kinds of armor!\nToughness: 3000\nSpecial: Deals damage to armor and the zombie in the armor at the same time.",
+    "ingredients": "Football Helmet+Rust-shroom"
+  },
+  {
+    "Timestamp": "2025/10/04 10:30:26 AM AST",
+    "id": "Football-nut",
+    "properties": "defensive;magnetic;cherryResist",
+    "cost": "",
+    "recharge": "",
+    "DPS": "16000 Toughness",
+    "description": "Football-nut is able to hold a huge amount of damage. \nSpecial:\nMetal plant. Can be fed metal objects to restore 500 Toughness. \nTall plant.",
+    "ingredients": "Football Helmet+Tall-nut"
+  },
+  {
+    "Timestamp": "2025/10/04 10:31:42 AM AST",
+    "id": "Buck-shroom",
+    "properties": "defensive;short;straight;magnetic;overlapping;cherryResist",
+    "cost": "",
+    "recharge": "",
+    "DPS": "80/2.25s",
+    "description": "Buck-shrooms can knockback zombies too. \nToughness: 1000. \nSpecial: Metal plant. Short plant. Projectiles knock back zombies and destroy Type 2 armor with ease.",
+    "ingredients": "Bucket+Pea-shroom"
+  },
+  {
+    "Timestamp": "2025/10/04 10:32:32 AM AST",
+    "id": "Pickaxe",
+    "properties": "zombieItem",
+    "cost": 0,
+    "recharge": 0,
+    "DPS": "N/A",
+    "description": "Zombie item! Dropped by miner zombies.",
+    "ingredients": ""
+  },
+  {
+    "Timestamp": "2025/10/04 10:33:47 AM AST",
+    "id": "Starpick",
+    "properties": "straight;multiLane",
+    "cost": "",
+    "recharge": "",
+    "DPS": "40x5/1.5s",
+    "description": "Starpick hides underground: zombies will not attack it. \nSpecial: Cannot be attacked and does not block zombies.",
+    "ingredients": "Pickaxe+Starmorph"
+  },
+  {
+    "Timestamp": "2025/10/04 10:34:41 AM AST",
+    "id": "Miner Pumpkin",
+    "properties": "defensive;magnetic;overlapping;cherryResist",
+    "cost": "",
+    "recharge": "",
+    "DPS": "4000 Toughness",
+    "description": "Can block mining attempts by Digger Zombies. \nSpecial: Metal plant. Forces Digger Zombies to unearth prematurely.",
+    "ingredients": "Pickaxe+Pumpkin Morph"
+  },
+  {
+    "Timestamp": "2025/10/04 10:35:21 AM AST",
+    "id": "Giga Mecha Fragments",
+    "properties": "zombieItem",
+    "cost": 0,
+    "recharge": 0,
+    "DPS": "N/A",
+    "description": "Zombie item! Dropped by the giga mecha-nut",
+    "ingredients": ""
+  },
+  {
+    "Timestamp": "2025/10/04 10:38:11 AM AST",
+    "id": "Giga Mecha-nut",
+    "properties": "defensive;magnetic;multiLane;vehicleResist;crushResist;cherryResist;jackResist;autoHeal;manual;spawner",
+    "cost": "",
+    "recharge": "",
+    "DPS": "8000 Toughness",
+    "description": "Can store up Toughness and protect your plants. \nSpecial:\nMetal plant. Anti-crush. Max damage received is capped at 8k. \nHealing can exceed maximum Toughness without any cap. Spawns with 80x Toughness as initial HP. \nRedirects damage to itself in a 3x3 area. \nRecovers 4.8k HP when fed metal objects. When metal objects on the lawn disappear, every Giga Mecha-nut restores (4.8k/total Giga Mecha-nuts) HP. \nUsing a Wall-nut on it restores 8k HP instantly and summons a Sharkmarine (stationary if on land with 1/3 the HP of the Giga Mecha-nut).",
+    "ingredients": "Wall-nut+Giga Mecha Fragments"
+  },
+  {
+    "Timestamp": "2025/10/04 10:41:15 AM AST",
+    "id": "Mecha-nut",
+    "properties": "defensive;magnetic;multiLane;cherryResist;autoHeal",
+    "cost": "",
+    "recharge": "",
+    "DPS": "8000 Toughness.",
+    "description": "Can receive attributes from Jalapeno or Ice-shroom, with effects upon death. \nToughness: 8000\nSpecial:\nChanges form when affected by Ice-shroom or Jalapeno, healing 3000 Toughness upon transformation. \nReleases the current form's effects upon death. \nAbsorbs damage for other plants in a 3x3 radius, but with the damage doubled. \nHealing can exceed maximum Toughness (up to 4x)\nRecovers 1k HP when fed metal objects. When metal objects on the lawn disappear and no Giga Mecha-nuts are present, every Mecha-nut restores (1k/total number of Mecha-nuts) HP.",
+    "ingredients": "Wall-nut+Mecha Fragments"
+  },
+  {
+    "Timestamp": "2025/10/04 10:41:36 AM AST",
+    "id": "Mecha Fragments",
+    "properties": "zombieItem",
+    "cost": 0,
+    "recharge": 0,
+    "DPS": "N/A",
+    "description": "Zombie item! Dropped by Mecha-nuts.",
+    "ingredients": ""
+  },
+  {
+    "Timestamp": "2025/10/04 10:43:31 AM AST",
+    "id": "Golden Cabbage",
+    "properties": "lobbed;manual",
+    "cost": "",
+    "recharge": "",
+    "DPS": "80/3s",
+    "description": "Attacks zombies by throwing golden cabbages. Its ultimate move unleashes cabbages on all zombies!\nUltimate: Costs 1000 Coins, Cooldown: 2s; throws a cabbage at every zombie, instantly killing those with Toughness below 300.",
+    "ingredients": "Silver Cabbage+Coffee Bean"
+  },
+  {
+    "Timestamp": "2025/10/04 10:44:15 AM AST",
+    "id": "Coffee Bean",
+    "properties": "itemProducer",
+    "cost": 0,
+    "recharge": 0,
+    "DPS": "N/A",
+    "description": "Pay for coffee beans using coins acquired from Marigold and some of its fusions!",
+    "ingredients": ""
+  },
+  {
+    "Timestamp": "2025/10/04 10:46:09 AM AST",
+    "id": "Golden Kernel",
+    "properties": "itemProducer;instant;lobbed;stun",
+    "cost": "",
+    "recharge": "",
+    "DPS": "60/3s",
+    "description": "Throws golden kernels and butter at zombies, with a chance to generate Coins. Its ultimate fires golden poppin' popcorns at zombies. \nSpecial: 25% chance to throw a money bag, dealing 80 damage, stunning zombies for 4 seconds and dropping 100 Coins. \nUltimate: Costs 3500 Coins, cooldown 2s; launches four golden corn bombs, each dealing 450 damage in a 3x3 area without damage falloff.",
+    "ingredients": "Coffee Bean+Silver Kernel"
+  },
+  {
+    "Timestamp": "2025/10/04 10:47:24 AM AST",
+    "id": "Golden Melon",
+    "properties": "lobbed;multiLane;splash;manual",
+    "cost": "",
+    "recharge": "",
+    "DPS": "120/3s",
+    "description": "Hurls golden melons at zombies; its ultimate rains golden melons across the screen. \nUltimate: Costs 3000 Coins, Cooldown: 2s; launches 60 golden melons, each dealing 120 damage, landing randomly across the screen.",
+    "ingredients": "Coffee Bean+Silver Melon"
+  },
+  {
+    "Timestamp": "2025/10/04 10:48:38 AM AST",
+    "id": "Golden-nut",
+    "properties": "defensive;autoHeal;manual",
+    "cost": "",
+    "recharge": "",
+    "DPS": "8000 Toughness",
+    "description": "Wall-nut made of gold, with even higher toughness; can use Ultimate to boost max HP and restore health. \nUltimate: Costs 1000 Coins, Cooldown: 5s; increases max Toughness by 1000 and restores health equal to its full Toughness",
+    "ingredients": "Coffee Bean+Silver-nut"
+  },
+  {
+    "Timestamp": "2025/10/04 10:50:31 AM AST",
+    "id": "Golden Pot",
+    "properties": "itemProducer;short;overlapping;attackBoost;manual",
+    "cost": "",
+    "recharge": "",
+    "DPS": "25/25s",
+    "description": "Generates extra Coins and amplifies the ultimate ability of any golden plant above it. \nCoin Output: 25/25s\nSpecial: When you trigger an ultimate of a Golden Plant above it, all Golden plants on other Golden Pots with an equal or lesser ultimate cost trigger their ultimates too. \nUpgrade Cost: 2000 Coins; each existing Golden pot will double the cost.",
+    "ingredients": "Coffee Bean+Silver Pot"
+  },
+  {
+    "Timestamp": "2025/10/04 10:51:39 AM AST",
+    "id": "Golden Garlic",
+    "properties": "defensive;laneChange;multiLane;manual",
+    "cost": "",
+    "recharge": "",
+    "DPS": "900 Toughness",
+    "description": "A stronger gold-scented garlic that can force all zombies in front to switch lanes with its ultimate move. \nUltimate: Costs 1000 Coins, Cooldown: 2s; forces all zombies in its lane to change lanes. \nUpgrade Cost: 1000 Coins.",
+    "ingredients": "Silver Garlic+Coffee Bean"
+  },
+  {
+    "Timestamp": "2025/10/04 10:53:58 AM AST",
+    "id": "Golden Umbrella",
+    "properties": "itemProducer;defensive;multiLane;reflector;autoHeal;manual",
+    "cost": "",
+    "recharge": "",
+    "DPS": "1000 Toughness",
+    "description": "Deflects basketballs, generating extra Coins, and its ultimate move can knock airborne imps and repel all nearby zombies. \nSpecial: Drops 50 Coins every time it deflects a basketball; knocks back approaching zombies, dealing 40 damage, at the cost of Toughness. See Umbrella Husk. \nUltimate: Costs 2000 Coins, Cooldown: 7.5s; knocks back all nearby zombies, drops 25 Coins/zombie, restores 1000 Toughness, yeets airborne imps, and drops 3 diamonds. \nUpgrades Cost: 1000 Coins.",
+    "ingredients": "Coffee Bean+Silver Umbrella"
+  },
+  {
+    "Timestamp": "2025/10/04 10:56:18 AM AST",
+    "id": "Golden Sunflower",
+    "properties": "activeSun;sunProducer;manual",
+    "cost": "",
+    "recharge": "",
+    "DPS": "N/A",
+    "description": "Generates Sun faster... faster!\nSpecial:\nEvery 10 seconds, 50 Sun is accumulated, up to 10,000. \nThe Sun limit in the level is adjusted to 50,000. \nThe excess will be stored in the available Golden sunflowers. \nUltimate: Costs 1000 Coins; makes all Golden Sunflowers release their stored Sun. \nUpgrade Cost: 3000 Coins; each existing Golden sunflower will double the cost.",
+    "ingredients": "Coffee Bean+Silver Sunflower"
+  },
+  {
+    "Timestamp": "2025/10/04 10:57:30 AM AST",
+    "id": "Golde Doom-Shroom",
+    "properties": "itemProducer;instant;multiLane;manual",
+    "cost": "",
+    "recharge": "",
+    "DPS": "N/A",
+    "description": "Turns money into ruin. \nSpecial: Does not passively explode. \nUltimate: Costs 3000 Coins, Cooldown: 30s; releases a Doom-shroom effect that does not leave a crater. \nUpgrade Cost: 6000 Coins.",
+    "ingredients": "Silver Doom-shroom+Coffee Bean"
+  },
+  {
+    "Timestamp": "2025/10/04 10:59:47 AM AST",
+    "id": "Explod-o-shooter",
+    "properties": "straight;splash;cherryResist",
+    "cost": "",
+    "recharge": "",
+    "DPS": "300/3s",
+    "description": "Shoots out explosive cherries that explode on impact. \nSpecial: \nIts bullets will deal area explosion damage. \nHas immunity to cherry explosions. \nReduces the Recharge of the last Cherry Bomb seed packet used for its fusion by 85%.",
+    "ingredients": "Peashooter+Cherry Bomb+Cherry Bomb"
+  },
+  {
+    "Timestamp": "2025/10/04 11:01:26 AM AST",
+    "id": "Charm-shroom",
+    "properties": "straight;hypno;splash;deathEffect",
+    "cost": "",
+    "recharge": "",
+    "DPS": "120/1.5s",
+    "description": "Charm-shroom can fire explosive Charm spores. \nSpecial:\nDeals 40 no-falloff splash damage in a 1-tile radius. \nHas a chance to hypnotize zombies with <60% Toughness (ignoring Type 2 armor). \nWhen bitten, hypnotizes the attacker, then reverts to a Gusty-shroom.",
+    "ingredients": "Fume-shroom+Scaredy-shroom+Hypno-shroom"
+  },
+  {
+    "Timestamp": "2025/10/04 11:03:39 AM AST",
+    "id": "Infernowood",
+    "properties": "activeSun;instant;attackBoost;splash;deathEffect",
+    "cost": "",
+    "recharge": "",
+    "DPS": "N/A",
+    "description": "Infernowood can provide an even stronger damage boost to projectiles!\nSpecial:\nExplodes like a Jalapeno upon death. \nignites projectiles for the following effects:\nPeas, potatoes, and low-tier Ignited Peas:+40 damage\nHypno Peas:+30 Damage\nSnow Peas: Turns into regular peas\nCherries, Bucks, Suns: x4 damage\nQueen Endoflame's attacks: Now drops 15 Suns instead of 5\nDeals 40 damage-over-time to nearby zombies every 1.5s.",
+    "ingredients": "Torchwood+Jalapeno+Jalapeno"
+  },
+  {
+    "Timestamp": "2025/10/04 11:06:00 AM AST",
+    "id": "stardrop",
+    "properties": "instant;straight;homing;lumos;magnetic;multiLane;attackBoost",
+    "cost": "",
+    "recharge": "",
+    "DPS": "60 x 5/3s",
+    "description": "Lumos System:\nLumos level 1-3 has the same effect as Starglow. Upon hitting Lumos Level 4, summons another type of meteor that has a separate cooldown from the original meteor. \nMagnetic System: Each plant connected to the Magnetic System will increase the damage of the stars by 5%. \nBoth systems can increase the damage of the stars up to 120, maximum. \nSpecial: Summons a meteor that hits the ground and explodes into stars every 60 seconds. The cooldown can be reduced by connecting other Stardrops together, up to 13 for an improved cooldown of 25 seconds.",
+    "ingredients": "Plantern+Magnet-shroom+Starfruit"
+  },
+  {
+    "Timestamp": "2025/10/04 11:07:11 AM AST",
+    "id": "Salad-pult",
+    "properties": "pierce;lobbed;splash;stun",
+    "cost": "",
+    "recharge": "",
+    "DPS": "140/5s",
+    "description": "Cna catapult mixed projectiles in rapid succession. \nSpecial: 42% chance of rapid-firing. Projectiles split into a mix of corn on the cob (1/4th chance for buttered corn) and cracked melons upon hitting zombies.",
+    "ingredients": "Cabbage-pult+Kernel-pult+Melon-pult"
+  },
+  {
+    "Timestamp": "2025/10/04 11:09:42 AM AST",
+    "id": "Chompzilla",
+    "properties": "defensive;instant;pierce;infinite pierce;straight;vehicleResist;crushResist;cherryResist;jackResist;autoHeal",
+    "cost": "",
+    "recharge": "",
+    "DPS": "200/1.75s (chomp); 80/3s (Zombie part)",
+    "description": "Both a bulwark and a fierce attacker. \nToughness: 4000\nSpecial: Chomping zombies restores 200 Toughness and deals 200 damage. Spits out rolling zombie parts after that deal 80 damage and pierce infinitely\nInstantly kills unarmored zombies with less than 500 Toughness, restoring 400 Toughness. Also spits out parts that knockback zombies.\nEvery 40s, devours a zombie and restores to max (up to 16k HP). Excess Toughness drains at 200 per second. \nDamage taken per hit is capped at 1/3rd Toughness.",
+    "ingredients": "Peashooter+Wall-nut+Chomper"
+  },
+  {
+    "Timestamp": "2025/10/04 11:11:09 AM AST",
+    "id": "Doomspike-shroom",
+    "properties": "pierce;cryo;splash",
+    "cost": "",
+    "recharge": "",
+    "DPS": "20 x 4/3s",
+    "description": "Doomspike-shroom can fire chilly doomspikes. \nCryo System: Add 10 Cryo points to zombies each hit. Deals x4 damage to frozen zombies. \nSpecial: Pierces 2 times. Splashes for 10 damage without falloff within a range of 1 tile.",
+    "ingredients": "Fume-shroom+Ice-shroom+Doom-shroom"
+  },
+  {
+    "Timestamp": "2025/10/04 11:13:07 AM AST",
+    "id": "Krakerberus",
+    "properties": "instant;pierce;straight;tangled;multiLane;splash;aquatic",
+    "cost": "",
+    "recharge": "",
+    "DPS": "40 x 3/3s",
+    "description": "Fires kelps that bounce upon contact and slow down water zombies, can also drag 3 zombies under the water. \n\nDamage: 40 x 3/3s+insta-kill (drown) x 3\nTangled Debuff: Kelps bounce upon contact, dealing 40 damage to nearby zombies when they land. Each kelp does 1 Tangle Value upon contact. \nSpecial: Can drag 3 zombies under the water.",
+    "ingredients": "Threepeater+Squash+Tangle Kelp"
+  },
+  {
+    "Timestamp": "2025/10/04 11:14:47 AM AST",
+    "id": "Pump-karrier",
+    "properties": "defensive;hovering;overlapping;antiAir;spawner",
+    "cost": "",
+    "recharge": "",
+    "DPS": "4000 Toughness",
+    "description": "Spawns a Cactus Drone that moves around the field to attack flying zombies. \nSpecial: Inherits Thorny Pumpkin traits. Always has a Cactus Drone wingman with him when he appears. Generates a Cactus Drone on top of a 3x3 grid regularly.",
+    "ingredients": "Cactus+Blover+Pumpkin"
+  },
+  {
+    "Timestamp": "2025/10/04 11:17:17 AM AST",
+    "id": "Alchemist Umbrella",
+    "properties": "itemProducer;defensive;multiLane;reflector;manual",
+    "cost": "",
+    "recharge": "",
+    "DPS": "4000 Toughness.",
+    "description": "High-risk, high-reward!\nSpecial:\nHas the traits of both Umbrella Clove and Golden Umbrella. \nPrioritized by Trident Zombies. \nUltimate: Costs 3000 Coins, Cooldown 7.5s; inherits traits from Golden Umbrella; knocks back all nearby zombies, turning those with less than 25% Toughness into silver statues worth 1000 Coins, or gold statues worth 3000 coins if below 10% Toughness. Zombies without statues drop Coins directly.",
+    "ingredients": "Marigold+Coffee Bean+Garlic+Umbrella Leaf"
+  }
+]

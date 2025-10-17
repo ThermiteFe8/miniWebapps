@@ -1,0 +1,424 @@
+<html>
+<head>
+    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+
+    <style type="text/css">
+        #mynetwork {
+            width: 600px;
+            height: 400px;
+            border: 1px solid lightgray;
+        }
+		#plantInformation {
+            width: 400px;
+            height: 400px;
+            border: 1px solid lightgray;
+			overflow-y: auto;
+        }
+		#plantInformation *{
+			margin-left:15px;
+			 
+		}
+		
+		#displayContainer {
+			display:flex;
+			flex-direction:row;
+		}
+		#propertyContainer{
+			display:flex;
+			flex-direction:column;
+			height:150px;
+			width:1000px;
+			flex-wrap:wrap;
+			overflow-x:auto;
+		}
+    </style>
+</head>
+	<body>
+	<input type="search" id="query" name="q" placeholder="Search...">
+	<button onclick ="newSearchFunction()"type="submit">Search</button>
+	<div id = "displayContainer">
+		<div id="mynetwork"></div>
+		<div id="plantInformation">
+			<h3>Plant Name</h3>
+			<p>Sun Cost</p>
+			<p>Recharge</p>
+			<p>DPS</p>
+			<p>Almanac Description</p>
+			<p>Base Plants</p>
+			<p>Future Plants</p>
+			<p>keywords</p>
+		</div>
+	</div>
+	
+	<div id="propertyContainer">
+		
+	</div>
+	
+	<button onclick="searchPlants()">Search</button>
+	<button onclick="highlightAll()">Select All</button>
+	<button onclick="highlightNone()">Select None</button>
+	
+		<script type="text/javascript">
+			const query = document.getElementById("query");
+			let tickboxes = [];
+			const propertyContainer = document.getElementById("propertyContainer");
+			const infoCont = document.getElementById("plantInformation");
+			var nodes;
+			var edges;
+			var nodeIds;
+			var data;
+			var options;
+			var network;
+			// create an array with nodes
+			let rawJsonData;
+			
+			fetch('https://thermitefe8.github.io/Fusion%20Tool/Categories.txt')
+			.then(response => response.text())
+			.then((data) => {
+				console.log(data)
+				let allLines = data.split("\n");
+				for(let i = 0; i < allLines.length; i++)
+				{
+					let currentCategory = allLines[i].split("|");
+				
+					let newTickboxContainer = document.createElement("div");
+					newTickboxContainer.setAttribute('class', 'tickboxContainer');
+					let newCheckbox = document.createElement("input");
+					newCheckbox.setAttribute('type', 'checkbox');
+					newCheckbox.setAttribute('class', 'plantProperties');
+					newCheckbox.setAttribute('id', currentCategory[0]);
+					newCheckbox.setAttribute('value', currentCategory[0]);
+					newCheckbox.setAttribute('checked', 'true');
+					
+					let newLabel = document.createElement("label");
+					newLabel.setAttribute('for', currentCategory[0]);
+					newLabel.textContent = currentCategory[1];
+					newTickboxContainer.appendChild(newCheckbox);
+					newTickboxContainer.appendChild(newLabel);
+					propertyContainer.appendChild(newTickboxContainer);
+				
+				}
+				tickboxes = propertyContainer.getElementsByClassName("plantProperties");
+				
+			});
+			
+			fetch("https://thermitefe8.github.io/Fusion%20Tool/Fusion.json")
+			.then(response => response.json())
+			.then(data => {
+				console.log(data);
+				rawJsonData = data;
+				let tempNodes = [];
+				let tempEdges = [];
+				for(let i = 0; i < rawJsonData.length; i++)
+				{
+					let tempId = rawJsonData[i].id;
+					let tempProperties = rawJsonData[i].properties.split(";");
+					let tempCost = rawJsonData[i].cost;
+					let tempRecharge = rawJsonData[i].recharge;
+					let tempDPS = rawJsonData[i].DPS;
+					let tempDescription = rawJsonData[i].description;
+					
+					
+					if(rawJsonData[i].ingredients != "")
+					{
+						let tempIngredients = rawJsonData[i].ingredients.split("+");
+						for(let k = 0; k < tempIngredients.length; k++)
+						{
+							tempEdges.push({to: tempId, from: tempIngredients[k]})
+						}
+					}
+					else
+					{
+						tempProperties.push("basePlant");
+					}
+					
+					let currentNode = {id: tempId, label: tempId, properties: tempProperties, cost: tempCost, recharge: tempRecharge, DPS: tempDPS, description: tempDescription};
+					if(tempCost == "")
+					{
+						delete currentNode['cost'];
+					}
+					if(tempRecharge == "")
+					{
+						delete currentNode['recharge'];
+					}
+					
+					tempNodes.push(currentNode);
+					
+				}
+					
+				nodes = new vis.DataSet(tempNodes);
+				
+				nodeIds = nodes.getIds();
+				
+				for(let k = 0; k < nodeIds.length; k++)
+				{
+					let node = nodes.get(nodeIds[k]);
+					if(node.properties.includes("basePlant"))
+					{
+						node.color = "MediumSeaGreen";
+						nodes.update(node);
+					
+					}
+				}
+				
+				
+				// create an array with edges
+				edges = new vis.DataSet(tempEdges);
+				
+				
+				// create a network
+				container = document.getElementById('mynetwork');
+
+				// provide the data in the vis format
+				data = {
+					nodes: nodes,
+					edges: edges
+				};
+				options = {
+				edges:{
+					arrows: 'to',
+					font: '12px arial #ff0000',
+					scaling:{
+					  label: true,
+						},
+					smooth: false,
+				},
+				layout: {
+					improvedLayout: false,
+					// This line disables the improved layout algorithm
+				},
+				physics: {
+					enabled: true // You can also disable physics entirely if needed
+				},
+				 interaction: {
+            navigationButtons: true, // Enable navigation buttons including zoom
+            keyboard: true // Optional: Enable keyboard navigation
+        }
+				}
+
+				// initialize your network!
+				network = new vis.Network(container, data, options);
+				network.on("selectNode", function (params) {
+				var selectedNodes = network.getSelectedNodes();
+				if (selectedNodes.length > 0) {
+					var selectedNodeId = selectedNodes[0]; // Get the ID of the first selected node
+					console.log("Selected node ID:", selectedNodeId);
+					// You can now use selectedNodeId to access the node data or perform other actions
+					var nodeData = nodes.get(selectedNodeId);
+					infoCont.children[0].textContent = nodeData.id;
+					infoCont.children[1].textContent = "Sun Cost: " + recursiveSearch(selectedNodeId);
+					if('recharge' in nodeData)
+					{
+						infoCont.children[2].textContent = "Recharge: " + nodeData.recharge;
+					}
+					else
+					{
+						infoCont.children[2].textContent = "N/A";
+					}
+					infoCont.children[3].textContent = nodeData.DPS;
+					infoCont.children[4].textContent = nodeData.description;
+					const connections = network.getConnectedEdges(selectedNodeId);
+					let basePlantList = "";
+					let fusionPlantList = "";
+					for(let i = 0; i < connections.length; i++)
+					{
+						console.log(edges.get(connections[i]).to);
+						if(edges.get(connections[i]).to == selectedNodeId)
+						{
+							if(basePlantList == "")
+							{
+								basePlantList = "Ingredients: ";
+								basePlantList = basePlantList + edges.get(connections[i]).from;
+							}
+							else
+							{
+								basePlantList = basePlantList + " + ";
+								basePlantList = basePlantList + edges.get(connections[i]).from;			
+							}
+						}
+						else
+						{
+							if(fusionPlantList == "")
+							{
+								fusionPlantList = "Fusions: ";
+								fusionPlantList = fusionPlantList + edges.get(connections[i]).to;
+							}
+							else
+							{
+								fusionPlantList = fusionPlantList + " | ";
+								fusionPlantList = fusionPlantList + edges.get(connections[i]).to;
+							}				
+						}
+					}
+					
+					infoCont.children[5].textContent = basePlantList;
+					infoCont.children[6].textContent = fusionPlantList;
+					
+					let keywords = "Keywords: ";
+					for(let i = 0; i < nodeData.properties.length; i++)
+					{
+						if(i != 0)
+						{
+							keywords = keywords + " | ";
+						}
+						keywords = keywords + nodeData.properties[i];
+					}
+					
+					infoCont.children[7].textContent = keywords;
+					
+				}
+			});
+			network.on("doubleClick", function (params) {
+				// Check if a node was double-clicked
+				if (params.nodes.length > 0) {
+  const nodeId = params.nodes[0]; // Get the ID of the double-clicked node
+  console.log("Double-clicked node with ID:", nodeId);
+
+  // Hide all nodes initially
+  const updatedNodes = nodeIds.map(id => {
+    const node = nodes.get(id);
+    node.hidden = true;
+    return node;
+  });
+
+  // Keep current node visible
+  const currentNode = nodes.get(nodeId);
+  currentNode.hidden = false;
+  updatedNodes.push(currentNode);
+
+  // Reveal connected nodes
+  const connections = network.getConnectedEdges(nodeId);
+  for (const edgeId of connections) {
+    const edge = edges.get(edgeId);
+    const neighborId = edge.to === nodeId ? edge.from : edge.to;
+    const neighborNode = nodes.get(neighborId);
+    neighborNode.hidden = false;
+    updatedNodes.push(neighborNode);
+  }
+
+  // Batch update once
+  nodes.update(updatedNodes);
+  
+  network.fit({animation: {
+    duration: 1500, // Animation duration in milliseconds
+    easingFunction: 'easeInOutQuint' // Easing function for the animation
+  }});
+  
+}
+
+			});
+			network.on("click", function (params) {
+				// Check if a node was double-clicked
+				if (params.nodes.length <= 0 && params.edges.length <=0) {
+					searchPlants();
+					
+				}
+			});
+			})
+			.catch(error => {
+				console.error('Error fetching or parsing JSON:', error);
+			});
+			
+			
+			
+			
+			
+			function recursiveSearch(newId)
+			{
+				if('cost' in nodes.get(newId))
+				{
+					console.log(newId + nodes.get(newId).cost);
+					return nodes.get(newId).cost;
+				}
+				else
+				{
+					const connections = network.getConnectedEdges(newId);
+					let tempTotal = 0;
+					for(let i = 0; i < connections.length; i++)
+					{
+						if(edges.get(connections[i]).to == newId)
+						{
+							tempTotal = tempTotal + recursiveSearch(edges.get(connections[i]).from);
+						}
+					}					
+					return tempTotal;		
+				}
+			}
+			
+			function searchPlants() {
+				const activeValues = new Set(
+					Array.from(tickboxes)
+					.filter(tb => tb.checked)
+					.map(tb => tb.value)
+				);
+
+				const updatedNodes = nodeIds.map(id => {
+					const node = nodes.get(id);
+					const props = Array.isArray(node.properties) ? node.properties : [String(node.properties)];
+					node.hidden = !props.some(p => activeValues.has(p));
+					return node;
+				});
+
+				try {
+				// Try batch update (most efficient)
+					nodes.update(updatedNodes);
+				} catch (err) {
+				// Fallback: update nodes one-by-one
+					for (const n of updatedNodes) nodes.update(n);
+				}
+				network.fit({animation: {
+    duration: 1500, // Animation duration in milliseconds
+    easingFunction: 'easeInOutQuint' // Easing function for the animation
+  }});
+			}
+			
+			function highlightAll()
+			{
+				for(let i = 0; i < tickboxes.length; i++)
+				{
+					tickboxes[i].checked = true;
+				}
+			}
+			
+			function highlightNone()
+			{
+				for(let i = 0; i < tickboxes.length; i++)
+				{
+					tickboxes[i].checked = false;
+				}
+			}
+			
+			function newSearchFunction()
+			{
+				searchKeywords(query.value);
+			}
+			
+			function searchKeywords(newWord)
+			{
+				let updatedNodes = []
+				for(let i = 0; i < nodeIds.length; i++)
+				{
+					let currentNode = nodes.get(nodeIds[i]);
+					currentNode.hidden = true;
+					if(currentNode.id.includes(newWord) || currentNode.description.includes(newWord) || currentNode.properties.includes(newWord))
+					{
+						currentNode.hidden = false;
+					}
+					updatedNodes.push(currentNode);
+				}
+				
+				if(updatedNodes.length > 0)
+				{
+					nodes.update(updatedNodes);
+				}
+				network.fit({animation: {
+    duration: 1500, // Animation duration in milliseconds
+    easingFunction: 'easeInOutQuint' // Easing function for the animation
+  }});
+			}
+			
+			
+
+		</script>
+	</body>
+</html>

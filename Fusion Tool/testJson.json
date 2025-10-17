@@ -1,0 +1,52 @@
+[
+  {
+    "Timestamp": "2025/10/02 8:43:58 PM AST",
+    "id": "Peashooter",
+    "properties": "basePlant;straight",
+    "cost": 100,
+    "recharge": 7.5,
+    "DPS": "20/1.5s",
+    "description": "I'm a peashooter",
+    "ingredients": ""
+  },
+  {
+    "Timestamp": "2025/10/02 8:45:59 PM AST",
+    "id": "Sun Peashooter",
+    "properties": "sunProducer;aggroSun;straight",
+    "cost": "",
+    "recharge": "",
+    "DPS": "30/1.5s",
+    "description": "I'm a sun shooter",
+    "ingredients": "Peashooter+Sunflower"
+  },
+  {
+    "Timestamp": "2025/10/02 8:46:19 PM AST",
+    "id": "Sunflower",
+    "properties": "basePlant;sunProducer",
+    "cost": 50,
+    "recharge": 7.5,
+    "DPS": "25/25s",
+    "description": "I'm a sunflower",
+    "ingredients": ""
+  },
+  {
+    "Timestamp": "2025/10/02 8:47:16 PM AST",
+    "id": "Twin Sunflower",
+    "properties": "sunProducer",
+    "cost": "",
+    "recharge": "",
+    "DPS": "25 x 20/20s",
+    "description": "Twin sunflower! oh boy!",
+    "ingredients": "Sunflower+Sunflower"
+  },
+  {
+    "Timestamp": "2025/10/02 8:47:54 PM AST",
+    "id": "Repeater",
+    "properties": "straight",
+    "cost": "",
+    "recharge": "",
+    "DPS": "2 x 2/1.5s",
+    "description": "Repeater",
+    "ingredients": "Peashooter+Peashooter"
+  }
+]
