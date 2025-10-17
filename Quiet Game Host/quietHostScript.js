@@ -16,7 +16,7 @@ let points = new Array(playerMods.length).fill(0);
 
 function newGame()
 {
-	fetch('https://thermitefe8.github.io/Quiet%20Game%20Host/TaskList.txt')
+	fetch('TaskList.txt')
   .then(response => response.text())
   .then((data) => {
     console.log(data)
