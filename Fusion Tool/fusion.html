@@ -72,7 +72,7 @@
 			// create an array with nodes
 			let rawJsonData;
 			
-			fetch('https://thermitefe8.github.io/Fusion%20Tool/Categories.txt')
+			fetch('Categories.txt')
 			.then(response => response.text())
 			.then((data) => {
 				console.log(data)
@@ -102,7 +102,7 @@
 				
 			});
 			
-			fetch("https://thermitefe8.github.io/Fusion%20Tool/Fusion.json")
+			fetch("Fusion.json")
 			.then(response => response.json())
 			.then(data => {
 				console.log(data);
