@@ -122,7 +122,7 @@
 				interactMode = interactModeElem.checked;
 			}
 			
-			fetch("https://thermitefe8.github.io/rockyLighting/rockyCues.json")
+			fetch("https://thermitefe8.github.io/miniWebapps/rockyLighting/rockyCues.json")
 			.then(response => response.json())
 			.then(data => 
 			{
@@ -363,7 +363,7 @@
 											Looping: false
 										};
 										eventsToAdd.push(tempEvent);
-										console.log(tempEvent);
+										//console.log(tempEvent);
 									}
 								}
 							}
@@ -375,7 +375,6 @@
 							if(tempHolder == true)
 							{
 								//prompter.textContent = timeArray[i].Description;
-								console.log(i);
 								finishedEvents.push(i);
 							}
 						}
@@ -384,15 +383,15 @@
 					
 
 					for(let i = finishedEvents.length - 1; i >= 0; i--)
-					{	console.log(finishedEvents);
+					{	//console.log(finishedEvents);
 						previousEvent = timeArray[i];
 						timeArray.splice(i, 1);
-						console.log(timeArray);
+						//console.log(timeArray);
 						setNextEvent();
 					}
 					if(eventsToAdd.length > 0)
 					{
-						console.log("pushingEvents");
+						//console.log("pushingEvents");
 						timeArray.unshift(...eventsToAdd);
 					}
 				}	
@@ -406,7 +405,7 @@
 				{
 					if(skipVal < timer)
 					{
-						fetch("https://thermitefe8.github.io/rockyLighting/rockyCues.json")
+						fetch("https://thermitefe8.github.io/miniWebapps/rockyLighting/rockyCues.json")
 						.then(response => response.json())
 						.then(data => 
 						{
@@ -425,9 +424,14 @@
 							interval = setInterval(update, 1);
 							console.log("Starting");
 							setNextEvent();
-							skipInput.value = "";
-							rockyVid.currentTime = timer/1000;
+							
+							if(rockyVid.currentTime != timer/1000)
+							{
+								rockyVid.currentTime = timer/1000;
+							}
+							
 							rockyVid.play();
+							skipInput.value = "";
 							
 						});
 						
@@ -440,9 +444,12 @@
 						interval = setInterval(update, 1);
 						console.log("Starting");
 						setNextEvent();
-						skipInput.value = "";
-						rockyVid.currentTime = timer/1000;
+						if(rockyVid.currentTime != timer/1000)
+							{
+								rockyVid.currentTime = timer/1000;
+							}
 							rockyVid.play();
+							skipInput.value = "";
 					}
 					
 				}
@@ -455,6 +462,7 @@
 					console.log("Empty Starting");
 					setNextEvent();
 					rockyVid.play();
+					skipInput.value = "";
 				}
 
 				
@@ -547,7 +555,7 @@
 			
 			function resetTimer()
 			{
-				fetch("https://thermitefe8.github.io/rockyLighting/rockyCues.json")
+				fetch("https://thermitefe8.github.io/miniWebapps/rockyLighting/rockyCues.json")
 			.then(response => response.json())
 			.then(data => 
 			{
