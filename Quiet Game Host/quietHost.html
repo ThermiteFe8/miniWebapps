@@ -1,0 +1,95 @@
+<html>
+<head>
+	<meta charset="UTF=8">
+	<meta name="viewport" content="width=device-width, inital-scale=1.0">
+	<title>Gunman Taskmaster</title>
+	<link rel = "stylesheet" href = "style.css">
+</head>
+
+<body>
+	<div id = "bigContainer">
+		<h3 id = "NextPrompt">Your next task is...</h3>
+		<h1 id="NewPrompt">To KILL EVERYONE!</h1>
+		
+		
+		<div id = "PlayerContainer">
+			<div class="PlayerModule">
+				<p> Player 1 </p>
+				<input type="text" id="username" name="username">
+				<p class = "pointCounter"> Points: </p>
+				<button onclick = "playerFinished(0)">Finished Task!</button>
+				<button onclick = "playerShot(0)">Got Shot...</button>
+			</div>
+			<div class="PlayerModule">
+				<p> Player 2 </p>
+				<input type="text" id="username" name="username">
+				<p class = "pointCounter"> Points: </p>
+				<button onclick = "playerFinished(1)">Finished Task!</button>
+				<button onclick = "playerShot(1)">Got Shot...</button>
+			</div>
+			<div class="PlayerModule">
+				<p> Player 3 </p>
+				<input type="text" id="username" name="username">
+				<p class = "pointCounter"> Points: </p>
+				<button onclick = "playerFinished(2)">Finished Task!</button>
+				<button onclick = "playerShot(2)">Got Shot...</button>
+			</div>
+			<div class="PlayerModule">
+				<p> Player 4 </p>
+				<input type="text" id="username" name="username">
+				<p class = "pointCounter"> Points: </p>
+				<button onclick = "playerFinished(3)">Finished Task!</button>
+				<button onclick = "playerShot(3)">Got Shot...</button>
+			</div>
+			<div class="PlayerModule">
+				<p> Player 5 </p>
+				<input type="text" id="username" name="username">
+				<p class = "pointCounter"> Points: </p>
+				<button onclick = "playerFinished(4)">Finished Task!</button>
+				<button onclick = "playerShot(4)">Got Shot...</button>
+			</div>
+			<div class="PlayerModule">
+				<p> Player 6 </p>
+				<input type="text" id="username" name="username">
+				<p class = "pointCounter"> Points: </p>
+				<button onclick = "playerFinished(5)">Finished Task!</button>
+				<button onclick = "playerShot(5)">Got Shot...</button>
+			</div>
+			<div class="PlayerModule">
+				<p> Player 7 </p>
+				<input type="text" id="username" name="username">
+				<p class = "pointCounter"> Points: </p>
+				<button onclick = "playerFinished(6)">Finished Task!</button>
+				<button onclick = "playerShot(6)">Got Shot...</button>
+			</div>
+			<div class="PlayerModule">
+				<p> Player 8 </p>
+				<input type="text" id="username" name="username">
+				<p class = "pointCounter"> Points: </p>
+				<button onclick = "playerFinished(7)">Finished Task!</button>
+				<button onclick = "playerShot(7)">Got Shot...</button>
+			</div>
+		</div>
+		
+		<div id="gameConfig">
+			<button onclick="newGame()">New Game!</button>
+			
+			<select name="myDropdown" id="myDropdown">
+			  <option value="0">Player 1</option>
+			  <option value="1">Player 2</option>
+			  <option value="2" selected>Player 3</option>
+			  <option value="3">Player 4</option>
+			  <option value="4">Player 5</option>
+			  <option value="5">Player 6</option>
+			  <option value="6">Player 7</option>
+			  <option value="7">Player 8</option>
+			</select>
+		</div>
+	</div>
+	
+	<script src="quietHostScript.js"></script>
+	
+</body>
+
+
+</html>

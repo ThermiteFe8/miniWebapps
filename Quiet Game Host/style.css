@@ -1,0 +1,62 @@
+#bigContainer
+{
+	display:flex;
+	flex-direction:column;
+	margin-left:auto;
+	margin-right:auto;
+
+	justify-content:center;
+}
+
+#startButton
+{
+	max-width:250px;
+}
+
+#textField
+{
+	max-width:500px;
+}
+
+.PlayerModule
+{
+	display:flex;
+	flex-direction:column;
+	max-width:100px;
+	align-items:center;
+	margin-left:40px;
+}
+
+#PlayerContainer
+{
+	display:flex;
+	flex-direction:row;
+	
+	flex-wrap: wrap;
+}
+
+#username
+{
+	max-width:100px;
+}
+
+#gameConfig
+{
+	display:flex;
+	max-width:100%;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:40px;
+	align-items:center;
+	justify-content:center;
+}
+
+#NewPrompt
+{
+	text-align:center;
+}
+
+#NextPrompt
+{
+	text-align:center;
+}

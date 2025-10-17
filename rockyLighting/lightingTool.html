@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Page Title</title>
+	</head>
+	<body>
+
+		<style>
+			#leftLight
+			{
+				background-color:black;
+				border: 3px solid lightgray;
+				width:200px;
+				height:200px;
+			}
+			#rightLight
+			{
+				background-color:black;
+				border: 3px solid lightgray;
+				width:200px;
+				height:200px;
+			}
+			#lightContainer
+			{
+				display:flex;
+			}
+			
+			#rockyVid
+			{
+				width:300px;
+			}
+			
+			
+		</style>
+		<input type = "checkbox" id = "interactMode" onclick="toggleInteract()" checked="false">
+		<label for = "interactMode">Interact Mode</label>
+		<h3>Your cue: <span id = "prompt"></span></h3>
+		<p><span id="nextLight">light</span> in <span id="display">0.0</span> seconds</p>
+		<video controls id="rockyVid" src = "rockyVideo.mp4"></video>
+		<input type="file" accept=".mp4" id="input" />
+		<a href="https://drive.google.com/file/d/1XK7AXilgMtTkoRY5hFpvJ4JrYpH1_BPq/view?usp=sharing">Source Video</a>
+		
+		<div id="lightContainer">
+			<div>
+				<div id="leftLight"> </div>
+				<p>Rating: <span id = "leftRating"></span></p>
+				<p>Should be: <span id="leftState">Off</span></p>
+			</div>
+			<div>
+				<div id="rightLight"> </div>
+				<p>Rating: <span id = "rightRating"></span></p>
+				<p>Should be: <span id="rightState">Off</span></p>
+			</div>
+		</div>
+		<button onclick="startTimer()">Start</button>
+		<button onclick="stopTimer()">Stop</button>
+		<button onclick="resetTimer()">Reset</button>
+		<button onclick = "toggleLeftLight()">Left Light</button>
+		<button onclick = "toggleRightLight()">Right Light</button>
+		<input type="search" id="skipInput" name="q" placeholder="Skip to MS count">
+		<p>Current time elapsed: <span id="elapsedTimeMin">0</span> mins; <span id="elapsedTimeDisplay">0</span> ms</p>
+		<script type="text/javascript">
+		
+			const rockyVid = document.getElementById("rockyVid");
+			const fileInput = document.getElementById("input");
+			
+			if (fileInput.files.length > 0)
+			{
+				updateImageDisplay();
+			}
+			
+			fileInput.addEventListener("change", updateImageDisplay);
+			function updateImageDisplay()
+			{
+				let url = URL.createObjectURL(fileInput.files[0]);
+				rockyVid.src = url;
+				console.log("attaching video");
+			}
+			
+			let timer = 0;
+			let ticking = false;
+			let offset = 0;
+			const display = document.getElementById("display");
+			const leftLight = document.getElementById("leftLight");
+			const rightLight = document.getElementById("rightLight");
+			const prompter = document.getElementById("prompt");
+			const nextLight = document.getElementById("nextLight");
+			const leftRating = document.getElementById("leftRating");
+			const rightRating = document.getElementById("rightRating");
+			const leftState = document.getElementById("leftState");
+			const rightState = document.getElementById("rightState");
+			const skipInput = document.getElementById("skipInput");
+			const elapsedTimeDisplay = document.getElementById("elapsedTimeDisplay");
+			const elapsedTimeMin = document.getElementById("elapsedTimeMin");
+			let nextTimestamp = 9999;
+			let nextEvent = "";
+			let interval;
+			let timeArray = [];
+			let leftSwitch = false;
+			let rightSwitch = false;
+			
+			
+			let looping = false;
+			let loopingInterval = 1000;
+			let loopingEndpoint = 5000;
+			let loopLeft1 = false;
+			let loopLeft2 = false;
+			let loopRight1 = false;
+			let loopRight2 = false;
+			
+			
+			let acceptableThreshold = 1000;
+			let latestPressL = 0;
+			let latestPressR = 0;
+			let interactModeElem = document.getElementById("interactMode");
+			interactModeElem.checked = false;
+			let interactMode = false;
+			let previousEvent = "";
+			
+			function toggleInteract()
+			{
+				interactMode = interactModeElem.checked;
+			}
+			
+			fetch("https://thermitefe8.github.io/rockyLighting/rockyCues.json")
+			.then(response => response.json())
+			.then(data => 
+			{
+				timeArray = data;
+				console.log(data);			
+			});
+			
+			
+			document.onkeypress = function (e) 
+			{
+				e = e || window.event;
+				if(e.keyCode == 102)
+				{
+					toggleLeftLight();
+				}
+				if(e.keyCode == 107)
+				{
+					toggleRightLight();
+				}
+			// use e.keyCode
+			};
+				
+			function toggleLeftLight()
+			{
+				if(interactMode && ticking)
+				{
+					leftSwitch = !leftSwitch;	
+					toggleLeft();
+					latestPressL = timer;
+					leftRating.textContent = setRating(latestPressL, true);
+				}
+			}
+			
+			function toggleRightLight()
+			{
+				if(interactMode && ticking)
+				{
+					rightSwitch = !rightSwitch;
+					toggleRight();
+					latestPressR = timer;
+					rightRating.textContent = setRating(latestPressR, false);
+				}
+			}
+			
+			function setRating(latestPress, isLeft)
+			{
+				let earlyHit = -1;
+				let lateHit = -1;
+				let ratingString = ""
+				if(previousEvent != "")
+				{
+					if(isLeft == true)
+					{
+						if(previousEvent.LeftLight != "nothing")
+						{
+							lateHit = latestPress - previousEvent.timestamp;
+						}
+					}
+					else
+					{
+						if(previousEvent.RightLight != "nothing")
+						{
+							lateHit = latestPress - previousEvent.timestamp;
+						}
+					}
+				}
+				
+				if(nextEvent != "")
+				{
+					if(isLeft == true)
+					{
+						if(nextEvent.LeftLight != "nothing")
+						{
+							earlyHit = nextEvent.timestamp -  latestPress;
+						}
+					}
+					else
+					{
+						if(nextEvent.RightLight != "nothing")
+						{
+							earlyHit = nextEvent.timestamp - latestPress;
+						}
+					}
+				}
+				
+				if(earlyHit >= 0 || lateHit >= 0)
+				{
+					if(lateHit < 0 || earlyHit < lateHit)
+					{
+						ratingString = earlyHit + " ms EARLY";
+					}
+					else
+					{
+						ratingString = lateHit + " ms LATE";
+					}
+				}
+				
+				return ratingString;
+				
+				
+			}
+			
+			
+			function LeftOn()
+			{
+				leftLight.style.backgroundColor = "yellow";
+			}
+			function LeftOff()
+			{
+				leftLight.style.backgroundColor = "black";
+			}
+			
+			function RightOn()
+			{
+				rightLight.style.backgroundColor = "yellow";
+			}
+			function RightOff()
+			{
+				rightLight.style.backgroundColor = "black";
+			}
+			
+			function toggleLeft()
+			{
+				
+				if(leftSwitch == true)
+				{
+					LeftOn();
+				}
+				else
+				{
+					LeftOff();
+				}
+			}
+			
+			function toggleRight()
+			{
+				
+				if(rightSwitch == true)
+				{
+					RightOn();
+				}
+				else
+				{
+					RightOff();
+				}
+			}
+		
+			
+			function update()
+			{
+				if(ticking == true)
+				{
+					timer += delta();
+					render();
+					let finishedEvents = [];
+					let eventsToAdd = [];
+					for(let i = 0; i < timeArray.length; i++)
+					{
+						if(timeArray[i].timestamp <= timer)
+						{
+							let tempHolder = false;
+							if(timeArray[i].LeftLight != "nothing")
+							{
+								tempHolder = true;
+								if(timeArray[i].LeftLight == true)
+								{
+									leftState.textContent = "On";
+								}
+								else
+								{
+									leftState.textContent = "Off";
+								}
+								if(interactMode == false)
+								{
+									leftSwitch = timeArray[i].LeftLight;
+									toggleLeft();
+								}
+
+							}
+							
+							if(timeArray[i].RightLight != "nothing")
+							{
+								tempHolder = true;
+								if(timeArray[i].RightLight == true)
+								{
+									rightState.textContent = "On";
+								}
+								else
+								{
+									rightState.textContent = "Off";
+								}
+								if(interactMode == false)
+								{
+									rightSwitch = timeArray[i].RightLight;
+									toggleRight();
+								}
+							}
+							
+							if(timeArray[i].Looping == true)
+							{
+								looping = true;
+								loopingInterval = timeArray[i].loopInterval;
+								loopingEndpoint = timeArray[i].loopEndpoint;
+								loopLeft1 = timeArray[i].LeftLight;
+								loopLeft2 = timeArray[i].leftStep2;
+								loopRight1 = timeArray[i].RightLight;
+								loopRight2 = timeArray[i].rightStep2;
+								
+								let loopCount = (loopingEndpoint - timeArray[i].timestamp)/loopingInterval;
+								console.log(loopingInterval);
+								console.log(loopingEndpoint);
+								
+								if(loopCount > 0)
+								{
+									for(let k = 0; k < loopCount; k++)
+									{
+										let tempLeft = false;
+										let tempRight = false;
+										let tempDescription = timeArray[i].Description;
+										if(k%2 == 0)
+										{
+											tempLeft = timeArray[i].LeftLight;
+											tempRight = timeArray[i].RightLight;
+											tempDescription = tempDescription + " (Loop A)";
+										}
+										else
+										{
+											tempLeft = timeArray[i].leftStep2;
+											tempRight = timeArray[i].rightStep2;
+											tempDescription = tempDescription + " (Loop B)";
+										}
+										let tempEvent = 
+										{
+											timestamp: timeArray[i].timestamp + k * timeArray[i].loopInterval,
+											Description: tempDescription,
+											LeftLight: tempLeft,
+											RightLight: tempRight,
+											Looping: false
+										};
+										eventsToAdd.push(tempEvent);
+										console.log(tempEvent);
+									}
+								}
+							}
+							else
+							{
+								looping = false;
+							}
+							
+							if(tempHolder == true)
+							{
+								//prompter.textContent = timeArray[i].Description;
+								console.log(i);
+								finishedEvents.push(i);
+							}
+						}
+					}
+					
+					
+
+					for(let i = finishedEvents.length - 1; i >= 0; i--)
+					{	console.log(finishedEvents);
+						previousEvent = timeArray[i];
+						timeArray.splice(i, 1);
+						console.log(timeArray);
+						setNextEvent();
+					}
+					if(eventsToAdd.length > 0)
+					{
+						console.log("pushingEvents");
+						timeArray.unshift(...eventsToAdd);
+					}
+				}	
+			}
+			
+			function startTimer()
+			{
+				let skipVal = Math.trunc(skipInput.value);
+				console.log(skipInput.value);
+				if(skipInput.value != "")
+				{
+					if(skipVal < timer)
+					{
+						fetch("https://thermitefe8.github.io/rockyLighting/rockyCues.json")
+						.then(response => response.json())
+						.then(data => 
+						{
+							timeArray = data;
+							console.log(data);	
+							leftSwitch = false;
+							rightSwitch = false;
+							toggleLeft();
+							toggleRight();
+							leftState.textContent = "Off";
+							rightState.textContent = "Off";
+							offset = Date.now();
+							console.log(skipInput.value);
+							timer = Math.trunc(skipInput.value);
+							ticking = true;
+							interval = setInterval(update, 1);
+							console.log("Starting");
+							setNextEvent();
+							skipInput.value = "";
+							rockyVid.currentTime = timer/1000;
+							rockyVid.play();
+							
+						});
+						
+					}
+					else
+					{
+						offset = Date.now();
+						timer = Math.trunc(skipInput.value);
+						ticking = true;
+						interval = setInterval(update, 1);
+						console.log("Starting");
+						setNextEvent();
+						skipInput.value = "";
+						rockyVid.currentTime = timer/1000;
+							rockyVid.play();
+					}
+					
+				}
+				else
+				{
+					offset = Date.now();
+					timer = timer;
+					ticking = true;
+					interval = setInterval(update, 1);
+					console.log("Empty Starting");
+					setNextEvent();
+					rockyVid.play();
+				}
+
+				
+				
+			}
+			
+			function setNextEvent()
+			{
+				if(timeArray.length > 0)
+				{
+					
+					let tempStamp = Number.MAX_SAFE_INTEGER;
+					let tempIndex = 0;
+					for(let i = 0; i < timeArray.length; i++)
+					{
+						if(timeArray[i].timestamp < tempStamp)
+						{
+							tempStamp = timeArray[i].timeStamp;
+							tempIndex = i;
+						}
+					}
+					
+					nextEvent = timeArray[tempIndex];
+					if(timeArray[tempIndex].Looping == true)
+					{
+						nextLight.textContent = parseLoopLight(timeArray[tempIndex].LeftLight, timeArray[tempIndex].RightLight, timeArray[tempIndex].leftStep2, timeArray[tempIndex].rightStep2, timeArray[tempIndex].loopInterval);
+					}
+					else
+					{
+						nextLight.textContent = "Turn the " + parseNextLight(timeArray[tempIndex].LeftLight, timeArray[tempIndex].RightLight);
+					}
+					
+					prompter.textContent = timeArray[tempIndex].Description;
+					nextTimestamp = timeArray[tempIndex].timestamp;
+				}
+				else
+				{
+					prompter.textContent = "Finished!";
+					stopTimer();
+				}
+				
+			}
+			
+			function parseNextLight(lightL, lightR)
+			{
+				let returnString = "";
+				if(lightL != "nothing")
+				{
+					returnString = returnString + "LEFT";
+					if(lightL == true)
+					{
+						returnString = returnString + " ON";
+					}
+					else
+					{
+						returnString = returnString + " OFF";
+					}
+					
+				}
+				if(lightR != "nothing")
+				{
+					if(lightL != "nothing")
+					{
+						returnString = returnString + " + ";
+					}
+					returnString = returnString + "RIGHT"
+					if(lightR == true)
+					{
+						returnString = returnString + " ON";
+					}
+					else
+					{
+						returnString = returnString + " OFF";
+					}
+				}
+				
+				return returnString;
+			}
+			
+			function parseLoopLight(lightL, lightR, lightL2, lightR2, newInterval)
+			{
+				let returnString = "Flip between the ";
+				returnString = returnString + parseNextLight(lightL, lightR);
+				returnString = returnString + " and ";
+				returnString = returnString + parseNextLight(lightL2, lightR2);
+				returnString = returnString + " every " + ((newInterval)/1000).toFixed(1) + " seconds";
+				
+				return returnString;
+			}
+			
+			function resetTimer()
+			{
+				fetch("https://thermitefe8.github.io/rockyLighting/rockyCues.json")
+			.then(response => response.json())
+			.then(data => 
+			{
+				timeArray = data;
+				console.log(data);	
+				leftSwitch = false;
+				rightSwitch = false;
+				toggleLeft();
+				toggleRight();
+				leftState.textContent = "Off";
+				rightState.textContent = "Off";
+			});
+				timer = 0;
+				rockyVid.currentTime = 0;
+				render();
+			}
+			
+			function stopTimer()
+			{
+				ticking = false;
+				if (interval) 
+				{
+					clearInterval(interval);
+					interval = null;
+				}
+				rockyVid.pause();
+			}
+			
+			function delta() 
+			{
+				var now = Date.now(),
+				d = now - offset;
+
+				offset = now;
+				return d;
+			}
+			
+			function render() 
+			{
+				let difference = nextTimestamp - timer;
+				elapsedTimeMin.textContent = Math.trunc(timer/60000);
+				elapsedTimeDisplay.textContent = timer%60000;
+				if(difference >= 0)
+				{
+					display.innerHTML = ((nextTimestamp - timer)/1000).toFixed(1);
+				}
+				else
+				{
+					display.innerHTML = "0.0";
+				}
+				
+			}
+			
+			rockyVid.addEventListener("play", (event) => {
+				startTimer();
+			});
+			
+			
+			rockyVid.addEventListener("seeked", (event) => {
+				skipInput.value = rockyVid.currentTime * 1000;
+				
+			});
+			
+			rockyVid.addEventListener("pause", (event) => {
+				stopTimer();
+			});
+			
+			let skipAmount = 5;
+			
+			document.addEventListener('keydown', (event) => {
+            if (event.key === 'ArrowLeft') {
+                event.preventDefault(); // Prevent default browser behavior (e.g., scrolling)
+                rockyVid.currentTime = Math.max(0, rockyVid.currentTime - skipAmount);
+				skipInput.value = rockyVid.currentTime * 1000;
+            } else if (event.key === 'ArrowRight') {
+                event.preventDefault(); // Prevent default browser behavior
+                rockyVid.currentTime = Math.min(rockyVid.duration, rockyVid.currentTime + skipAmount);
+				skipInput.value = rockyVid.currentTime * 1000;
+            }
+			if(rockyVid.paused == false)
+			{
+				startTimer();
+			}
+        });
+		</script>
+	</body>
+</html>

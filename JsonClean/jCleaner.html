@@ -1,0 +1,32 @@
+<html>
+<head>
+	<meta charset="UTF=8">
+	<meta name="viewport" content="width=device-width, inital-scale=1.0">
+	<title>jCleaner</title>
+	<link rel = "stylesheet" href = "style.css">
+</head>
+
+<body>
+	<div id = "bigContainer">
+		<h1>Welcome to the JSON Cleaner!</h1>
+		<p>You may upload a json file you'd like to remove the values of OR paste it into the textfield below!</p>
+		<p>I don't recommend doing both, but if you do it'll prioritize the textfield.</p>
+		<p>Sometimes, things break if there straight up isn't any value associated with the keys/ids, so you can check the checkbox to add some placeholder text to your stripped JSON file</p>
+		<p>When you're ready, press "Clean JSON file!" to download!</p>
+		
+		
+		<input type="file" accept=".json" id="input" />
+		<textarea id="textField" rows="4" cols="50" placeholder="Paste JSON data here"></textarea>
+		
+		<div>
+		<input type="checkbox" id="blankCheck" name="blankCheck" checked />
+		<label for="blankCheck">Replace every value with the word "Blank"?</label>
+		</div>
+		
+		<button id="startButton" onclick="StartCleaning()">Clean JSON file!</button>
+		<script src="jsonCleaner.js"></script>
+	</div>
+</body>
+
+
+</html>
