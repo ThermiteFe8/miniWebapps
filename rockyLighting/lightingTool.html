@@ -23,42 +23,83 @@
 			#lightContainer
 			{
 				display:flex;
+				margin-left:auto;
+				margin-right:auto;
+				text-align:center;
+				margin-top:10px;
+				gap:15px;
 			}
 			
 			#rockyVid
 			{
-				width:300px;
+				width:500px;
+				border-width:5px;
+				border-color:white;
+				border-width:4px;
+	border-style:solid;
 			}
 			
+			#cueContainer
+			{
+				margin-left:auto;
+				margin-right:auto;
+				text-align:center;
+			}
+			
+			#centerContainer
+			{
+			display:flex;
+			flex-direction:column;
+			align-items:center;
+			}
+			
+			html
+			{
+				background-color:#202038;
+				color:white;
+			}
+			a
+			{
+				color:#ff75aa;
+			}
 			
 		</style>
-		<input type = "checkbox" id = "interactMode" onclick="toggleInteract()" checked="false">
-		<label for = "interactMode">Interact Mode</label>
-		<h3>Your cue: <span id = "prompt"></span></h3>
-		<p><span id="nextLight">light</span> in <span id="display">0.0</span> seconds</p>
+		<div id="centerContainer">
+		<div>
+			<input type = "checkbox" id = "interactMode" onclick="toggleInteract()" checked="false">
+			<label for = "interactMode">Interact Mode</label>
+			<input type="file" accept=".mp4" id="input" />
+			<a href="https://drive.google.com/file/d/1XK7AXilgMtTkoRY5hFpvJ4JrYpH1_BPq/view?usp=sharing">Source Video</a>
+		</div>
+		<div id="cueContainer">
+			<h3>Your cue: <span id = "prompt"></span></h3>
+			<p><span id="nextLight">light</span> in <span id="display">0.0</span> seconds</p>
+		</div>
 		<video controls id="rockyVid" src = "rockyVideo.mp4"></video>
-		<input type="file" accept=".mp4" id="input" />
-		<a href="https://drive.google.com/file/d/1XK7AXilgMtTkoRY5hFpvJ4JrYpH1_BPq/view?usp=sharing">Source Video</a>
+		
 		
 		<div id="lightContainer">
 			<div>
-				<div id="leftLight"> </div>
-				<p>Rating: <span id = "leftRating"></span></p>
+				<div id="leftLight"><p>Rating: <span id = "leftRating"></span></p> </div>
 				<p>Should be: <span id="leftState">Off</span></p>
+					
 			</div>
 			<div>
-				<div id="rightLight"> </div>
-				<p>Rating: <span id = "rightRating"></span></p>
+				<div id="rightLight"> <p>Rating: <span id = "rightRating"></span></p> </div>
 				<p>Should be: <span id="rightState">Off</span></p>
+				
 			</div>
 		</div>
-		<button onclick="startTimer()">Start</button>
-		<button onclick="stopTimer()">Stop</button>
-		<button onclick="resetTimer()">Reset</button>
-		<button onclick = "toggleLeftLight()">Left Light</button>
-		<button onclick = "toggleRightLight()">Right Light</button>
-		<input type="search" id="skipInput" name="q" placeholder="Skip to MS count">
+		<div>
+			<button onclick="startTimer()">Start</button>
+			<button onclick="stopTimer()">Stop</button>
+			<button onclick="resetTimer()">Reset</button>
+			<button onclick = "toggleLeftLight()">Left Light</button>
+			<button onclick = "toggleRightLight()">Right Light</button>
+			<input type="search" id="skipInput" name="q" placeholder="Skip to MS count">
+		</div>
 		<p>Current time elapsed: <span id="elapsedTimeMin">0</span> mins; <span id="elapsedTimeDisplay">0</span> ms</p>
+		</div>
 		<script type="text/javascript">
 		
 			const rockyVid = document.getElementById("rockyVid");
@@ -229,19 +270,23 @@
 			function LeftOn()
 			{
 				leftLight.style.backgroundColor = "yellow";
+				leftLight.style.color="black";
 			}
 			function LeftOff()
 			{
 				leftLight.style.backgroundColor = "black";
+				leftLight.style.color="white";
 			}
 			
 			function RightOn()
 			{
 				rightLight.style.backgroundColor = "yellow";
+				rightLight.style.color="black";
 			}
 			function RightOff()
 			{
 				rightLight.style.backgroundColor = "black";
+				rightLight.style.color="white";
 			}
 			
 			function toggleLeft()
@@ -290,10 +335,14 @@
 								if(timeArray[i].LeftLight == true)
 								{
 									leftState.textContent = "On";
+									leftState.style.backgroundColor = "yellow";
+									leftState.style.color = "black";
 								}
 								else
 								{
 									leftState.textContent = "Off";
+									leftState.style.backgroundColor = "black";
+									leftState.style.color = "white";
 								}
 								if(interactMode == false)
 								{
@@ -309,10 +358,14 @@
 								if(timeArray[i].RightLight == true)
 								{
 									rightState.textContent = "On";
+									rightState.style.backgroundColor = "yellow";
+									rightState.style.color = "black";
 								}
 								else
 								{
 									rightState.textContent = "Off";
+									rightState.style.backgroundColor = "black";
+									rightState.style.color = "white";
 								}
 								if(interactMode == false)
 								{
