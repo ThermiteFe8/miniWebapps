@@ -1,7 +1,8 @@
 let fileName = "dataBlanked.json";
 const canvas = document.getElementById("canvas");
-const ctx = canvas.getContext("2d");
+const ctx = canvas.getContext("2d", { colorSpace: "srgb" });
 const centerSrc = document.getElementById("centerSrc");
+ctx.imageSmoothingEnabled = false;
 const edgeSrc = document.getElementById("edgeSrc");
 const cornerSrc = document.getElementById("cornerSrc");
 const testPreview = document.getElementById("testPreview");
@@ -17,54 +18,57 @@ let centerImg = new Image();
 let edgeImg = new Image();
 let cornerImg = new Image();
 
-function handleFileSelect(inputFile, index) {
-	const file = inputFile; // Grab the actual File
-	console.log("handling file select");
+function handleFileSelect(file, index) {
+  if (!file) return;
 
-	if (!file) return;
+  console.log("handling file select", file.name);
 
-	fileName = "blanked" + file.name;
+  // Update output filename once (based on center image)
+  if (index === 0) {
+    fileName = "blanked" + file.name;
+  }
 
-	const reader = new FileReader();
+  // Create a URL that preserves the original file bytes (ICC included)
+  const objectUrl = URL.createObjectURL(file);
 
-	reader.onload = function (e) {
-		const dataUrl = e.target.result; // ✅ result, not results
+  let targetImg;
+  if (index === 0) targetImg = centerImg;
+  else if (index === 1) targetImg = edgeImg;
+  else if (index === 2) targetImg = cornerImg;
 
-		if (index == 0) {
-			centerUrl = dataUrl;
-			console.log(centerUrl);
-			const img = new Image();
-			img.onload = function () {
-				// Optional: resize canvas to image size
-				ctx.canvas.width = img.width;
-				ctx.canvas.height = img.height;
+  if (!targetImg) return;
 
-				ctx.drawImage(img, 0, 0);
-				handleFileSelect(edgeSrc.files[0], 1);
-			};
+  targetImg.onload = () => {
+    // Revoke URL once the image is decoded
+    URL.revokeObjectURL(objectUrl);
 
-			img.src = dataUrl;
-			testPreview.src = dataUrl; // preview <img>
-			centerImg.src = dataUrl;
-			
-			stuffLoaded++;
-			console.log(stuffLoaded);
-		}
-		else if (index == 1) {
-			edgeUrl = dataUrl;
-			edgeImg.src = dataUrl;
-			stuffLoaded++;
-			console.log(stuffLoaded);
-		}
-		else if (index == 2) {
-			cornerUrl = dataUrl;
-			cornerImg.src = dataUrl;
-			stuffLoaded++;
-			console.log(stuffLoaded);
-		}
-	};
+    // For the center image, size the canvas once
+    if (index === 0) {
+      canvas.width  = targetImg.width;
+      canvas.height = targetImg.height;
 
-	reader.readAsDataURL(file); // ✅ correct for images
+      // Draw once for the test export
+      ctx.setTransform(1, 0, 0, 1, 0, 0);
+      ctx.imageSmoothingEnabled = false;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.drawImage(targetImg, 0, 0);
+    }
+
+    stuffLoaded++;
+    console.log("loaded", stuffLoaded);
+  };
+
+  targetImg.onerror = () => {
+    URL.revokeObjectURL(objectUrl);
+    console.error("Failed to load image:", file.name);
+  };
+
+  targetImg.src = objectUrl;
+
+  // Preview uses the same object URL (color-accurate)
+  if (index === 0) {
+    testPreview.src = objectUrl;
+  }
 }
 
 
@@ -100,6 +104,11 @@ async function logicPostLoad() {
   console.log('Waiting for data to be ready...');
   try {
     await waitUntil(() => stuffLoaded >= 3, 50, 10000); // Check every 50ms, timeout after 3s
+		
+		ctx.imageSmoothingEnabled = false;
+		ctx.drawImage(centerImg, 0, 0);
+		allImages.push(canvas.toDataURL('image/png'));
+		allImageNames.push("Test");
 		for (let mask = 0; mask < 16; mask++)
         {
             let j = 0;
@@ -141,13 +150,24 @@ async function logicPostLoad() {
 }
 
 function ApplyWallMask(mask, cornerEnabled)
-    {
-		let tempImage = edgeImg;
-		if(cornerEnabled)
-		{
-			tempImage = cornerImg;
-		}
-		rotateImage(centerImg, 0,centerImg.width/2,centerImg.height/2);
+{
+    // CLEAR PREVIOUS DRAW
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+ctx.globalCompositeOperation = "source-over";
+
+// Fill with opaque background (usually transparent-looking but color-correct)
+ctx.fillStyle = "rgba(0,0,0,0)"; // ❌ NOT THIS
+
+// DO THIS INSTEAD:
+ctx.fillStyle = "#000000"; // or the dominant background color
+ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+
+
+    let tempImage = cornerEnabled ? cornerImg : edgeImg;
+
+    // draw base center
+    ctx.drawImage(centerImg, 0, 0);
 		
 		if(cornerEnabled)
 		{
@@ -272,26 +292,21 @@ async function downloadImagesAsZip(zipName = "images.zip") {
 
 
 
-function rotateImage(image, angleInDegrees, x, y) {
-  // 1. Save the current canvas state (prevents other drawings from being rotated)
+function rotateImage(image, angleDeg, x, y) {
   ctx.save();
 
-  // 2. Translate the canvas origin to the desired center of rotation
-  ctx.translate(x, y);
+  ctx.translate(Math.round(x), Math.round(y));
+  ctx.rotate(angleDeg * Math.PI / 180);
 
-  // 3. Rotate the canvas by the specified angle (in radians)
-  // Convert degrees to radians: radians = degrees * Math.PI / 180
-  const angleInRadians = angleInDegrees * Math.PI / 180;
-  ctx.rotate(angleInRadians);
+  ctx.drawImage(
+    image,
+    Math.round(-image.width / 2),
+    Math.round(-image.height / 2)
+  );
 
-  // 4. Draw the image
-  // Draw the image at a negative offset from the new origin so its center aligns with (x, y)
-  ctx.drawImage(image, -image.width / 2, -image.height / 2);
-
-  // 5. Restore the canvas to its state before the transformations
-  // This resets the origin and rotation for subsequent drawing operations
   ctx.restore();
 }
+
 
 function CleanJSON(inputJson)
 {
