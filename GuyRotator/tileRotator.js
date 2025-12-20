@@ -191,13 +191,13 @@ function CheckMultiMask(mask)
     {
         let name = "";
         if ((mask & 1) != 0)
-            name = name + "Forward";
+            name = name + "Left";
         if ((mask & 2) != 0)
-            name = name + "Back";
+            name = name + "Forward";
         if ((mask & 4) != 0)
             name = name + "Right";
         if ((mask & 8) != 0)
-            name = name + "Left";
+            name = name + "Back";
 
 
         return name;
