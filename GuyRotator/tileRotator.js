@@ -149,25 +149,59 @@ function ApplyWallMask(mask, cornerEnabled)
 		}
 		rotateImage(centerImg, 0,centerImg.width/2,centerImg.height/2);
 		
-		if((mask & 1) != 0)
+		if(cornerEnabled)
 		{
-			rotateImage(tempImage, 0 * 90,centerImg.width/2,centerImg.height/2);
+			if((mask & 1) != 0)
+			{
+				if((mask & 2) != 0)
+				{
+					rotateImage(tempImage, 0 * 90,centerImg.width/2,centerImg.height/2);
+				}
+				
+				if((mask & 8) != 0)
+				{
+					rotateImage(tempImage, 3 * 90,centerImg.width/2,centerImg.height/2);
+				}
+			}
+			
+			
+			if((mask & 4) != 0)
+			{
+				if((mask & 2) != 0)
+				{
+					rotateImage(tempImage, 1 * 90,centerImg.width/2,centerImg.height/2);
+				}
+				
+				if((mask & 8) != 0)
+				{
+					rotateImage(tempImage, 2 * 90,centerImg.width/2,centerImg.height/2);
+				}
+			}
+		}
+		else
+		{
+			if((mask & 1) != 0)
+			{
+				rotateImage(tempImage, 0 * 90,centerImg.width/2,centerImg.height/2);
+			}
+			
+			if((mask & 2) != 0)
+			{
+				rotateImage(tempImage, 1 * 90,centerImg.width/2,centerImg.height/2);
+			}
+			
+			if((mask & 4) != 0)
+			{
+				rotateImage(tempImage, 2 * 90,centerImg.width/2,centerImg.height/2);
+			}
+			
+			if((mask & 8) != 0)
+			{
+				rotateImage(tempImage, 3 * 90,centerImg.width/2,centerImg.height/2);
+			}
 		}
 		
-		if((mask & 2) != 0)
-		{
-			rotateImage(tempImage, 1 * 90,centerImg.width/2,centerImg.height/2);
-		}
 		
-		if((mask & 4) != 0)
-		{
-			rotateImage(tempImage, 2 * 90,centerImg.width/2,centerImg.height/2);
-		}
-		
-		if((mask & 8) != 0)
-		{
-			rotateImage(tempImage, 3 * 90,centerImg.width/2,centerImg.height/2);
-		}
     }
 
 function CheckMultiMask(mask)
