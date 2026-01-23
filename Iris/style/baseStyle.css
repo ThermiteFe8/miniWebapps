@@ -207,6 +207,8 @@ body
 	/*! box-shadow: 0vh 1.55vh var(--first-shadow-color), inset 0.7vh 0.7vh var(--second-highlight-color); */
 	justify-content: space-between;
 	align-items: center;
+	margin-left: 4vh;
+	margin-right: 4vh;
 }
 
 #centralContent
@@ -233,11 +235,12 @@ body
 	transform:scale(1);
 	display:inline-block;
 	cursor:pointer;
+	text-decoration: none;
 }
 
 #centralContent a:hover, #centralContent a:focus
 {
-	color:white;
+	color:var(--highlighted-button-color);
 	transform:scale(1.01);
 }
 
@@ -246,8 +249,8 @@ body
 {
 	#centralContent
 	{
-		width:125vh;
-		margin-top:8vh;
+		width:121vh;
+		margin-top:2vh;
 	}
 
 }
