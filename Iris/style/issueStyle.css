@@ -1,0 +1,290 @@
+
+@media screen and (width > 155vh)
+{
+	
+	#issueNavButtons
+	{
+		gap:80vh;
+	}
+	
+	#coverBlock
+	{
+		width:47%;
+		height:68vh;
+	}
+	
+	#creditsBlock p
+	{
+		font-size:2.4vh;
+	}
+
+	#creditsBlock ul
+	{
+		font-size:2.5vh;
+		margin-left:9vh;
+	}
+	#issueTopContainer
+	{
+		margin-top:5vh;
+		margin-left:8vh;
+		margin-right:2vh;
+		flex-direction:row;
+		
+		display: flex;
+	}
+	#creditsBlock h1
+	{
+		font-size:4.5vh;
+	}
+	#descriptionBlock
+	{
+		margin-left:15vh;
+		margin-right:15vh;
+	}
+
+	#descriptionBlock h2
+	{
+		margin-left:2.5vh;
+		text-decoration:underline;
+		font-size:4vh;
+		text-align:left;
+	}
+
+	#descriptionBlock p
+	{
+		font-size:2.7vh;
+		text-indent:7vh;
+	}
+	#creditsBlock
+	{
+		
+		margin-left:9vh;
+		margin-top: 0;
+		width: 50%;
+		/*! height: 57vh; */
+	}
+
+
+}
+@media screen and (110vh <= width <= 155vh)
+{
+	#issueNavButtons
+	{
+		gap:60vh;
+	}
+	
+	#coverBlock
+	{
+		width:91%;
+		height:56vh;
+	}
+	
+	#creditsBlock p
+	{
+		font-size:2.2vh;
+	}
+
+	#creditsBlock ul
+	{
+		font-size:2.2vh;
+		margin-left:4vh;
+	}
+	#issueTopContainer
+	{
+		margin-top:5vh;
+		margin-left:0vh;
+		margin-right:6vh;
+		flex-direction:row;
+		
+		display: flex;
+	}
+	#creditsBlock h1
+	{
+		font-size:5.2vh;
+	}
+	#descriptionBlock
+	{
+		margin-left:15vh;
+		margin-right:15vh;
+		margin-top: 2vh;
+	}
+
+	#descriptionBlock h2
+	{
+		margin-left:2.5vh;
+		text-decoration:underline;
+		font-size:4.2vh;
+		text-align:left;
+	}
+
+	#descriptionBlock p
+	{
+		font-size:3vh;
+		text-indent:7vh;
+	}
+	#creditsBlock
+	{
+		
+		margin-left:0;
+		margin-top: 0;
+		width: 58%;
+		/*! height: 57vh; */
+	}
+
+}
+
+@media screen and (width < 110vh)
+{
+	#issueTopContainer
+	{
+		margin-top:5vh;
+		margin-left:4vh;
+		margin-right:4vh;
+		flex-direction:column;
+		
+		display: flex;
+	}
+	#issueNavButtons
+	{
+		gap:11vh;
+	}
+	#coverBlock
+	{
+		width:100%;
+		/*! height:83vh; */
+	}
+	#creditsBlock p
+	{
+		font-size:2.2vh;
+		margin-left:4vh;
+	}
+
+	#creditsBlock ul
+	{
+		font-size:2.5vh;
+		margin-left:12vh;
+	}
+	#creditsBlock h1
+	{
+		font-size:4.2vh;
+	}
+	#descriptionBlock
+	{
+		margin-left:6vh;
+		margin-right:3vh;
+	}
+
+	#descriptionBlock h2
+	{
+		margin-left:0;
+		text-align:left;
+		text-decoration:underline;
+		font-size:4.2vh;
+	}
+
+	#descriptionBlock p
+	{
+		font-size:2.8vh;
+		text-indent:5vh;
+	}
+	#creditsBlock
+	{
+		
+		margin-left:0;
+		margin-top: 0;
+		width: 100%;
+		/*! height: 57vh; */
+	}
+
+}
+
+
+#coverBlock
+{
+	display:flex;
+}
+
+#coverBlock *
+{
+	margin-left:auto;
+	margin-right:auto;
+	margin-bottom:auto;
+	max-width:95%;
+	/*! border-width:1.3vh; */
+	/*! border-style:solid; */
+	border-top-color: var(--border-highlight);
+	border-left-color:var(--border-highlight);
+	border-right-color:var(--border-shadow);
+	border-bottom-color:var(--border-shadow);
+	/*! box-shadow: 1vh 1vh var(--first-shadow-color); */
+	max-height: 100%;
+}
+
+
+#creditsBlock h1
+{
+	/*! margin-top:2vh; */
+	text-align:center;
+	text-decoration:underline;
+}
+
+#creditsBlock #creditsLabel
+{
+	margin-bottom:1vh;
+}
+
+
+#creditsBlock ul
+{
+	margin-top:1vh;
+	padding-left:0;
+}
+#creditsBlock ul li
+{
+	margin-left:0;
+}
+
+#issueNavButtons
+{
+	margin-top:2vh;
+	margin-left:auto;
+	margin-right:auto;
+	margin-bottom:3.5vh;
+	display:flex;
+}
+
+#issueNavButtons button
+{
+	color:white;
+	font-size:3.1vh;
+	padding:1.2vh;
+	width:15vh;
+	border-width:0;
+	/*! border-style:solid; */
+	/*! border-top-color: var(--border-highlight); */
+	/*! border-left-color:var(--border-highlight); */
+	/*! border-right-color:var(--border-shadow); */
+	/*! border-bottom-color:var(--border-shadow); */
+	background-color:var(--hyperlink-color);
+	/*! box-shadow: 1vh 1vh var(--first-shadow-color), inset 0.55vh 0.55vh var(--first-highlight-color); */
+	transition: background-color 0.5s, transform 0.4s;
+	transform:scale(1);
+	
+	font-family: Synonym;
+	/*! font-style: bold; */
+}
+
+#issueNavButtons button:hover, #issueNavButtons button:focus
+{
+	background-color:var(--highlighted-button-color);
+	cursor: pointer;
+	transform:scale(1.05);
+	
+}
+
+#issueNavButtons button span
+{
+	font-size:2.6vh;
+	
+	text-decoration:underline;
+}
