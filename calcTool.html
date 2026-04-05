@@ -74,13 +74,16 @@
 			
 			function degreeLimiter(input)
 			{
-				while(input <= -180 && input <= 180)
+			input = parseFloat(input);
+				while(input <= -180)
 				{
 					input = input + 360;
+					console.log(input);
 				}
-				while(input >= 180 && input >= -180)
+				while(input >= 180)
 				{
 					input = input - 360;
+					console.log("Removing 360");
 				}
 				return input;
 			}
