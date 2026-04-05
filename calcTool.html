@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Stronghold Calc</title>
+	</head>
+	<body>
+		<h1>Nicole's Stronghold Calculator</h1>
+		<label for="FirstCopy">First Point</label>
+		<input type="text" id="FirstCopy" name="FirstCopy"/>
+		<label for="SecondCopy">Second Point</label>
+		<input type="text" id="SecondCopy" name="SecondCopy"/>
+		<button id="SubmitCoords" onclick="calculateCoords()">Submit</button>
+		<p>Overworld Coords: (<span id="Overworld">INPUT MISSING</span>)</p>
+		<p>Nether Coords: (<span id="Nether">INPUT MISSING</span>)</p>
+		<script>
+			const FirstCopy = document.getElementById("FirstCopy");
+			const SecondCopy = document.getElementById("SecondCopy");
+			const Overworld = document.getElementById("Overworld");
+			const Nether = document.getElementById("Nether");
+			
+			function calculateCoords()
+			{
+				let firstNums = valueExtractor(FirstCopy.value);
+				let secondNums = valueExtractor(SecondCopy.value);
+				
+				let A1 = degreeLimiter(firstNums[3]);
+				let A2 = degreeLimiter(secondNums[3]%180);
+				let X1 = firstNums[0];
+				let Z1 = firstNums[2];
+				let X2 = secondNums[0];
+				let Z2 = secondNums[2];
+				console.log(A1);
+				
+				let A3 = degreeLimiter(radiansToDegrees(Math.atan((Z1-Z2)/(X1-X2))) + 90);
+				console.log(A3);
+				
+				let distance = radiansToDegrees(Math.sin(degreesToRadians(360 - (Math.abs(A1) + A3) + (A1-A2) ))) * ((Math.sqrt((X2-X1)*(X2-X1) + (Z2-Z1)*(Z2-Z1) ))/ radiansToDegrees(Math.sin(degreesToRadians(Math.abs(A1-A2)))) );
+				console.log(distance);
+				let xDiff = Math.abs(distance * Math.sin(degreesToRadians(180-Math.abs(A1))  ) );
+				let zDiff = Math.abs(distance * Math.cos(degreesToRadians(180-Math.abs(A1))));
+				
+				console.log(xDiff);
+				
+				let trueX = Math.trunc(parseFloat(X1) + (-1 * (A1/Math.abs(A1)) * xDiff ));
+				let trueZ = Math.trunc(parseFloat(Z1) + ( (Math.abs(A1)-90)/(Math.abs(Math.abs(A1)-90)) ) * -1 * zDiff);
+				
+				console.log(trueX);
+				
+				Overworld.textContent = trueX + ", " + trueZ;
+				let multiplier = 0.125;
+				let NX = trueX * multiplier;
+				let NZ = trueZ * multiplier;
+				Nether.textContent = NX + ", " + NZ;
+				console.log(NX);
+				console.log(multiplier);
+				
+			}
+			
+			function valueExtractor(input)
+			{
+				let allNums = input.replace("/execute in minecraft:overworld run tp @s ", "").split(" ");
+				return allNums;
+			}
+			
+			function radiansToDegrees(input)
+			{
+				return input*(180/Math.PI);
+			}
+			
+			function degreesToRadians(input)
+			{
+				return input*(Math.PI/180);
+			}
+			
+			function degreeLimiter(input)
+			{
+				while(input <= -180 && input <= 180)
+				{
+					input = input + 360;
+				}
+				while(input >= 180 && input >= -180)
+				{
+					input = input - 360;
+				}
+				return input;
+			}
+		</script>
+	</body>
+</html>

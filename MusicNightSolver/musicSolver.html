@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Music Night Solver</title>
+      <style>
+		  .combo{
+				padding:10px;
+				margin-bottom:10px;
+				display:flex;
+				flex-wrap:wrap;
+				gap:10px;
+			}
+
+			.combo > div:first-child{
+				flex-basis:100%;
+				font-size:13px;
+				color:#444;
+			}
+			body{
+				font-family:Arial;
+				margin:20px;
+				max-width:1000px;
+			}
+
+			/* general spacing */
+			label{
+				display:block;
+				margin-top:8px;
+				font-weight:bold;
+			}
+
+			input{
+				width:100%;
+				padding:4px;
+				box-sizing:border-box;
+			}
+
+			button{
+				margin-top:12px;
+				padding:8px 12px;
+				font-size:14px;
+				cursor:pointer;
+			}
+
+			/* main vertical layout */
+			body > *{
+				margin-bottom:18px;
+			}
+
+			/* TAG CONDITIONS GRID */
+			#TagConditions{
+				display:grid;
+				grid-template-columns:1fr 1fr;
+				gap:16px;
+				padding:12px;
+				border:1px solid #ccc;
+				border-radius:6px;
+			}
+
+			/* CALCULATION WEIGHTS */
+			#CalculationWeights{
+				display:flex;
+				flex-direction:column;
+				gap:18px;
+				padding:12px;
+				border:1px solid #ccc;
+				border-radius:6px;
+			}
+
+			/* production weights grid */
+			#ProductionQualityWeights{
+				display:row;
+				grid-template-columns:repeat(5, 1fr);
+				gap:10px;
+			}
+
+			/* tag overlap weights */
+			#CalculationWeights > div:nth-child(2){
+				display:grid;
+				grid-template-columns:1fr 1fr;
+				gap:12px;
+			}
+
+			/* list container spacing */
+			#listContainer{
+				margin-top:20px;
+			}
+			body {
+				font-family: Arial;
+				margin: 20px;
+			}
+
+			#listContainer {
+				margin-top: 20px;
+			}
+
+			.combo {
+				padding: 10px;
+				margin-bottom: 8px;
+				display: flex;
+				gap: 10px;
+			}
+
+			.combo:nth-child(even) {
+				background: #f0f0f0;
+			}
+
+			.songBox {
+				border: 1px solid #ccc;
+				padding: 6px;
+				width: 260px;
+				cursor: pointer;
+				background: white;
+			}
+
+			.songBox:hover {
+				background: #e8f3ff;
+			}
+
+			.songTags {
+				font-size: 12px;
+				color: #444;
+			}
+
+			#toast {
+				position: fixed;
+				bottom: 20px;
+				right: 20px;
+				background: black;
+				color: white;
+				padding: 8px 12px;
+				opacity: 0;
+				transition: opacity .3s;
+			}
+      </style>
+   </head>
+   <body>
+      <button id="reloadBtn">Reload Songs</button>
+      <label>Number of Songs</label>
+      <input id="NumberOfSongs" type="number" value="3"/>
+      <div id="TagConditions">
+         <label>Tags to EXCLUDE on at least ONE song</label>
+         <input id="SingleExclude" type="text"/>
+         <label>Tags to INCLUDE on at least ONE song</label>
+         <input id="SingleInclude" type="text"/>
+         <label>Tags to EXCLUDE on ALL songs</label>
+         <input id="AllExclude" type="text"/>
+         <label>Tags to INCLUDE on ALL songs</label>
+         <input id="AllInclude" type="text"/>
+      </div>
+      <div id="CalculationWeights">
+         <div id="ProductionQualityWeights">
+            <label>Standard</label>
+            <input id="Standard" type="number" value="1"/>
+            <label>High</label>
+            <input id="High" type="number" value="2"/>
+            <label>Aggressive</label>
+            <input id="Aggressive" type="number" value="3"/>
+            <label>Gimmick</label>
+            <input id="Gimmick" type="number" value="-1"/>
+            <label>IndieMode</label>
+            <input id="IndieMode" type="number" value="2"/>
+         </div>
+         <div>
+            <label>Two Tag Overlap Weight</label>
+            <input id="TwoTag" type="number" value="-1"/>
+            <label>Three+ Tag Overlap Weight</label>
+            <input id="ThreeTag" type="number" value="-2"/>
+         </div>
+         <label>View Count Weight</label>
+         <input id="ViewCount" type="number" value="1"/>
+         <label>Repeat Artist Weight</label>
+         <input id="RepeatArtist" type="number" value="-3"/>
+      </div>
+      <button id="sortBtn">Sort List</button>
+      <div id="listContainer"></div>
+      <div id="toast">Copied!</div>
+      <script>
+         const DATA_URL="https://opensheet.elk.sh/1m3kh6hS0WQT6vFPfaIcD2IugmA6aZk5IEXaVkuLQU_o/1"
+         
+         let songs=[]
+         let allCombos=[]
+         
+         function getInput(id){
+             return document.getElementById(id).value.trim()
+         }
+         
+         function getNum(id){
+             return Number(document.getElementById(id).value)||0
+         }
+         
+         function parseTags(str){
+             if(!str)return[]
+             return str.split(",").map(t=>t.trim().toLowerCase())
+         }
+         
+         function generateCombinations(arr,k){
+             const result=[]
+         
+             function helper(start,combo){
+                 if(combo.length===k){
+                     result.push([...combo])
+                     return
+                 }
+                 for(let i=start;i<arr.length;i++){
+                     combo.push(arr[i])
+                     helper(i+1,combo)
+                     combo.pop()
+                 }
+             }
+         
+             helper(0,[])
+             return result
+         }
+         
+         async function loadSongs(){
+         
+             const data = await fetch(DATA_URL).then(r => r.json())
+         
+             songs = []
+         
+             for (const row of data) {
+         
+                 // Stop parsing when we hit a blank Name cell
+                 if (!row.Name || row.Name.trim() === "") break
+         
+                 songs.push({
+         
+                     name: row.Name,
+                     artist: row.Artist,
+                     tags: parseTags(row.Tags),
+                     views: Number(row.Views) || 0,
+                     prod: row["Production Quality"],
+                     link: row.Link
+         
+                 })
+             }
+         console.log(songs[0]);
+             console.log("Loaded songs:", songs.length)
+         
+             buildAllCombinations()
+         }
+         
+         function buildAllCombinations(){
+         
+             const k=Number(getInput("NumberOfSongs"))||3
+             allCombos=generateCombinations(songs,k)
+         
+             console.log("Combinations:",allCombos.length)
+         }
+         
+         function passesConditions(combo){
+         
+             const singleExclude=parseTags(getInput("SingleExclude"))
+             const singleInclude=parseTags(getInput("SingleInclude"))
+             const allExclude=parseTags(getInput("AllExclude"))
+             const allInclude=parseTags(getInput("AllInclude"))
+         
+             for(const tag of allExclude){
+                 if(combo.some(s=>s.tags.includes(tag)))return false
+             }
+         
+             for(const tag of allInclude){
+                 if(!combo.every(s=>s.tags.includes(tag)))return false
+             }
+         
+             for(const tag of singleExclude){
+                 if(!combo.some(s=>!s.tags.includes(tag)))return false
+             }
+         
+             for(const tag of singleInclude){
+                 if(!combo.some(s=>s.tags.includes(tag)))return false
+             }
+         
+             return true
+         }
+         
+         function countSharedTags(combo){
+         
+             const counts={}
+         
+             combo.forEach(s=>{
+                 s.tags.forEach(t=>{
+                     counts[t]=(counts[t]||0)+1
+                 })
+             })
+         
+             let two=0
+             let three=0
+         
+             Object.values(counts).forEach(v=>{
+                 if(v>=2)two++
+                 if(v>=3)three++
+             })
+         
+             return{two,three}
+         }
+         
+         function repeatArtists(combo){
+         
+             const map={}
+             combo.forEach(s=>{
+                 map[s.artist]=(map[s.artist]||0)+1
+             })
+         
+             let repeats=0
+         
+             Object.values(map).forEach(v=>{
+                 if(v>1)repeats+=v-1
+             })
+         
+             return repeats
+         }
+         
+         function productionScore(combo){
+
+			const weights={
+				Standard:getNum("Standard"),
+				High:getNum("High"),
+				Aggressive:getNum("Aggressive"),
+				Gimmick:getNum("Gimmick"),
+				IndieMode:getNum("IndieMode")
+				
+			}
+			let score=0
+
+			combo.forEach(song=>{
+				const tag=song.prod// normalize spaces
+				console.log(tag);
+				if(weights[tag] != null){
+					score += weights[tag]
+				}
+			})
+			
+			console.log(score);
+			return score
+		}
+         
+         function computeScore(combo){
+
+			const viewWeight=getNum("ViewCount")
+			const twoTagWeight=getNum("TwoTag")
+			const threeTagWeight=getNum("ThreeTag")
+			const repeatWeight=getNum("RepeatArtist")
+
+			const avgViews=combo.reduce((a,b)=>a+b.views,0)/combo.length
+			const viewScore=avgViews*viewWeight
+
+			const tagData=countSharedTags(combo)
+
+			const twoTagScore=tagData.two*twoTagWeight
+			const threeTagScore=tagData.three*threeTagWeight
+
+			const repeat=repeatArtists(combo)
+			const repeatScore=repeat*repeatWeight
+
+			const prodScore=productionScore(combo)
+
+			const total=viewScore + twoTagScore + threeTagScore + repeatScore + prodScore
+
+			return{
+				total,
+				breakdown:{
+					avgViews,
+					viewScore,
+					twoTags:tagData.two,
+					twoTagScore,
+					threeTags:tagData.three,
+					threeTagScore,
+					repeatArtists:repeat,
+					repeatScore,
+					prodScore
+				}
+			}
+		}
+         
+         function render(list){
+
+			const container=document.getElementById("listContainer")
+			container.innerHTML=""
+
+			list.forEach(entry=>{
+
+				const combo=entry.combo
+				const b=entry.breakdown
+
+				const comboDiv=document.createElement("div")
+				comboDiv.className="combo"
+
+				const header=document.createElement("div")
+				header.style.width="100%"
+				header.style.marginBottom="6px"
+
+				header.innerHTML=
+				"<b>Score: "+entry.score.toFixed(2)+"</b><br>"+
+				"Views: "+b.viewScore.toFixed(2)+
+				" | Production: "+b.prodScore+
+				" | 2-Tag: "+b.twoTagScore+
+				" | 3+-Tag: "+b.threeTagScore+
+				" | Repeat Artists: "+b.repeatScore
+
+				comboDiv.appendChild(header)
+         
+                 combo.forEach(song=>{
+         
+                     const box=document.createElement("div")
+                     box.className="songBox"
+         
+                     const title=document.createElement("div")
+                     title.innerHTML="<b>"+song.name+"</b> - "+song.artist
+         
+                     const tags=document.createElement("div")
+                     tags.className="songTags"
+                     tags.innerText=song.tags.join(" | ")
+         
+                     box.appendChild(title)
+                     box.appendChild(tags)
+         
+                     box.onclick=()=>{
+                         navigator.clipboard.writeText(song.link)
+                         showToast()
+                     }
+         
+                     comboDiv.appendChild(box)
+         
+                 })
+         
+                 container.appendChild(comboDiv)
+         
+             })
+         
+         }
+         
+         function showToast(){
+         
+             const t=document.getElementById("toast")
+             t.style.opacity=1
+             setTimeout(()=>t.style.opacity=0,1000)
+         
+         }
+         
+         function sortList(){
+         
+             const filtered=allCombos.filter(passesConditions)
+         
+             const scored=filtered.map(c=>{
+    const result=computeScore(c)
+    return{
+        combo:c,
+        score:result.total,
+        breakdown:result.breakdown
+    }
+})
+
+scored.sort((a,b)=>b.score-a.score)
+         
+             render(scored)
+         }
+         
+         document.getElementById("sortBtn").onclick=sortList
+         document.getElementById("reloadBtn").onclick=loadSongs
+         
+         loadSongs()
+         
+      </script>
+   </body>
+</html>
