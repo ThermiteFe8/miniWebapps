@@ -8,6 +8,7 @@
 	--backdrop-color:#000000;
 	--default-button-color:#AE7BBA;
 	--highlighted-button-color:#FF9756;
+	--disabled-button-color:#8A89A9;
 	--first-shadow-color:rgba(6, 6, 32, 0.57);
 	--second-shadow-color:#1A1857C9;
 	--first-highlight-color:#FF9756;
@@ -368,6 +369,12 @@ md-block ul, ol {
 #chapterNavContainer button:hover
 {
 	background-color:var(--highlighted-button-color)
+}
+
+#chapterNavContainer button:disabled
+{
+	background-color:var(--disabled-button-color);
+	cursor:not-allowed;
 }
 
 #chapterNavContainer select

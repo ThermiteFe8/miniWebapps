@@ -1,44 +1,87 @@
 {
     "stories":  {
-                    "placeholderStory":  [
+                    "Placeholder Story":  [
+                                              {
+                                                  "title":  "Chapter 1",
+                                                  "date":  "06/11/2026",
+                                                  "filepath":  "stories/Placeholder Story/Chapter 1.md",
+                                                  "imagepath":  "stories/Placeholder Story/Chapter 1.png",
+                                                  "audiopath":  "stories/Placeholder Story/Chapter 1.wav"
+                                              },
+                                              {
+                                                  "title":  "Chapter 2",
+                                                  "date":  "06/11/2026",
+                                                  "filepath":  "stories/Placeholder Story/Chapter 2.md",
+                                                  "imagepath":  "stories/Placeholder Story/Chapter 2.png",
+                                                  "audiopath":  "stories/Placeholder Story/Chapter 2.wav"
+                                              },
+                                              {
+                                                  "title":  "Chapter 3",
+                                                  "date":  "06/11/2026",
+                                                  "filepath":  "stories/Placeholder Story/Chapter 3.md",
+                                                  "imagepath":  "stories/Placeholder Story/Chapter 3.png",
+                                                  "audiopath":  "stories/Placeholder Story/Chapter 3.wav"
+                                              },
+                                              {
+                                                  "title":  "Chapter 4",
+                                                  "date":  "06/11/2026",
+                                                  "filepath":  "stories/Placeholder Story/Chapter 4.md",
+                                                  "imagepath":  "stories/Placeholder Story/Chapter 4.png",
+                                                  "audiopath":  "stories/Placeholder Story/Chapter 4.wav"
+                                              },
+                                              {
+                                                  "title":  "Chapter 5",
+                                                  "date":  "06/11/2026",
+                                                  "filepath":  "stories/Placeholder Story/Chapter 5.md",
+                                                  "imagepath":  "stories/Placeholder Story/Chapter 5.png",
+                                                  "audiopath":  "stories/Placeholder Story/Chapter 5.wav"
+                                              }
+                                          ],
+                    "placeholderTitle":  [
                                              {
-                                                 "filepath":  "stories/placeholderStory/Chapter 1.md",
-                                                 "title":  "The First Chapter",
-                                                 "imagepath":  "stories/placeholderStory/Chapter 1.png",
-                                                 "date":  "12/6/2025"
+                                                 "title":  "Chapter 1",
+                                                 "date":  "06/11/2026",
+                                                 "filepath":  "stories/placeholderTitle/Chapter 1.md",
+                                                 "imagepath":  "stories/placeholderTitle/Chapter 1.png",
+                                                 "audiopath":  "stories/placeholderTitle/Chapter 1.wav"
                                              },
                                              {
-                                                 "filepath":  "stories/placeholderStory/Chapter 2.md",
-                                                 "title":  "The Next Chapter",
-                                                 "imagepath":  "stories/placeholderStory/Chapter 2.png",
-                                                 "date":  "1/5/2026"
+                                                 "title":  "Chapter 2",
+                                                 "date":  "06/11/2026",
+                                                 "filepath":  "stories/placeholderTitle/Chapter 2.md",
+                                                 "imagepath":  "stories/placeholderTitle/Chapter 2.png",
+                                                 "audiopath":  "stories/placeholderTitle/Chapter 2.wav"
                                              },
                                              {
-                                                 "filepath":  "stories/placeholderStory/Chapter 3.md",
-                                                 "title":  "Chapter Three",
-                                                 "imagepath":  "stories/placeholderStory/Chapter 3.png",
-                                                 "date":  "2/2/2026"
+                                                 "title":  "Chapter 3",
+                                                 "date":  "06/11/2026",
+                                                 "filepath":  "stories/placeholderTitle/Chapter 3.md",
+                                                 "imagepath":  "stories/placeholderTitle/Chapter 3.png",
+                                                 "audiopath":  "stories/placeholderTitle/Chapter 3.wav"
                                              },
                                              {
-                                                 "filepath":  "stories/placeholderStory/Chapter 4.md",
-                                                 "title":  "John Chapter",
-                                                 "imagepath":  "stories/placeholderStory/Chapter 4.png",
-                                                 "date":  "2/14/2026"
+                                                 "title":  "Chapter 4",
+                                                 "date":  "06/11/2026",
+                                                 "filepath":  "stories/placeholderTitle/Chapter 4.md",
+                                                 "imagepath":  "stories/placeholderTitle/Chapter 4.png",
+                                                 "audiopath":  "stories/placeholderTitle/Chapter 4.wav"
                                              },
                                              {
-                                                 "filepath":  "stories/placeholderStory/Chapter 5.md",
-                                                 "title":  "John Chapter 2",
-                                                 "imagepath":  "stories/placeholderStory/Chapter 5.png",
-                                                 "date":  "4/19/2026"
+                                                 "title":  "Chapter 5",
+                                                 "date":  "06/11/2026",
+                                                 "filepath":  "stories/placeholderTitle/Chapter 5.md",
+                                                 "imagepath":  "stories/placeholderTitle/Chapter 5.png",
+                                                 "audiopath":  "stories/placeholderTitle/Chapter 5.wav"
                                              }
                                          ]
                 },
     "root":  {
                  "root":  {
+                              "title":  "Recipes",
+                              "date":  "06/10/2026",
                               "filepath":  "Recipes.md",
-                              "title":  "Placeholder",
                               "imagepath":  "Recipes.png",
-                              "date":  "1/1/1900"
+                              "audiopath":  "Recipes.wav"
                           }
              }
 }

@@ -26,27 +26,34 @@ if (Test-Path $output) {
 }
 
 # -----------------------------
-# Build new structure
+# Build tree
 # -----------------------------
 $tree = @{}
 
 Get-ChildItem -Recurse -Filter *.md | ForEach-Object {
 
-    $fullPath = $_.FullName
+    $file = $_
+    $fullPath = $file.FullName
 
     # relative path
     $relativePath = $fullPath.Substring($PSScriptRoot.Length + 1)
     $relativePath = $relativePath -replace '\\','/'
 
     $imagePath = $relativePath -replace '\.md$','.png'
+	$audioPath = $relativePath -replace '\.md$','.wav'
 
-    # split folders
+    # file name as title
+    $title = [System.IO.Path]::GetFileNameWithoutExtension($file.Name)
+
+    # creation date formatted
+    $date = $file.CreationTime.ToString("MM/dd/yyyy")
+
+    # folder split
     $parts = $relativePath -split '/'
 
     $top = if ($parts.Count -ge 2) { $parts[0] } else { "root" }
     $sub = if ($parts.Count -ge 3) { $parts[1] } else { "root" }
 
-    # init structure
     if (-not $tree.ContainsKey($top)) {
         $tree[$top] = @{}
     }
@@ -56,14 +63,16 @@ Get-ChildItem -Recurse -Filter *.md | ForEach-Object {
     }
 
     if ($existing.ContainsKey($relativePath)) {
+        # preserve existing metadata (but allow title/date updates if you want)
         $tree[$top][$sub] += $existing[$relativePath]
     }
     else {
         $tree[$top][$sub] += [PSCustomObject]@{
-            filepath  = $relativePath
-            title     = ""
+            title     = $title
+			date      = $date
+			filepath  = $relativePath      
             imagepath = $imagePath
-            date      = ""
+            audiopath = $audioPath
         }
     }
 }
@@ -100,4 +109,4 @@ foreach ($topKey in @($tree.Keys)) {
 # -----------------------------
 $tree | ConvertTo-Json -Depth 10 | Set-Content $output
 
-Write-Host "Done. Nested JSON updated."
+Write-Host "Done scanning files. Open markdownFiles.json if you wanna edit defaults :3"
