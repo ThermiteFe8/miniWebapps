@@ -1,0 +1,460 @@
+:root
+{
+	--border-highlight:#46334E;
+	--border-shadow:#000000;
+	--bar-color:#414769;
+	--center-color:#3E2738;
+	--item-color:#CCBFFF;
+	--backdrop-color:#000000;
+	--default-button-color:#AE7BBA;
+	--highlighted-button-color:#FF9756;
+	--first-shadow-color:rgba(6, 6, 32, 0.57);
+	--second-shadow-color:#1A1857C9;
+	--first-highlight-color:#FF9756;
+	--second-highlight-color:#FFA5A5B8;
+	--third-highlight-color:#FDFDFF;
+	--third-shadow-color:#7265C3;
+	--hyperlink-color:#A9BAFF;
+}
+/**
+* @license
+*
+* Font Family: Amulya
+* Designed by: Joana Correia
+* URL: https://www.fontshare.com/fonts/amulya
+* © 2026 Indian Type Foundry
+*
+* Amulya Bold 
+
+*
+*/
+@font-face {
+  font-family: 'Amulya-Bold';
+  src: url('../fonts/Amulya-Bold.woff2') format('woff2'),
+       url('../fonts/Amulya-Bold.woff') format('woff'),
+       url('../fonts/Amulya-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+	
+}
+
+/**
+* @license
+*
+* Font Family: Synonym
+* Designed by: Hugo Dumont
+* URL: https://www.fontshare.com/fonts/synonym
+* © 2026 Indian Type Foundry
+*
+* Synonym Regular 
+
+*
+*/
+@font-face {
+  font-family: 'Synonym-Regular';
+  src: url('../fonts/Synonym-Regular.woff2') format('woff2'),
+       url('../fonts/Synonym-Regular.woff') format('woff'),
+       url('../fonts/Synonym-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
+
+h1, h2, h3, a
+{
+	font-family:Amulya;
+}
+p, li
+{
+	font-family:Synonym;
+}
+html
+{
+	background-color:var(--backdrop-color);
+	--background-image:url("img/tesBg.png");
+	background-size:cover;
+	background-attachment:fixed;
+	/*! background-size: 100%; */
+	/*! width: 110%; */
+	background-repeat: repeat-x;
+	
+}
+body
+{
+	margin:auto;
+	min-height: 100vh;
+	width: 100%;
+}
+
+#footerbar
+{
+	/*! border-width:2vh; */
+	/*! border-style:solid; */
+	/*! border-top-color: var(--border-highlight); */
+	/*! border-left-color:var(--border-highlight); */
+	/*! border-right-color:var(--border-shadow); */
+	/*! border-bottom-color:var(--border-shadow); */
+	background-color:var(--bar-color);
+	margin-top:10vh;
+	width:100%;
+	display:flex;
+	font-size:3.5vh;
+	align-content:stretch;
+	justify-content:flex-end;
+	min-height:5vh;
+	margin-right:5%;
+	/*! box-shadow: inset 0.35vh 0.35vh var(--second-highlight-color); */
+}
+#footerbar *
+{
+	margin-top:1vh;
+	margin-bottom:1vh;
+	min-height:3.5vh;
+	min-width:8.5vh;
+	margin-right:2vh;
+	color:white;
+}
+
+
+
+#footerbar a
+{
+	text-decoration:underline;
+}
+.rightItems
+{
+	margin-right:2vh;
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+.dropbtn:hover, .dropbtn:focus {
+  
+  --background-color: var(--highlighted-button-color);
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin-left:0.75vh;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--bar-color);
+  font-size:2.5vh;
+  min-width: 30vw;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 0.5em 0.5em;
+  text-decoration: none;
+  display: block;
+}
+
+#AllDropdown a
+{
+	margin-left:0;
+	color:white;
+	font-family: Synonym;
+	font-size:3.6vh;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+.homeBtn
+{
+	height:10.5vh;
+	/*! margin: 0; */
+	padding: 0;
+	margin-top: 1vh;
+}
+.dropbtn {
+	max-height:100%;
+  /*! background-color:var(--default-button-color); */
+  color: white;
+  /*! padding: 0.5em; */
+  font-size: 3.6vh;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.5s;
+  /*! box-shadow: 0vh 0vh var(--first-shadow-color), inset 0.5vh 0.5vh var(--second-highlight-color); */
+  /*! border-width:0.7vh; */
+	/*! border-style:solid; */
+	background-color:var(--bar-color);
+	margin: 0;
+	/*! padding: 10; */
+	font-family: Synonym;
+	/*! font-family: Amulya; */
+}
+
+.show {display:block;} 
+
+#headerbar, #headerbarsmall
+{
+	/*! border-width:1vh; */
+	/*! border-style:solid; */
+	/*! border-top-color: var(--border-highlight); */
+	/*! border-left-color:var(--border-highlight); */
+	/*! border-right-color:var(--border-shadow); */
+	/*! border-bottom-color:var(--border-shadow); */
+	/*! background-color:var(--bar-color); */
+	color:black;
+	display:flex;
+	flex-wrap:wrap;
+	background-color:var(--bar-color);
+	/*! overflow:visible; */
+	/*! font-size:5vh; */
+	/*! width:99%; */
+	/*! box-shadow: 0vh 1.55vh var(--first-shadow-color), inset 0.7vh 0.7vh var(--second-highlight-color); */
+	justify-content: space-between;
+	align-items: center;
+	height:8vh;
+	width: 100%;
+}
+
+.rightItems > a
+{
+	font-family:Synonym;
+	color:white;
+	font-size:3.6vh;
+	margin-right:0.2vh;
+	margin-left:2.5vh;
+	text-decoration:none;
+}
+
+
+#centralContent
+{
+	display:flex;
+	flex-direction:column;
+	background-color:#33365C;
+	margin-left:auto;
+	margin-right:auto;
+	/*! box-shadow: 2vh 2vh var(--first-shadow-color), inset 1.2vh 1.2vh var(--first-highlight-color); */
+	/*! border-width:2vh; */
+	/*! border-style:solid; */
+	/*! border-top-color: var(--border-highlight); */
+	/*! border-left-color:var(--border-highlight); */
+	/*! border-right-color:var(--border-shadow); */
+	/*! border-bottom-color:var(--border-shadow); */
+	color:white;
+	border-radius:1.5vh;
+	min-height:77vh;
+}
+
+#centralContent a
+{
+	color:var(--hyperlink-color);
+	transition: color 0.5s, transform 0.4s, background-color 0.5s;
+	transform:scale(1);
+	display:inline-block;
+	cursor:pointer;
+	text-decoration: none;
+}
+
+#centralContent a:hover, #centralContent a:focus
+{
+	color:var(--highlighted-button-color);
+	transform:scale(1.01);
+}
+
+
+#title {
+  text-align: center;
+  margin-bottom: 0.8vh;
+  font-size: 6vh;
+}
+#audioContainer {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  
+}
+#audioContainer * {
+  margin-top: 0;
+  margin-bottom: 1.5vh;
+  /*! margin-left: auto; */
+  /*! margin-right: auto; */
+  height: 6vh;
+  font-size: 4.5vh;
+  width: 45vh;
+  text-align: center;
+  max-width: 90%;
+}
+
+
+#mdBlockContainer {
+  max-width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#mdBlockContainer img{
+  margin-left:auto;
+	margin-right:auto;
+	max-width:100%;
+  margin-top: 4vh;
+}
+
+#mdBlockContainer h1
+{
+  text-align:center;
+}
+#mdBlockContainer h2
+{
+  text-align:center;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  font-size: 4.5vh;
+}
+#mdBlockContainer h3
+{
+  text-align:left;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+  font-size: 3.5vh;
+}
+#mdBlockContainer p, a
+{
+	font-size:2.5vh;
+	margin-top: 2vh;
+	margin-bottom: 2vh;
+}
+
+
+md-block ul, ol {
+  font-size: 2.5vh;
+}
+
+
+#chapterNavContainer {
+  display: flex;
+  max-width: 95%;
+  justify-content: space-evenly;
+  font-family: Synonym;
+  margin-bottom: 5vh;
+  margin-top: 3vh;
+  font-size: 4vh;
+	flex-wrap:wrap;
+	align-items:center;
+}
+
+#chapterNavContainer button
+{
+	font-size:3vh;
+	font-family: Amulya;
+	background-color:var(--item-color);
+	border:none;
+	padding:1vh;
+	max-width:10vh;
+	cursor:pointer;
+	margin-top:2vh;
+	margin-bottom:2vh;
+	border-radius:0.8vh;
+	height:7vh;
+}
+
+#chapterNavContainer button:hover
+{
+	background-color:var(--highlighted-button-color)
+}
+
+#chapterNavContainer select
+{
+	background-color:var(--item-color);
+	border:none;
+	border-radius:0.8vh;
+	font-family:Synonym;
+	font-size:2.75vh;
+	padding:1.3vh;
+	flex-shrink: 1;
+	height:7vh;
+}
+
+@media screen and (width > 155vh)
+{
+	#centralContent
+	{
+		width:121vh;
+		margin-top:2vh;
+	}
+	.headerLink
+	{
+		display:inline;		
+	}
+	.dropdown 
+	{
+	  display: none;
+	}
+	#audioContainer {
+  flex-direction: row;
+	  max-width: 100%;
+		justify-content: space-evenly;
+  margin-top: 1.5vh;
+  }
+
+}
+@media screen and (110vh <= width <= 155vh)
+{
+	#centralContent
+	{
+		width:100vh;
+		margin-top:8vh;
+	}
+	.headerLink
+	{
+		display:none;		
+	}
+	.dropdown 
+	{
+	  display: inline-block;
+	}
+	#audioContainer {
+  flex-direction: column;
+		 max-width: 100%;
+		justify-content: center;
+  }
+	#audioContainer *
+	{
+	 margin-left: auto;
+  margin-right: auto;
+	}
+}
+
+@media screen and (width < 110vh)
+{
+	#centralContent
+	{
+		width:88vw;
+		margin-top:3.5vh;
+	}
+	.headerLink
+	{
+		display:none;		
+	}
+	.dropdown 
+	{
+	  display: inline-block;
+	}
+	#audioContainer {
+  flex-direction: column;
+		 max-width: 100%;
+		justify-content: center;
+  }
+	#audioContainer *
+	{
+	 margin-left: auto;
+  margin-right: auto;
+	}
+}

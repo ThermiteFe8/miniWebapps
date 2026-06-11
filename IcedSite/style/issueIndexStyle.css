@@ -1,0 +1,270 @@
+
+@media screen and (width > 155vh)
+{
+	#issueIndexHead
+{
+	text-align:center;
+	font-size:7vh;
+	text-decoration:underline;
+	margin-top:4vh;
+	margin-bottom:3vh;
+}
+
+.indexDivContainer
+{
+	display:flex;
+	flex-direction:row;
+	
+	
+	align-items:center;
+	height:40vh;
+}
+
+
+.indexContainer
+{
+	color:white;
+	text-decoration:none;
+	background-color:var(--default-button-color);
+	box-shadow: 1.5vh 1.5vh var(--first-shadow-color), inset 0.6vh 0.6vh var(--first-highlight-color);
+	border-width:1.4vh;
+	border-style:solid;
+	border-top-color: var(--border-highlight);
+	border-left-color:var(--border-highlight);
+	border-right-color:var(--border-shadow);
+	border-bottom-color:var(--border-shadow);
+		width:100vh;
+		margin-left:auto;
+	margin-right:auto;
+	margin-bottom:5vh;
+	transition:background-color 0.5s;
+}
+
+.indexContainer:hover, .indexContainer:focus
+{
+	background-color:var(--highlighted-button-color);
+}
+
+.indexCoverContainer
+{
+	width:27vh;
+	margin-left:3vh;
+	margin-top:1vh;
+}
+
+.indexCoverContainer img
+{
+	width:100%;
+}
+
+.indexTextContainer
+{
+	display:flex;
+	flex-direction:column;
+	width:60vh;
+	margin-left:3vh;
+	margin-right:3vh;
+}
+
+.indexTextContainer h2
+{
+	text-align:center;
+	font-size:5vh;
+	color:white;
+	text-decoration:underline;
+	text-decoration-color:white;
+	margin-top:2.5vh;
+	margin-bottom:1vh;
+	
+}
+.indexTextContainer p
+{
+	font-size:3vh;
+	color:white;
+	text-indent:5.5vh;
+	 overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 7;
+  -webkit-box-orient: vertical;
+}
+}
+@media screen and (110vh <= width <= 155vh)
+{
+#issueIndexHead
+{
+	text-align:center;
+	font-size:7vh;
+	text-decoration:underline;
+	margin-top:4vh;
+	margin-bottom:3vh;
+}
+
+.indexDivContainer
+{
+	display:flex;
+	flex-direction:row;
+	
+	
+	align-items:center;
+	height:40vh;
+}
+
+
+.indexContainer
+{
+	color:white;
+	text-decoration:none;
+	background-color:var(--default-button-color);
+	box-shadow: 1.5vh 1.5vh var(--first-shadow-color), inset 0.6vh 0.6vh var(--first-highlight-color);
+	border-width:1.4vh;
+	border-style:solid;
+	border-top-color: var(--border-highlight);
+	border-left-color:var(--border-highlight);
+	border-right-color:var(--border-shadow);
+	border-bottom-color:var(--border-shadow);
+		width:84vh;
+		margin-left:auto;
+	margin-right:auto;
+	margin-bottom:5vh;
+	transition:background-color 0.5s;
+}
+
+.indexContainer:hover, .indexContainer:focus
+{
+	background-color:var(--highlighted-button-color);
+}
+
+.indexCoverContainer
+{
+	width:27vh;
+	margin-left:3vh;
+	margin-top:1vh;
+}
+
+.indexCoverContainer img
+{
+	width:100%;
+}
+
+.indexTextContainer
+{
+	display:flex;
+	flex-direction:column;
+	width:60vh;
+	margin-left:3vh;
+	margin-right:3vh;
+}
+
+.indexTextContainer h2
+{
+	text-align:center;
+	font-size:5vh;
+	color:white;
+	text-decoration:underline;
+	text-decoration-color:white;
+	margin-top:2.5vh;
+	margin-bottom:1vh;
+	
+}
+.indexTextContainer p
+{
+	font-size:3vh;
+	color:white;
+	text-indent:5.5vh;
+	 overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+}
+}
+
+@media screen and (width < 110vh)
+{
+#issueIndexHead
+{
+	text-align:center;
+	font-size:10vw;
+	text-decoration:underline;
+	margin-top:7vw;
+	margin-bottom:5vw;
+}
+
+.indexDivContainer
+{
+	display:flex;
+	flex-direction:row;
+	
+	
+	align-items:center;
+	height:40vw;
+}
+
+
+.indexContainer
+{
+	color:white;
+	text-decoration:none;
+	background-color:var(--default-button-color);
+	box-shadow: 1.5vh 1.5vh var(--first-shadow-color), inset 0.6vh 0.6vh var(--first-highlight-color);
+	border-width:2.2vw;
+	border-style:solid;
+	border-top-color: var(--border-highlight);
+	border-left-color:var(--border-highlight);
+	border-right-color:var(--border-shadow);
+	border-bottom-color:var(--border-shadow);
+		width:90%;
+		margin-left:auto;
+	margin-right:auto;
+	margin-bottom:5vw;
+	transition:background-color 0.5s;
+}
+
+.indexContainer:hover, .indexContainer:focus
+{
+	background-color:var(--highlighted-button-color);
+}
+
+.indexCoverContainer
+{
+	width:27vh;
+	margin-left:3.5vw;
+	margin-top:1vw;
+}
+
+.indexCoverContainer img
+{
+	width:100%;
+}
+
+.indexTextContainer
+{
+	display:flex;
+	flex-direction:column;
+	width:60vh;
+	margin-left:2vw;
+	margin-right:2vw;
+}
+
+.indexTextContainer h2
+{
+	text-align:center;
+	font-size:4vw;
+	color:white;
+	text-decoration:underline;
+	text-decoration-color:white;
+	margin-top:2.5vh;
+	margin-bottom:-1.5vw;
+	
+}
+.indexTextContainer p
+{
+	font-size:3.5vw;
+	color:white;
+	text-indent:6.5vw;
+	 overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+}
+}
+

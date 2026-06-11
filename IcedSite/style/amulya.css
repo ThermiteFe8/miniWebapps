@@ -1,0 +1,22 @@
+/**
+* @license
+*
+* Font Family: Amulya
+* Designed by: Joana Correia
+* URL: https://www.fontshare.com/fonts/amulya
+* © 2026 Indian Type Foundry
+*
+* Amulya Bold 
+
+*
+*/
+@font-face {
+  font-family: 'Amulya-Bold';
+  src: url('../fonts/Amulya-Bold.woff2') format('woff2'),
+       url('../fonts/Amulya-Bold.woff') format('woff'),
+       url('../fonts/Amulya-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+

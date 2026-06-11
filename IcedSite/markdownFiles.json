@@ -1,0 +1,44 @@
+{
+    "stories":  {
+                    "placeholderStory":  [
+                                             {
+                                                 "filepath":  "stories/placeholderStory/Chapter 1.md",
+                                                 "title":  "The First Chapter",
+                                                 "imagepath":  "stories/placeholderStory/Chapter 1.png",
+                                                 "date":  "12/6/2025"
+                                             },
+                                             {
+                                                 "filepath":  "stories/placeholderStory/Chapter 2.md",
+                                                 "title":  "The Next Chapter",
+                                                 "imagepath":  "stories/placeholderStory/Chapter 2.png",
+                                                 "date":  "1/5/2026"
+                                             },
+                                             {
+                                                 "filepath":  "stories/placeholderStory/Chapter 3.md",
+                                                 "title":  "Chapter Three",
+                                                 "imagepath":  "stories/placeholderStory/Chapter 3.png",
+                                                 "date":  "2/2/2026"
+                                             },
+                                             {
+                                                 "filepath":  "stories/placeholderStory/Chapter 4.md",
+                                                 "title":  "John Chapter",
+                                                 "imagepath":  "stories/placeholderStory/Chapter 4.png",
+                                                 "date":  "2/14/2026"
+                                             },
+                                             {
+                                                 "filepath":  "stories/placeholderStory/Chapter 5.md",
+                                                 "title":  "John Chapter 2",
+                                                 "imagepath":  "stories/placeholderStory/Chapter 5.png",
+                                                 "date":  "4/19/2026"
+                                             }
+                                         ]
+                },
+    "root":  {
+                 "root":  {
+                              "filepath":  "Recipes.md",
+                              "title":  "Placeholder",
+                              "imagepath":  "Recipes.png",
+                              "date":  "1/1/1900"
+                          }
+             }
+}

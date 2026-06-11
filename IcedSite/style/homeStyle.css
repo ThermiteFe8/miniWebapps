@@ -1,0 +1,677 @@
+
+@media screen and (width > 155vh)
+{
+#homeTopContainer
+{
+	margin-left:5vh;
+	margin-right:5vh;
+	margin-top:5vh;
+	display:flex;
+	flex-direction:row;
+}
+
+#irisRenderContainer
+{
+	width:40vh;
+	margin-left:11vh;
+}
+
+#irisRenderContainer img
+{
+	max-width:100%;
+	filter: 
+				drop-shadow(-0.45vh -0.45vh 0 var(--first-highlight-color)) 
+                drop-shadow(-0.6vh -0.6vh 0 var(--border-highlight)) 
+                drop-shadow(0.6vh -0.6vh var(--border-highlight)) 
+                drop-shadow(-0.6vh 0.6vh 0 var(--border-highlight))
+				drop-shadow(0.9vh 0.9vh 0 var(--border-shadow)) 
+				drop-shadow(1.5vh 1.5vh var(--first-shadow-color));
+}
+
+#splashText
+{
+	margin-top:2vh;
+	text-align:center;
+	margin-left:8vh;
+}
+
+#splashText h1
+{
+	text-decoration:underline;
+	font-size:11vh;
+	margin-top:0vh;
+	margin-bottom:1vh;
+}
+
+#splashText h3
+{
+	font-size:4vh;
+	margin-bottom:0vh;
+}
+
+#splashText h2
+{
+	margin-top:2vh;
+	font-size:6vh;
+}
+
+#splashText p
+{
+	margin-top:4vh;
+	font-size:4.5vh;
+	font-style:italic;
+	max-width:59%;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+#homeMidContainer
+{
+	display:flex;
+	flex-direction:row;
+	margin-left:5vh;
+	margin-right:5vh;
+	margin-top:2vh;
+	
+}
+
+#homeMidContainer a
+{
+	text-decoration-color:white;
+}
+
+
+.highlightBox
+{
+	display:flex;
+	flex-direction:column;
+	width:32vh;
+	background-color:var(--default-button-color);
+	box-shadow: 1.5vh 1.5vh var(--first-shadow-color), inset 0.6vh 0.6vh var(--first-highlight-color);
+	border-width:1.4vh;
+	border-style:solid;
+	border-top-color: var(--border-highlight);
+	border-left-color:var(--border-highlight);
+	border-right-color:var(--border-shadow);
+	border-bottom-color:var(--border-shadow);
+	transition: background-color 0.5s
+}
+
+.highlightBox:hover, .highlightBox:focus
+{
+	background-color:var(--highlighted-button-color);
+	
+}
+
+.highlightBox div img
+{
+	height:20vh;
+	margin-left:3vh;
+	margin-bottom:2vh;
+	box-shadow: 0.75vh 0.75vh var(--first-shadow-color);
+}
+
+.highlightBox div
+{
+	display:flex;
+	flex-direction:row;
+}
+
+.highlightBox div div p
+{
+	color:white;
+	font-size:clamp(2vh, 2.7vh, 4.5vh);
+	margin-left:1vh;
+	margin-right:1vh;
+	text-decoration:none;
+	text-align:center;
+	margin-bottom:0vh;
+	margin-top:1vh;
+}
+.highlightBox div div h3
+{
+	text-align:center;
+	color:white;
+	font-size:3vh;
+	margin-bottom:0.5vh;
+	margin-top:1vh;
+}
+
+.highlightBox div div
+{
+	color:white;
+	font-size:2vh;
+	margin-left:1vh;
+	margin-right:2vh;
+	display:flex;
+	flex-direction:column;
+}
+
+.highlightBox h2
+{
+	font-size:4vh;
+	margin-top:1vh;
+	margin-bottom:1vh;
+	color:white;
+	
+	text-align:center;
+}
+
+.verticalDiv
+{
+	background-color:white;
+	width:0.5vh;
+	height:30.5vh;
+	margin-left:2.5vh;
+	margin-right:2.5vh;
+}
+
+#homeBottomContainer
+{
+	display:flex;
+	flex-direction:row;
+	justify-content:center;
+	gap:15vh;
+	margin-top:4vh;
+	margin-bottom:4vh;
+	
+}
+
+#homeBottomContainer a
+{
+	color:white;
+	text-decoration:none;
+}
+
+.bottomBoxes
+{
+	background-color:var(--default-button-color);
+	box-shadow: 1.5vh 1.5vh var(--first-shadow-color), inset 0.6vh 0.6vh var(--first-highlight-color);
+	border-width:1.4vh;
+	border-style:solid;
+	border-top-color: var(--border-highlight);
+	border-left-color:var(--border-highlight);
+	border-right-color:var(--border-shadow);
+	border-bottom-color:var(--border-shadow);
+	width:45vh;
+	transition: background-color 0.5s
+}
+
+.bottomBoxes h2
+{
+	text-decoration:underline;
+	text-align:center;
+	font-size:5vh;
+	margin-bottom:0vh;
+}
+
+.bottomBoxes p
+{
+	margin-top:2vh;
+	font-size:3vh;
+	text-align:center;
+}
+
+.bottomBoxes:hover, .bottomBoxes:focus
+{
+	background-color:var(--highlighted-button-color);
+}
+}
+@media screen and (110vh <= width <= 155vh)
+{
+	#homeTopContainer
+{
+	margin-left:5vh;
+	margin-right:5vh;
+	margin-top:5vh;
+	display:flex;
+	flex-direction:row;
+}
+
+#irisRenderContainer
+{
+	width:38vh;
+	margin-left:11vh;
+}
+
+#irisRenderContainer img
+{
+	max-width:100%;
+	filter: 
+				drop-shadow(-0.45vh -0.45vh 0 var(--first-highlight-color)) 
+                drop-shadow(-0.6vh -0.6vh 0 var(--border-highlight)) 
+                drop-shadow(0.6vh -0.6vh var(--border-highlight)) 
+                drop-shadow(-0.6vh 0.6vh 0 var(--border-highlight))
+				drop-shadow(0.9vh 0.9vh 0 var(--border-shadow)) 
+				drop-shadow(1.5vh 1.5vh var(--first-shadow-color));
+}
+
+#splashText
+{
+	margin-top:2vh;
+	text-align:center;
+	margin-left:8vh;
+}
+
+#splashText h1
+{
+	text-decoration:underline;
+	font-size:8vh;
+	margin-top:0vh;
+	margin-bottom:1vh;
+}
+
+#splashText h3
+{
+	font-size:3vh;
+	margin-bottom:0vh;
+}
+
+#splashText h2
+{
+	margin-top:2vh;
+	font-size:4vh;
+}
+
+#splashText p
+{
+	margin-top:4vh;
+	font-size:4vh;
+	font-style:italic;
+	max-width:59%;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+#homeMidContainer
+{
+	display:flex;
+	flex-direction:row;
+	margin-left:5vh;
+	margin-right:5vh;
+	margin-top:3vh;
+	
+}
+
+#homeMidContainer a
+{
+	text-decoration-color:white;
+}
+
+
+.highlightBox
+{
+	display:flex;
+	flex-direction:column;
+	width:25vh;
+	background-color:var(--default-button-color);
+	box-shadow: 1.5vh 1.5vh var(--first-shadow-color), inset 0.6vh 0.6vh var(--first-highlight-color);
+	border-width:1.4vh;
+	border-style:solid;
+	border-top-color: var(--border-highlight);
+	border-left-color:var(--border-highlight);
+	border-right-color:var(--border-shadow);
+	border-bottom-color:var(--border-shadow);
+	transition: background-color 0.5s
+}
+
+.highlightBox:hover, .highlightBox:focus
+{
+	background-color:var(--highlighted-button-color);
+	
+}
+
+.highlightBox div img
+{
+	/*! height:21vh; */
+	margin-left:3vh;
+	margin-bottom:2vh;
+	box-shadow: 0.75vh 0.75vh var(--first-shadow-color);
+	margin-right: 3vh;
+}
+
+.highlightBox div
+{
+	display:flex;
+	flex-direction:column;
+}
+
+.highlightBox div div p
+{
+	color:white;
+	font-size:clamp(2vh, 2.7vh, 4.5vh);
+	margin-left:1vh;
+	margin-right:1vh;
+	text-decoration:none;
+	text-align:center;
+	margin-bottom:0vh;
+	margin-top:1vh;
+	display: none;
+}
+.highlightBox div div h3
+{
+	text-align:center;
+	color:white;
+	font-size:3vh;
+	margin-bottom:2.5vh;
+	margin-top:0.5;
+}
+
+.highlightBox div div
+{
+	color:white;
+	font-size:2vh;
+	margin-left:1vh;
+	margin-right:2vh;
+	display:flex;
+	flex-direction:column;
+}
+
+.highlightBox h2
+{
+	font-size:4vh;
+	margin-top:1vh;
+	margin-bottom:1vh;
+	color:white;
+	
+	text-align:center;
+}
+
+.verticalDiv
+{
+	background-color:white;
+	width:5.5vh;
+	height:30.5vh;
+	margin-left:2.5vh;
+	margin-right:2.5vh;
+}
+
+#homeBottomContainer
+{
+	display:flex;
+	flex-direction:row;
+	justify-content:center;
+	gap:5vh;
+	margin-top:6vh;
+	margin-bottom:4vh;
+	
+}
+
+#homeBottomContainer a
+{
+	color:white;
+	text-decoration:none;
+}
+
+.bottomBoxes
+{
+	background-color:var(--default-button-color);
+	box-shadow: 1.5vh 1.5vh var(--first-shadow-color), inset 0.6vh 0.6vh var(--first-highlight-color);
+	border-width:1.4vh;
+	border-style:solid;
+	border-top-color: var(--border-highlight);
+	border-left-color:var(--border-highlight);
+	border-right-color:var(--border-shadow);
+	border-bottom-color:var(--border-shadow);
+	width:39vh;
+	transition: background-color 0.5s
+}
+
+.bottomBoxes h2
+{
+	text-decoration:underline;
+	text-align:center;
+	font-size:4.5vh;
+	margin-bottom:0vh;
+}
+
+.bottomBoxes p
+{
+	margin-top:2vh;
+	font-size:3vh;
+	text-align:center;
+	margin-left: 1vh;
+	margin-right: 1vh;
+}
+
+.bottomBoxes:hover, .bottomBoxes:focus
+{
+	background-color:var(--highlighted-button-color);
+}
+}
+
+@media screen and (width < 110vh)
+{
+	#homeTopContainer
+{
+	margin-left:3vh;
+	margin-right:3vh;
+	margin-top:2vh;
+	display:flex;
+	flex-direction:column-reverse;
+}
+
+#irisRenderContainer
+{
+	width:45%;
+	margin-left:auto;
+	margin-right: auto;
+}
+
+#irisRenderContainer img
+{
+	max-width:100%;
+	filter: 
+				drop-shadow(-0.45vh -0.45vh 0 var(--first-highlight-color)) 
+                drop-shadow(-0.6vh -0.6vh 0 var(--border-highlight)) 
+                drop-shadow(0.6vh -0.6vh var(--border-highlight)) 
+                drop-shadow(-0.6vh 0.6vh 0 var(--border-highlight))
+				drop-shadow(0.9vh 0.9vh 0 var(--border-shadow)) 
+				drop-shadow(1.5vh 1.5vh var(--first-shadow-color));
+}
+
+#splashText
+{
+	margin-top:2vh;
+	text-align:center;
+	margin-left:3vh;
+}
+
+#splashText h1
+{
+	text-decoration:underline;
+	font-size:13vw;
+	margin-top:0vh;
+	margin-bottom:1vh;
+}
+
+#splashText h3
+{
+	font-size:6vw;
+	margin-bottom:0vh;
+	margin-top: 0;
+}
+
+#splashText h2
+{
+	margin-top:0.5vh;
+	font-size:7vw;
+	margin-bottom: 2vh;
+}
+
+#splashText p
+{
+	margin-top:1vh;
+	font-size:5vw;
+	font-style:italic;
+	/*! max-width:59%; */
+	margin-left:1vh;
+	margin-right:1vh;
+}
+
+#homeMidContainer
+{
+	display:flex;
+	flex-direction:row;
+	margin-left:2vh;
+	margin-right:2vh;
+	margin-top:2vh;
+	
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 2vw;
+}
+
+#homeMidContainer a
+{
+	text-decoration-color:white;
+	/*! display: flex; */
+}
+
+
+.highlightBox
+{
+	display:flex;
+	flex-direction:column;
+	width:21.5vw;
+	background-color:var(--default-button-color);
+	box-shadow: 1.5vh 1.5vh var(--first-shadow-color), inset 0.6vh 0.6vh var(--first-highlight-color);
+	border-width:1.7vw;
+	border-style:solid;
+	border-top-color: var(--border-highlight);
+	border-left-color:var(--border-highlight);
+	border-right-color:var(--border-shadow);
+	border-bottom-color:var(--border-shadow);
+	transition: background-color 0.5s;
+	/*! flex-grow: 1; */
+}
+
+.highlightBox:hover, .highlightBox:focus
+{
+	background-color:var(--highlighted-button-color);
+	
+}
+
+.highlightBox div img
+{
+	/*! height:20vw; */
+	margin-left:2vw;
+	margin-bottom:0.5vh;
+	box-shadow: 0.75vh 0.75vh var(--first-shadow-color);
+	margin-right: 2vw;
+}
+
+.highlightBox div
+{
+	display:flex;
+	flex-direction:column;
+}
+
+.highlightBox div div p
+{
+	color:white;
+	font-size:clamp(2vh, 2.7vh, 4.5vh);
+	margin-left:1vh;
+	margin-right:1vh;
+	text-decoration:none;
+	text-align:center;
+	margin-bottom:0vh;
+	margin-top:1vh;
+	display: none;
+}
+.highlightBox div div h3
+{
+	text-align:center;
+	color:white;
+	font-size:4vw;
+	margin-bottom:1.5vh;
+	margin-top:1vh;
+}
+
+.highlightBox div div
+{
+	color:white;
+	font-size:2vh;
+	margin-left:1vw;
+	margin-right:1vw;
+	display:flex;
+	flex-direction:column;
+}
+
+.highlightBox h2
+{
+	font-size:3.8vw;
+	margin-top:1vh;
+	margin-bottom:1vh;
+	color:white;
+	
+	text-align:center;
+}
+
+.verticalDiv
+{
+	background-color:white;
+	/*! width:0.5vh; */
+	/*! height:30.5vh; */
+	/*! margin-left:2.5vh; */
+	/*! margin-right:2.5vh; */
+	display: none;
+}
+
+#homeBottomContainer
+{
+	display:flex;
+	flex-direction:row;
+	justify-content:center;
+	gap:5vw;
+	margin-top:4vh;
+	margin-bottom:4vh;
+	
+	margin-left: 1vh;
+	margin-right: 1vh;
+}
+
+#homeBottomContainer a
+{
+	color:white;
+	text-decoration:none;
+}
+
+.bottomBoxes
+{
+	background-color:var(--default-button-color);
+	box-shadow: 1.5vh 1.5vh var(--first-shadow-color), inset 0.6vh 0.6vh var(--first-highlight-color);
+	border-width:1.4vh;
+	border-style:solid;
+	border-top-color: var(--border-highlight);
+	border-left-color:var(--border-highlight);
+	border-right-color:var(--border-shadow);
+	border-bottom-color:var(--border-shadow);
+	width:32vw;
+	transition: background-color 0.5s
+}
+
+.bottomBoxes h2
+{
+	text-decoration:underline;
+	text-align:center;
+	font-size:6vw;
+	margin-bottom:0vh;
+}
+
+.bottomBoxes p
+{
+	margin-top:2vh;
+	font-size:3vw;
+	text-align:center;
+	margin-left: 1.3vw;
+	margin-right: 1.3vw;
+}
+
+.bottomBoxes:hover, .bottomBoxes:focus
+{
+	background-color:var(--highlighted-button-color);
+}
+
+}
+
