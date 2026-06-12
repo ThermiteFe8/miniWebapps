@@ -4,17 +4,27 @@ Set-Location $PSScriptRoot
 $output = "markdownFiles.json"
 
 # -----------------------------
-# Load existing JSON (optional)
+# Load existing JSON
 # -----------------------------
 $existing = @{}
+$existingFolderTitles = @{}
 
 if (Test-Path $output) {
     try {
         $json = Get-Content $output -Raw | ConvertFrom-Json
 
         foreach ($topKey in $json.PSObject.Properties.Name) {
+
+            # store folder title if exists
+            if ($json.$topKey.title) {
+                $existingFolderTitles[$topKey] = $json.$topKey.title
+            }
+
             foreach ($subKey in $json.$topKey.PSObject.Properties.Name) {
-                foreach ($entry in $json.$topKey.$subKey) {
+
+                if ($subKey -eq "title") { continue }
+
+                foreach ($entry in $json.$topKey.$subKey.items) {
                     $existing[$entry.filepath] = $entry
                 }
             }
@@ -33,46 +43,48 @@ $tree = @{}
 Get-ChildItem -Recurse -Filter *.md | ForEach-Object {
 
     $file = $_
-    $fullPath = $file.FullName
 
-    # relative path
-    $relativePath = $fullPath.Substring($PSScriptRoot.Length + 1)
+    $relativePath = $file.FullName.Substring($PSScriptRoot.Length + 1)
     $relativePath = $relativePath -replace '\\','/'
 
     $imagePath = $relativePath -replace '\.md$','.png'
 	$audioPath = $relativePath -replace '\.md$','.wav'
 
-    # file name as title
     $title = [System.IO.Path]::GetFileNameWithoutExtension($file.Name)
-
-    # creation date formatted
     $date = $file.CreationTime.ToString("MM/dd/yyyy")
 
-    # folder split
     $parts = $relativePath -split '/'
 
     $top = if ($parts.Count -ge 2) { $parts[0] } else { "root" }
     $sub = if ($parts.Count -ge 3) { $parts[1] } else { "root" }
 
+    # init top folder
     if (-not $tree.ContainsKey($top)) {
-        $tree[$top] = @{}
+        $tree[$top] = @{
+            title = if ($existingFolderTitles.ContainsKey($top)) { $existingFolderTitles[$top] } else { $top }
+        }
     }
 
+    # init subfolder
     if (-not $tree[$top].ContainsKey($sub)) {
-        $tree[$top][$sub] = @()
+        $tree[$top][$sub] = @{
+            title = if ($existingFolderTitles.ContainsKey($sub)) { $existingFolderTitles[$sub] } else { $sub }
+            items = @()
+        }
     }
 
     if ($existing.ContainsKey($relativePath)) {
-        # preserve existing metadata (but allow title/date updates if you want)
-        $tree[$top][$sub] += $existing[$relativePath]
+        $tree[$top][$sub].items += $existing[$relativePath]
     }
     else {
-        $tree[$top][$sub] += [PSCustomObject]@{
+        $tree[$top][$sub].items += [PSCustomObject]@{
             title     = $title
 			date      = $date
-			filepath  = $relativePath      
-            imagepath = $imagePath
+			filepath  = $relativePath
             audiopath = $audioPath
+            imagepath = $imagePath
+			synopsis = ""
+            
         }
     }
 }
@@ -90,16 +102,18 @@ Get-ChildItem -Recurse -Filter *.md | ForEach-Object {
 foreach ($topKey in @($tree.Keys)) {
     foreach ($subKey in @($tree[$topKey].Keys)) {
 
-        $tree[$topKey][$subKey] = $tree[$topKey][$subKey] | Where-Object {
+        if ($subKey -eq "title") { continue }
+
+        $tree[$topKey][$subKey].items = $tree[$topKey][$subKey].items | Where-Object {
             $existingFiles.ContainsKey($_.filepath)
         }
 
-        if ($tree[$topKey][$subKey].Count -eq 0) {
+        if ($tree[$topKey][$subKey].items.Count -eq 0) {
             $tree[$topKey].Remove($subKey)
         }
     }
 
-    if ($tree[$topKey].Count -eq 0) {
+    if (($tree[$topKey].Keys | Where-Object { $_ -ne "title" }).Count -eq 0) {
         $tree.Remove($topKey)
     }
 }
@@ -107,6 +121,6 @@ foreach ($topKey in @($tree.Keys)) {
 # -----------------------------
 # Output JSON
 # -----------------------------
-$tree | ConvertTo-Json -Depth 10 | Set-Content $output
+$tree | ConvertTo-Json -Depth 15 | Set-Content $output
 
-Write-Host "Done scanning files. Open markdownFiles.json if you wanna edit defaults :3"
+Write-Host "Scanned all files. Edit markdownFiles.json directly to change defaults :3"

@@ -1,87 +1,109 @@
 {
-    "stories":  {
-                    "Placeholder Story":  [
-                                              {
-                                                  "title":  "Chapter 1",
-                                                  "date":  "06/11/2026",
-                                                  "filepath":  "stories/Placeholder Story/Chapter 1.md",
-                                                  "imagepath":  "stories/Placeholder Story/Chapter 1.png",
-                                                  "audiopath":  "stories/Placeholder Story/Chapter 1.wav"
-                                              },
-                                              {
-                                                  "title":  "Chapter 2",
-                                                  "date":  "06/11/2026",
-                                                  "filepath":  "stories/Placeholder Story/Chapter 2.md",
-                                                  "imagepath":  "stories/Placeholder Story/Chapter 2.png",
-                                                  "audiopath":  "stories/Placeholder Story/Chapter 2.wav"
-                                              },
-                                              {
-                                                  "title":  "Chapter 3",
-                                                  "date":  "06/11/2026",
-                                                  "filepath":  "stories/Placeholder Story/Chapter 3.md",
-                                                  "imagepath":  "stories/Placeholder Story/Chapter 3.png",
-                                                  "audiopath":  "stories/Placeholder Story/Chapter 3.wav"
-                                              },
-                                              {
-                                                  "title":  "Chapter 4",
-                                                  "date":  "06/11/2026",
-                                                  "filepath":  "stories/Placeholder Story/Chapter 4.md",
-                                                  "imagepath":  "stories/Placeholder Story/Chapter 4.png",
-                                                  "audiopath":  "stories/Placeholder Story/Chapter 4.wav"
-                                              },
-                                              {
-                                                  "title":  "Chapter 5",
-                                                  "date":  "06/11/2026",
-                                                  "filepath":  "stories/Placeholder Story/Chapter 5.md",
-                                                  "imagepath":  "stories/Placeholder Story/Chapter 5.png",
-                                                  "audiopath":  "stories/Placeholder Story/Chapter 5.wav"
-                                              }
-                                          ],
-                    "placeholderTitle":  [
-                                             {
-                                                 "title":  "Chapter 1",
-                                                 "date":  "06/11/2026",
-                                                 "filepath":  "stories/placeholderTitle/Chapter 1.md",
-                                                 "imagepath":  "stories/placeholderTitle/Chapter 1.png",
-                                                 "audiopath":  "stories/placeholderTitle/Chapter 1.wav"
-                                             },
-                                             {
-                                                 "title":  "Chapter 2",
-                                                 "date":  "06/11/2026",
-                                                 "filepath":  "stories/placeholderTitle/Chapter 2.md",
-                                                 "imagepath":  "stories/placeholderTitle/Chapter 2.png",
-                                                 "audiopath":  "stories/placeholderTitle/Chapter 2.wav"
-                                             },
-                                             {
-                                                 "title":  "Chapter 3",
-                                                 "date":  "06/11/2026",
-                                                 "filepath":  "stories/placeholderTitle/Chapter 3.md",
-                                                 "imagepath":  "stories/placeholderTitle/Chapter 3.png",
-                                                 "audiopath":  "stories/placeholderTitle/Chapter 3.wav"
-                                             },
-                                             {
-                                                 "title":  "Chapter 4",
-                                                 "date":  "06/11/2026",
-                                                 "filepath":  "stories/placeholderTitle/Chapter 4.md",
-                                                 "imagepath":  "stories/placeholderTitle/Chapter 4.png",
-                                                 "audiopath":  "stories/placeholderTitle/Chapter 4.wav"
-                                             },
-                                             {
-                                                 "title":  "Chapter 5",
-                                                 "date":  "06/11/2026",
-                                                 "filepath":  "stories/placeholderTitle/Chapter 5.md",
-                                                 "imagepath":  "stories/placeholderTitle/Chapter 5.png",
-                                                 "audiopath":  "stories/placeholderTitle/Chapter 5.wav"
-                                             }
-                                         ]
+    "scripts":  {
+                    "md-block-main":  {
+                                          "title":  "md-block-main",
+                                          "items":  {
+                                                        "title":  "README",
+                                                        "date":  "12/27/2023",
+                                                        "filepath":  "scripts/md-block-main/README.md",
+                                                        "audiopath":  "scripts/md-block-main/README.wav",
+                                                        "imagepath":  "scripts/md-block-main/README.png",
+                                                        "synopsis":  ""
+                                                    }
+                                      },
+                    "title":  "scripts"
                 },
-    "root":  {
-                 "root":  {
-                              "title":  "Recipes",
-                              "date":  "06/10/2026",
-                              "filepath":  "Recipes.md",
-                              "imagepath":  "Recipes.png",
-                              "audiopath":  "Recipes.wav"
-                          }
-             }
+    "stories":  {
+                    "title":  "stories",
+                    "Placeholder Story":  {
+                                              "title":  "Placeholder Story",
+                                              "items":  [
+                                                            {
+                                                                "title":  "Chapter 1",
+                                                                "date":  "12/11/2025",
+                                                                "filepath":  "stories/Placeholder Story/Chapter 1.md",
+                                                                "audiopath":  "storieasdgfyytgddv.wav",
+                                                                "imagepath":  "stories/Placeholder Story/Chapter 1.png",
+																"synopsis":  "Fuck. I highkenuinely hate using Lorem Ipsum placeholder text, but I don't have a ready-made summary of the bullshit I've written. This is the story of a man named Stanley. Oh no maybe I'll get hella copyrighted for that."
+                                                            },
+                                                            {
+                                                                "title":  "Chapter 2!!! I love \"quote marks",
+                                                                "date":  "01/03/2026",
+                                                                "filepath":  "stories/Placeholder Story/Chapter 2.md",
+                                                                "audiopath":  "stories/Placeholder Story/Chapter 2.wav",
+                                                                "imagepath":  "stories/Placeholder Story/Chapter 2.png",
+																"synopsis":  "Fuck. I highkenuinely hate using Lorem Ipsum placeholder text, but I don't have a ready-made summary of the bullshit I've written. This is the story of a man named Stanley. Oh no maybe I'll get hella copyrighted for that."
+                                                            },
+                                                            {
+                                                                "title":  "Chapter 3",
+                                                                "date":  "02/04/2026",
+                                                                "filepath":  "stories/Placeholder Story/Chapter 3.md",
+                                                                "audiopath":  "stories/Placeholder Story/Chapter 3.wav",
+                                                                "imagepath":  "stories/Placeholder Story/Chapter 3.png",
+																"synopsis":  "Fuck. I highkenuinely hate using Lorem Ipsum placeholder text, but. That's it."
+                                                            },
+                                                            {
+                                                                "title":  "Chapter 4",
+                                                                "date":  "02/08/2026",
+                                                                "filepath":  "stories/Placeholder Story/Chapter 4.md",
+                                                                "audiopath":  "stories/Placeholder Story/Chapter 4.wav",
+                                                                "imagepath":  "stories/Placeholder Story/Chapter 4.png",
+																"synopsis":  "Fuck. I highkenuinely hate using Lorem Ipsum placeholder text, but I don't have a ready-made summary of the bullshit I've written. This is the story of a man named Stanley. Oh no maybe I'll get hella copyrighted for that."
+                                                            },
+                                                            {
+                                                                "title":  "Chapter 5",
+                                                                "date":  "04/28/2026",
+                                                                "filepath":  "stories/Placeholder Story/Chapter 5.md",
+                                                                "audiopath":  "stories/Placeholder Story/Chapter 5.wav",
+                                                                "imagepath":  "stories/Placeholder Story/Chapter 5.png",
+																"synopsis":  "No synopsis this time. I forgot."
+                                                            }
+                                                        ]
+                                          },
+                    "placeholderTitle":  {
+                                             "title":  "placeholderTitle",
+                                             "items":  [
+                                                           {
+                                                               "title":  "Chapter 1",
+                                                               "date":  "06/11/2026",
+                                                               "filepath":  "stories/placeholderTitle/Chapter 1.md",
+                                                               "audiopath":  "stories/placeholderTitle/Chapter 1.wav",
+                                                               "imagepath":  "stories/placeholderTitle/Chasdasdasdapter 1.png",
+															   	"synopsis":  "Another synopsis... Fuck. I highkenuinely hate using Lorem Ipsum placeholder text, but I don't have a ready-made summary of the bullshit I've written. This is the story of a man named Stanley. Oh no maybe I'll get hella copyrighted for that."
+															},
+                                                           {
+                                                               "title":  "Chapter 2",
+                                                               "date":  "06/11/2026",
+                                                               "filepath":  "stories/placeholderTitle/Chapter 2.md",
+                                                               "audiopath":  "stories/placeholderTitle/Chapter 2.wav",
+                                                               "imagepath":  "stories/placeholderTitle/Chapter 2.png",
+															   "synopsis":  ""
+                                                           },
+                                                           {
+                                                               "title":  "Chapter 3",
+                                                               "date":  "06/11/2026",
+                                                               "filepath":  "stories/placeholderTitle/Chapter 3.md",
+                                                               "audiopath":  "stories/placeholderTitle/Chapter 3.wav",
+                                                               "imagepath":  "stories/placeholderTitle/Chapter 3.png",
+															   "synopsis":  ""
+                                                           },
+                                                           {
+                                                               "title":  "Chapter 4",
+                                                               "date":  "06/11/2026",
+                                                               "filepath":  "stories/placeholderTitle/Chapter 4.md",
+                                                               "audiopath":  "stories/placeholderTitle/Chapter 4.wav",
+                                                               "imagepath":  "stories/placeholderTitle/Chapter 4.png",
+															   "synopsis":  ""
+                                                           },
+                                                           {
+                                                               "title":  "Chapter 5",
+                                                               "date":  "06/11/2026",
+                                                               "filepath":  "stories/placeholderTitle/Chapter 5.md",
+                                                               "audiopath":  "stories/placeholderTitle/Chapter 5.wav",
+                                                               "imagepath":  "stories/placeholderTitle/Chapter 5.png",
+															   "synopsis":  ""
+                                                           }
+                                                       ]
+                                         }
+                }
 }

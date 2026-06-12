@@ -1,0 +1,103 @@
+
+.storyContainer {
+  display: flex;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 7vh;
+  align-items: center;
+}
+#normalPageHeader {
+  text-align: center;
+  font-size: 5.5vh;
+  margin-left: 1vh;
+  margin-right: 1vh;
+}
+
+
+.titleSynopsisContainer {
+  display: flex;
+  flex-direction: column;
+  /*! align-items: center; */
+  /*! align-content: center; */
+  /*! justify-content: center; */
+}
+.storyTitleDateContainer {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  margin-top: -0.8vh;
+  justify-content: space-between;
+}
+.storyThumbnail {
+  max-width: 20vh;
+  height: 20vh;
+  display: block;
+  margin-right: 4vh;
+}
+.storyTitleDateContainer #storyTitle {
+  text-decoration: underline;
+  font-size: 3.5vh;
+  margin-top: 0;
+  margin-bottom: 0;
+  color:white;
+  margin-right: 2vh;
+}
+
+
+.storyDate {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 2.75vh;
+  font-family: Synonym;
+}
+
+.storySynopsis {
+  margin-top: 1.3vh;
+  margin-bottom: 0;
+  font-size: 2.35vh;
+  /*! text-align:center; */
+}
+
+
+#allStories {
+  margin-bottom: 7vh;
+}
+
+@media screen and (width > 155vh)
+{
+}
+
+@media screen and (110vh <= width <= 155vh)
+{
+}
+
+@media screen and (width < 110vh)
+{
+  .storyTitleDateContainer {
+    flex-direction:column-reverse;
+    text-align:center;
+  }
+  .storyContainer {
+    flex-direction:column;
+    /*! align-content: center; */
+    /*! justify-content: center; */
+  }
+  
+  .storyThumbnail {
+    max-width: 90%;
+    height: auto;
+    display: block;
+    margin-right: 0vh;
+    margin-bottom:2vh
+  }
+  .storyTitleDateContainer #storyTitle {
+    margin-right: 0vh;
+  }
+  
+  .storySynopsis {
+  margin-left:3vh;
+    margin-right:3vh;
+  }
+}

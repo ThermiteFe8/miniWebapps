@@ -6,16 +6,19 @@
 <link rel = "stylesheet" href = "style/chapterStyle.css">
 <body>
 
-<script src="dropdown.js"></script>
-<script src="include.js"></script>
-	<div w3-include-html="header.html">
+<script src="scripts/dropdown.js"></script>
+<script src="scripts/include.js"></script>
+	<div w3-include-html="scripts/header.html">
 		
 	</div>
 	<div id="centralContent">
 		<h1 id="title">Story Title Here</h1>
 		<div id="audioContainer">
 			<h2 id="chapterTitle">Chapter 2</h2>
-			<audio id="audioReading" controls src="explosionIdeal.wav"></audio>
+			<audio id="audioReading" controls>
+				<source id="audioReadingSource" type="audio/wav">
+				<source src="placeholder/placeholderAudio.wav" type="audio/wav">
+			</audio>
 		</div>
 		<div id="mdBlockContainer" >
 		</div>
@@ -23,25 +26,22 @@
 			<button id="prevButton">Prev</button>
 			<select id="chapterDropdown" onchange="window.location.href=this.value">
 			  <option value="">Select a page...</option>
-			  <option value="/chapter1.html">Chapter 1</option>
-			  <option value="/chapter2.html">Chapter 2</option>
-			  <option value="/chapter3.html">Chapter 3</option>
 			</select>
 			<button id="nextButton">Next</button>
 		</div>
 	</div>
 	
-	<div w3-include-html="footer.html">
+	<div w3-include-html="scripts/footer.html">
 		
 	</div>
 	
-	<script src="chapterLoader.js"></script>
+	<script src="scripts/chapterLoader.js"></script>
 	
 	<script>
-	includeHTML();
+	
 	</script> 
 	
 </body>
-<script type="module" src="https://md-block.verou.me/md-block.js"></script>
+<script type="module" src="scripts/md-block-main/md-block.js"></script>
 
 </html>

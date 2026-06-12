@@ -34,7 +34,7 @@ The first few recipes are for breakfast and the rest are lunch/dinner.
 14. Wait until there are a lot of bubbles on the pancakes to flip them. Or until you can see the edges start to rise/solidify. Note that if you're repeatedly poking/flipping the pancakes, the bubble trick doesn't really work.
 15. If you did it right, the cooked side will be golden brown.
 16. Repeat until you run out of batter.
-![Picture of pancakes](markdown/RecipeImg/Pancakes.jpg)
+![Picture of pancakes](RecipeImg/Pancakes.jpg)
 
 ## French Toast
 ### Ingredients: 
@@ -110,7 +110,7 @@ The first few recipes are for breakfast and the rest are lunch/dinner.
 19. Take it out and let it cool for 1-2 minutes before serving.
 
 [Here's the recipe I'm ripping off.](https://sugarspunrun.com/the-best-pizza-dough-recipe/)
-![Picture of Pizza](markdown/RecipeImg/Pizza.jpg)
+![Picture of Pizza](RecipeImg/Pizza.jpg)
 
 ## Homemade Pasta
 ### Ingredients: 
@@ -143,10 +143,10 @@ The first few recipes are for breakfast and the rest are lunch/dinner.
 
 [Here's the recipe I'm ripping off.](https://www.loveandlemons.com/homemade-pasta-recipe/)
 
-![Picture of Uncooked noodles](markdown/RecipeImg/Noodles.jpg)
+![Picture of Uncooked noodles](RecipeImg/Noodles.jpg)
 The Uncooked Noodles
 
-![Picture of Cooked noodles](markdown/RecipeImg/Noodles2.jpg)
+![Picture of Cooked noodles](RecipeImg/Noodles2.jpg)
 Cooked with Alfredo Sauce and Arugula.
 
 ## Fried Rice
@@ -174,7 +174,7 @@ This one's very vibes-based. It's mostly a way to get rid of leftover rice and v
 11. Add more soy sauce and other seasoning as you please.
 12. Keep tossing until you're satisfied and the rice has browned/yellowed.
 
-![Picture of Fried Rice](markdown/RecipeImg/FriedRice.jpg)
+![Picture of Fried Rice](RecipeImg/FriedRice.jpg)
 
 ## Fried Chicken
 ### Ingredients: 
@@ -207,7 +207,7 @@ This one's very vibes-based. It's mostly a way to get rid of leftover rice and v
 17. Flip each tender. Wait another 4-5 minutes. If you did it right, the bread crumbs should be golden brown.
 18. If you like, stick a meat thermometer into each tender. If it's above 160 farenheit (56.9 reamur), you're good to go.
 
-![Picture of Chicken](markdown/RecipeImg/Chicken.jpg)
+![Picture of Chicken](RecipeImg/Chicken.jpg)
 
 ## (Experimental) Korean Fried Chicken
 I'm still figuring this one out. I think I've got the taste down, but I don't know how to make it just as crispy without deep frying. I'll update this when I nail it.
@@ -251,6 +251,6 @@ I'm still figuring this one out. I think I've got the taste down, but I don't kn
 21. Put the chicken back on the pan for 30 seconds to a minute. 
 22. Flip them and wait another 30 seconds to a minute.
 
-![Picture of Korean Chicken and Chicken](markdown/RecipeImg/KoreanChicken.jpg)
+![Picture of Korean Chicken and Chicken](RecipeImg/KoreanChicken.jpg)
 On the left is the Korean Fried Chicken and on the right is the Fried Chicken from the previous recipe. This gives away how similar these two recipes are - I literally just replaced the egg mix with terriyaki sauce.
 
