@@ -338,6 +338,9 @@ body
 
 md-block ul, ol {
   font-size: 2.5vh;
+  /*! margin-left: 0.5vh; */
+  /*! width: ; */
+  padding-left: 7.5vh;
 }
 
 
@@ -389,6 +392,20 @@ md-block ul, ol {
 	padding:1.3vh;
 	flex-shrink: 1;
 	height:7vh;
+}
+
+#postDate {
+  text-align: right;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: -3.25vh;
+  font-family: synonym;
+  font-size: 3vh;
+}
+md-block ul li::marker {
+  font-size: 2.5vh;
+  width:0.5vh;
+  /*! width: ; */
 }
 
 @media screen and (width > 155vh)
@@ -467,4 +484,7 @@ md-block ul, ol {
 	 margin-left: auto;
   margin-right: auto;
 	}
+	#postDate {
+  text-align: center;
+}
 }
