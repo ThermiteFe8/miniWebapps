@@ -1,0 +1,87 @@
+<html>
+<head>
+	<title id="pageHeader">Iced Site</title>
+</head>
+<link rel = "stylesheet" href = "style/baseStyle.css">
+<link rel = "stylesheet" href = "style/pageIndexStyle.css">
+<body>
+
+<script src="scripts/dropdown.js"></script>
+<script src="scripts/include.js"></script>
+	<div w3-include-html="scripts/header.html">
+		
+	</div>
+	<div id="centralContent">
+		<h1 id ="normalPageHeader">John Writing Website</h1>
+		<div id="heroContainer">
+			<img id="heroImage" src="homeresources/mainArt.png">
+			<p id="homeDescription"></p>
+		</div>
+		<div id="recommendationContainer">
+			<div class="recommendedPost">
+				<h2 class="recommendationLabel">
+					Recent Update
+				</h2>
+				<div class="recommendationImageContainer">
+					<img id="updateThumbnail" src="placeholder/placeholderThumbnail.png" class="homeThumbnail">
+					<div class="recommendationTitleContainer">
+						<a id="updateTitle" class="recommendationTitle">
+							Story Title
+						</a>
+						<p id="updateSynopsis" class="recommendationDescription">
+							Story description. I'm writing out so many words for this. Many filler words. Ah yes. The lifekind. Perchance.
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="recommendedPost">
+				<h2 class="recommendationLabel">
+					New Blog Post
+				</h2>
+				<div class="recommendationImageContainer">
+					<img id="blogThumbnail" src="placeholder/placeholderThumbnail.png" class="homeThumbnail">
+					<div class="recommendationTitleContainer">
+						<a id="blogTitle" class="recommendationTitle">
+							Story Title
+						</a>
+						<p id="blogSynopsis" class="recommendationDescription">
+							Story description. I'm writing out so many words for this. Many filler words. Ah yes. The lifekind. Perchance.
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="recommendedPost">
+				<h2 class="recommendationLabel">
+					Featured Story
+				</h2>
+				<div class="recommendationImageContainer">
+					<img id="storyThumbnail" src="placeholder/placeholderThumbnail.png" class="homeThumbnail">
+					<div class="recommendationTitleContainer">
+						<a id="storyTitle" class="recommendationTitle">
+							Story Title
+						</a>
+						<p id="storySynopsis" class="recommendationDescription">
+							Story description. I'm writing out so many words for this. Many filler words. Ah yes. The lifekind. Perchance.
+						</p>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		
+	</div>
+	
+	<div w3-include-html="scripts/footer.html">
+		
+	</div>
+	
+	<script src="scripts/homePageLoader.js"></script>
+	
+	<script>
+		includeHTML();
+	</script> 
+	
+</body>
+<script type="module" src="scripts/md-block-main/md-block.js"></script>
+
+</html>

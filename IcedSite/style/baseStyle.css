@@ -275,6 +275,8 @@ body
   text-align: center;
   margin-bottom: 0.8vh;
   font-size: 6vh;
+  margin-left: 1vh;
+  margin-right: 1vh;
 }
 #audioContainer {
   display: flex;
@@ -408,6 +410,89 @@ md-block ul li::marker {
   /*! width: ; */
 }
 
+#heroContainer {
+  display: flex;
+  max-width: 90%;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+#heroImage {
+  width: 35vh;
+  margin-right: 7vh;
+}
+#homeDescription {
+  width: 43vh;
+  text-align: center;
+  font-size: 2.7vh;
+}
+#recommendationContainer {
+  display: flex;
+  flex-direction: row;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 8vh;
+  margin-top: 3vh;
+  flex-wrap: wrap;
+  gap: 3vh;
+  /*! align-items: center; */
+  justify-content: space-evenly;
+}
+.recommendedPost {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /*! background-color: var(--item-color); */
+  /*! color: black; */
+  border: 0.75vh solid white;
+  /*! border-width: 9.5vh; */
+  /*! width: 90%; */
+  border-radius: 2vh;
+  padding: 1.35vh;
+  width: 37.35vh;
+  padding-left: 2.3vh;
+  padding-right: 2.3vh;
+  flex-grow: 1;
+  max-width: 90%;
+  padding-bottom: 2.5vh;
+}
+.recommendationLabel {
+  margin-top: 0;
+  font-size: 3.5vh;
+  margin-bottom: 0.5vh;
+}
+.recommendationImageContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.recommendationTitleContainer {
+  display: flex;
+  flex-direction: column;
+}
+.homeThumbnail {
+  width: 15vh;
+  margin-right: 2.35vh;
+}
+#recommendationContainer .recommendedPost .recommendationImageContainer .recommendationTitleContainer .recommendationTitle {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 3vh;
+  text-decoration: underline;
+}
+
+
+.recommendationDescription {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 2vh;
+}
+.recommendationTitle {
+}
+
 @media screen and (width > 155vh)
 {
 	#centralContent
@@ -487,4 +572,17 @@ md-block ul li::marker {
 	#postDate {
   text-align: center;
 }
+	#heroContainer
+	{
+		flex-direction:column;
+	}
+	#heroImage
+	{
+		margin-right:0;
+		width:80%;
+	}
+	#homeDescription
+	{
+		width:87%
+	}
 }
