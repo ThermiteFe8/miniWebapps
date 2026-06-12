@@ -303,6 +303,7 @@ body
   max-width: 85%;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 7vh;
 }
 
 #mdBlockContainer img{
@@ -517,6 +518,46 @@ md-block ul li::marker {
   }
 
 }
+
+#aboutContainer {
+  display: flex;
+  flex-direction: row;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  margin-bottom: 3vh;
+}
+#aboutPhoto {
+  width: 25vh;
+  height: 25vh;
+  margin-right: 5vh;
+}
+md-block p a {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+#aboutName {
+	margin-bottom: 9;
+	font-size: 3.5vh;
+	margin-top: 0;
+	text-align: left;
+}
+
+#aboutNameContainer {
+  display: flex;
+  flex-direction: column;
+  /*! align-items: center; */
+  /*! justify-content: center; */
+}
+#aboutDescription {
+  font-size: 2.5vh;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 @media screen and (110vh <= width <= 155vh)
 {
 	#centralContent
@@ -584,5 +625,27 @@ md-block ul li::marker {
 	#homeDescription
 	{
 		width:87%
+	}
+	
+	#aboutContainer
+	{
+		flex-direction:column;
+	}
+	
+	#aboutPhoto
+	{
+		margin-right:0;
+		width:70%;
+			height:auto;
+		margin-bottom:3vh
+	}
+	
+	#aboutName
+	{
+		text-align: center;
+	}
+	#aboutDescription
+	{
+		text-align:center;
 	}
 }

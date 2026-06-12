@@ -1,4 +1,5 @@
 const normalPageHeader = document.getElementById('normalPageHeader');
+const pageHeader = document.getElementById('pageHeader');
 const homeDescription = document.getElementById('homeDescription');
 const recommendationContainer = document.getElementById('recommendationContainer');
 
@@ -57,6 +58,7 @@ function jsonInputHandler(markdownInfo, homeInfo)
 {
 	
 	normalPageHeader.innerHTML = homeInfo.title;
+	pageHeader.innerHTML = homeInfo.title;
 	homeDescription.innerHTML = homeInfo.description;
 	
 	let newUpdate = markdownInfo.updates.root.items.find(item=> item.title == homeInfo.recentUpdate);
