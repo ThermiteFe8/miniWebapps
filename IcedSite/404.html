@@ -1,0 +1,39 @@
+<html>
+<head>
+	<title id="pageHeader">Error 404</title>
+</head>
+<link rel = "stylesheet" href = "style/baseStyle.css">
+<link rel = "stylesheet" href = "style/pageIndexStyle.css">
+<body>
+
+<script src="scripts/dropdown.js"></script>
+<script src="scripts/include.js"></script>
+	<div w3-include-html="scripts/header.html">
+		
+	</div>
+	<div id="centralContent">
+		<h1 id ="normalPageHeader">Page Not Found</h1>
+		
+		<div id="mdBlockContainer">
+			<md-block>
+				The link's gone. If you got here through a bookmark or another site, then the article must've changed names. 
+				
+				If you got here through a link within this site, let me know through my [contact info](About.html). Hopefully that ought to get fixed soon.
+			</md-block>
+		</div>
+		
+	</div>
+	
+	<div w3-include-html="scripts/footer.html">
+		
+	</div>
+
+	
+	<script>
+		includeHTML();
+	</script> 
+	
+</body>
+<script type="module" src="scripts/md-block-main/md-block.js"></script>
+
+</html>
