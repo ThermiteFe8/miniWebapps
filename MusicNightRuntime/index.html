@@ -1,0 +1,25 @@
+<html>
+	<h1>Nicole's Stupid Webapps</h1>
+	<div id="target-div">
+	</div>
+	
+	<script>
+	async function loadExternalSite(url) {
+    try {
+        // Fetching directly will fail for most sites due to CORS. 
+        // You will likely need a proxy URL like: `https://herokuapp.com{url}`
+        const response = await fetch(url);
+        const htmlText = await response.text();
+        
+        // Inject the text into a container on your page
+        document.getElementById('target-div').innerHTML = htmlText;
+    } catch (error) {
+        console.error("Failed to load the website:", error);
+    }
+}
+
+loadExternalSite('https://example.com');
+	
+	</script>
+
+</html>
