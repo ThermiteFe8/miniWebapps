@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Cheesonomics Solver</title>
+    </head>
+	<body>
+		<style>
+			#levelInput
+			{
+				display:flex;
+				flex-direction:column;
+				max-width:200px;
+			}
+			#levelInput input
+			{
+				margin-bottom:5px;
+			}
+			
+			#valueInput
+			{
+				display:grid;
+				grid-template-columns: 1fr 2fr;
+				max-width:500px;
+				text-align:right;
+				margin-left:100px;
+			}
+			#valueInput input
+			{
+				margin-bottom:5px;
+				max-width:100px;
+				margin-left:5px;
+			}
+			
+			#allInputs
+			{
+				display:flex;
+				flex-direction:row;
+				
+			}
+		</style>
+		<h1>Thermite's Automatic Cheesonomics Calculator</h1>
+		<h2>Input your values, press "calculate", and wait a few moments</h2>
+		<h3>It'll give you a combination of cheese/machines to get close to the target max</h3>
+		<div id="allInputs">
+		<div id="levelInput">
+			<label for="time">Timer</label>
+			<input type="number" id="time" name="time" value="200"/>
+			<label for="cowRate">Cow Rate</label>
+			<input type="number" id="cowRate" name="cowRate" value="5"/>
+			<label for="targetMax">Target Max</label>
+			<input type="number" id="targetMax" name="targetMax" value="1500"/>
+			<label for="multiplierMargin">Multiplier Margin</label>
+			<input type="number" id="multiplierMargin" name="multiplierMargin" value="1"/>
+		</div>
+		<div id="valueInput">
+			<label for="milk">Milk</label>
+			<input type="number" id="milk" name="milk" value="1"/>
+			<label for="wholeCheese">Whole Cheese</label>
+			<input type="number" id="wholeCheese" name="wholeCheese" value="10"/>
+			<label for="wholeCheeseWrapped">Whole Cheese Wrapped</label>
+			<input type="number" id="wholeCheeseWrapped" name="wholeCheeseWrapped" value="18"/>
+			<label for="wedge">Wedge</label>
+			<input type="number" id="wedge" name="wedge" value="30"/>
+			<label for="wrappedWedge">Wrapped Wedge</label>
+			<input type="number" id="wrappedWedge" name="wrappedWedge" value="54"/>
+			<label for="cream">Cream</label>
+			<input type="number" id="cream" name="cream" value="3"/>
+			<label for="butter">Butter</label>
+			<input type="number" id="butter" name="butter" value="4"/>
+			<label for="wrappedButter">Wrapped Butter</label>
+			<input type="number" id="wrappedButter" name="wrappedButter" value="12"/>
+			<label for="sourCream">Sour Cream</label>
+			<input type="number" id="sourCream" name="sourCream" value="7"/>
+		</div>
+		</div>
+		<button id="submit" onclick="calculateValues()">Calculate</button>
+		
+		<h3>Proposed Solution: </h3>
+		<p>Machine Count: <span id="machineCountResult"></span></p>
+		<p>Maximum Output: <span id="maximumOutputResult"></span></p>
+		<p>Cheese Type: <span id="cheeseTypeResult"></span></p>
+		<p>Cheese Divider: <span id="cheeseDividerResult"></span></p>
+		<p id="butterResult"></p>
+		
+		
+		
+		
+	</body>
+	
+	<script>
+		let machineCountResult = document.getElementById("machineCountResult");
+		let maximumOutputResult = document.getElementById("maximumOutputResult");
+		let cheeseTypeResult = document.getElementById("cheeseTypeResult");
+		let cheeseDividerResult = document.getElementById("cheeseDividerResult");
+		let butterResult = document.getElementById("butterResult");
+	
+		let timer = document.getElementById("time");
+		let cowRate = document.getElementById("cowRate");
+		let targetMax = document.getElementById("targetMax");
+		let multiplierMargin = document.getElementById("multiplierMargin");
+		
+		
+		let milk = document.getElementById("milk");
+		let wholeCheese = document.getElementById("wholeCheese");
+		let wholeCheeseWrapped = document.getElementById("wholeCheeseWrapped");
+		let wedge = document.getElementById("wedge");
+		let wrappedWedge = document.getElementById("wrappedWedge");
+		let cream = document.getElementById("cream");
+		let butter = document.getElementById("butter");
+		let wrappedButter = document.getElementById("wrappedButter");
+		let sourCream = document.getElementById("sourCream");
+		function calculateValues()
+		{
+			timer = document.getElementById("time");
+			cowRate = document.getElementById("cowRate");
+			targetMax = document.getElementById("targetMax");
+			multiplierMargin = document.getElementById("multiplierMargin");
+			
+			milk = document.getElementById("milk");
+			wholeCheese = document.getElementById("wholeCheese");
+			wholeCheeseWrapped = document.getElementById("wholeCheeseWrapped");
+			wedge = document.getElementById("wedge");
+			wrappedWedge = document.getElementById("wrappedWedge");
+			cream = document.getElementById("cream");
+			butter = document.getElementById("butter");
+			wrappedButter = document.getElementById("wrappedButter");
+			sourCream = document.getElementById("sourCream");
+			
+			let multiplierMarginTrue = parseFloat(multiplierMargin.value);
+		
+			let targetMultiplier = targetMax.value / (timer.value/cowRate.value);
+			console.log(targetMultiplier);
+			let validCombos = [];
+			
+			for(let cheeseType = 0; cheeseType <=5; cheeseType++)
+			{
+				for(let cheeseDivider = 1; cheeseDivider <=4; cheeseDivider++)
+				{
+					for (let butterQuantity = 0; butterQuantity <= 4; butterQuantity++)
+					{
+						for (let butterDivider = 1; butterDivider <=4; butterDivider++)
+						{
+							for(let wrappedButterQuantity = 0; wrappedButterQuantity <=4; wrappedButterQuantity++)
+							{
+								for (let wrappedButterDivider = 1; wrappedButterDivider <=4 ; wrappedButterDivider++)
+								{
+									for(let creamQuantity = 0; creamQuantity <=4; creamQuantity++)
+									{
+										for (let creamDivider = 1; creamDivider <=4 ; creamDivider++)
+										{
+											for(let sourCreamQuantity = 0; sourCreamQuantity <=4; sourCreamQuantity++)
+											{
+												for (let sourCreamDivider = 1; sourCreamDivider <=4 ; sourCreamDivider++)
+												{
+													let tempTrial = completeMultiplier(cheeseType, cheeseDivider, creamQuantity, creamDivider, butterQuantity, butterDivider, wrappedButterQuantity, wrappedButterDivider, sourCreamQuantity, sourCreamDivider);
+													//console.log(tempTrial[0]);
+													if(tempTrial[0] <= targetMultiplier + multiplierMarginTrue && tempTrial[0] >= targetMultiplier - multiplierMarginTrue)
+													{
+														//console.log(targetMultiplier + multiplierMargin.value);
+														validCombos.push([tempTrial[0], tempTrial[1], cheeseType, cheeseDivider, creamQuantity, creamDivider, butterQuantity, butterDivider, wrappedButterQuantity, wrappedButterDivider, sourCreamQuantity, sourCreamDivider]);
+														//console.log([tempTrial[0], tempTrial[1], cheeseType, cheeseDivider, creamQuantity, creamDivider, butterQuantity, butterDivider, wrappedButterQuantity, wrappedButterDivider, sourCreamQuantity, sourCreamDivider]);
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			
+			let runningMin = 99999999;
+			let minIndex = -1;
+			
+			for(let i = 0; i < validCombos.length; i++)
+			{
+				if(validCombos[i][1] < runningMin)
+				{
+					runningMin = validCombos[i][1];
+					minIndex = i;
+				}
+				
+			}
+			if(minIndex < 0)
+			{
+				console.log("No Combos found");
+			}
+			else
+			{
+				let bestCombo = validCombos[minIndex]
+				machineCountResult.innerHTML = bestCombo[1];
+				let maxOutput = bestCombo[0] * (timer.value/cowRate.value);
+				maximumOutputResult.innerHTML = maxOutput;
+				cheeseTypeResult.innerHTML = cheeseTextConverter(bestCombo[2]);
+				cheeseDividerResult.innerHTML = bestCombo[3]/4;
+				
+				let tempButterString = "";
+				for(let k = 4; k < bestCombo.length; k = k + 2)
+				{
+					if(k % 2 == 0)
+					{
+						let creamName = "";
+						if(k == 4)
+							creamName = "Cream";
+						if(k == 6)
+							creamName = "Butter";
+						if(k == 8)
+							creamName = "Wrapped Butter"
+						if(k == 10)
+							creamName = "Sour Cream"
+						if(bestCombo[k] > 0)
+						{
+							tempButterString = tempButterString + creamName + " x " + bestCombo[k];
+							if(bestCombo[k + 1] < 4)
+							{
+								tempButterString = tempButterString + ", divided in " + bestCombo[k] + " quarters"
+							}
+							tempButterString = tempButterString + " | ";
+						}
+						
+						
+					}
+				}
+				butterResult.innerHTML = tempButterString;		
+				console.log(validCombos[minIndex]);
+			}
+		}
+		
+		function cheeseTextConverter(cheeseInput)
+		{
+			if(cheeseInput == 1)
+				return "Milk";
+			if(cheeseInput == 2)
+				return "Whole Cheese";
+			if(cheeseInput == 3)
+				return "Whole Cheese Wrapped";
+			if(cheeseInput == 4)
+				return "Wedges";
+			if(cheeseInput == 5)	
+				return "Wrapped Wedges";
+			return "None";
+		}
+		
+		function cheeseSelect(cheeseInput)
+		{
+			if(cheeseInput == 1)
+				return milk.value;
+			if(cheeseInput == 2)
+				return wholeCheese.value;
+			if(cheeseInput == 3)
+				return wholeCheeseWrapped.value;
+			if(cheeseInput == 4)
+				return wedge.value;
+			if(cheeseInput == 5)	
+				return wrappedWedge.value;
+			return 0;
+		}
+		
+		function cheeseMech(cheeseInput)
+		{
+			if(cheeseInput == 1)
+				return 1;
+			if(cheeseInput == 2)
+				return 3;
+			if(cheeseInput == 3)
+				return 9;
+			if(cheeseInput == 4)
+				return 9;
+			if(cheeseInput == 5)
+				return 13;
+			return 1;
+		}
+		
+		function divideConverter(quarterInput)
+		{
+			if(quarterInput == 3 || quarterInput == 1)
+				return 3;
+			if(quarterInput == 2)
+				return 2;
+			return 0;
+		}
+		
+		function cheeseDivideConverter(cheeseInput, quarterInput)
+		{
+			if(quarterInput == 2)
+			{
+				if(cheeseInput == 1)
+					return 2;
+				if(cheeseInput >= 2)
+					return 1;
+				return 0;
+			}
+			if(quarterInput == 3 || quarterInput == 1)
+			{
+				if(cheeseInput == 1)
+					return 3;
+				if(cheeseInput == 2)
+					return 2;
+				if(cheeseInput >=3)
+					return 1;
+				return 0;
+			}
+			return 0;
+		}
+		
+		function completeMultiplier(cheeseInput, cheeseDividerInput, creamQuantityInput, creamDividerInput, butterQuantityInput, butterDividerInput, butterWrappedQuantityInput, butterWrappedDividerInput, sourCreamQuantityInput, sourCreamDividerInput)
+		{
+			let tempMult = cheeseSelect(cheeseInput) * (cheeseDividerInput/4) + cream.value * creamQuantityInput * (creamDividerInput/4) + butter.value * butterQuantityInput * (butterDividerInput/4) + wrappedButter.value * butterWrappedQuantityInput * (butterWrappedDividerInput/4) + sourCream.value * sourCreamQuantityInput * (sourCreamDividerInput/4);
+			
+			
+			let tempMech = cheeseMech(cheeseInput) + cheeseDivideConverter(cheeseInput, cheeseDividerInput) + 2*(creamQuantityInput + butterQuantityInput + butterWrappedQuantityInput + sourCreamQuantityInput) + butterQuantityInput + 2 * butterWrappedQuantityInput + sourCreamQuantityInput + divideConverter(creamDividerInput) + divideConverter(butterDividerInput) + divideConverter(butterWrappedDividerInput) + divideConverter(sourCreamDividerInput);
+			
+			return [tempMult, tempMech];
+		}
+		
+		
+	</script>
+</html>
