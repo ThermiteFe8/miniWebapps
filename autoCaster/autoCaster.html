@@ -294,7 +294,12 @@
 
 		async function startFeedbackLoop() {
 			try {
-				// Must be triggered by a user interaction
+				// Reset audio session to automatic mode
+				if (navigator.audioSession) {
+					navigator.audioSession.type = "auto";
+				}
+
+				// Request microphone
 				microphoneStream = await navigator.mediaDevices.getUserMedia({
 					audio: {
 						echoCancellation: false,
@@ -303,23 +308,27 @@
 					}
 				});
 
-				audioContext = new AudioContext();
+				// Configure simultaneous recording and playback
+				if (navigator.audioSession) {
+					navigator.audioSession.type = "play-and-record";
+				}
 
-				// Ensure the context is running
+				// Initialize audio
+				audioContext = new AudioContext();
 				await audioContext.resume();
 
-				// Connect microphone directly to default output
 				source = audioContext.createMediaStreamSource(microphoneStream);
 				source.connect(audioContext.destination);
 
-				console.log("Microphone passthrough active!");
+				console.log("Audio session:", navigator.audioSession?.type);
+				console.log("Context state:", audioContext.state);
 
 			} catch (error) {
 				console.error("Audio initialization failed:", error);
 			}
 		}
 
-		function stopFeedbackLoop() {
+		async function stopFeedbackLoop() {
 			if (source) {
 				source.disconnect();
 				source = null;
@@ -331,8 +340,14 @@
 			}
 
 			if (audioContext) {
-				audioContext.close();
+				await audioContext.close();
 				audioContext = null;
+			}
+
+			// Restore normal playback behavior
+			if (navigator.audioSession) {
+				navigator.audioSession.type = "playback";
+				navigator.audioSession.type = "auto";
 			}
 		}
 		
