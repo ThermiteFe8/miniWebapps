@@ -41,6 +41,8 @@
 				width:14vh;
 				font-size:4vh;
 				text-align:center;
+				padding:0.1vh;
+				font:4vh sans-serif;
 			}
 			
 			#bottomOptions
@@ -231,7 +233,15 @@
 					
 					await sleep(100);
 					console.log(myAudio.duration);
-					await sleep(myAudio.duration * 1000 * 0.35);
+					if(Number.isNaN(myAudio.duration))
+					{
+						await sleep(900);
+					}
+					else
+					{
+						await sleep(myAudio.duration * 1000 * 0.35);
+					}
+					
 				
 					
 					
@@ -239,7 +249,14 @@
 					
 					await sleep(100);
 					console.log(myAudio.duration);
-					await sleep(myAudio.duration * 1000 * 0.35);
+					if(Number.isNaN(myAudio.duration))
+					{
+						await sleep(900);
+					}
+					else
+					{
+						await sleep(myAudio.duration * 1000 * 0.35);
+					}
 				
 					if(homeScore == 20 || awayScore == 20)
 					{
@@ -294,6 +311,80 @@
 		  }
 		  console.log("Streaming stopped.");
 		}
+		
+		const audioUrls = [
+		  '1',
+		  '2',
+		  '3',
+		  '4',
+		  '5',
+		  '6',
+		  '7',
+		  '8',
+		  '9',
+		  '10',
+		  '11',
+		  '12',
+		  '13',
+		  '14',
+		  '15',
+		  '16',
+		  '17',
+		  '18',
+		  '19',
+		  '20',
+		  '21',
+		  '0',
+		  'advantage home team',
+		  'advantage away team',
+		  'Deuce',
+		  'Foul',
+		  'Game Point',
+		  'Match Point',
+		  'Game',
+		  'Out',
+		  'The Score Is',
+		  'Time Out',
+		  'Try Again'
+		  
+		];
+
+		const loadedAudios = [];
+		let loadedCount = 0;
+
+		function preloadAudioList() {
+		  audioUrls.forEach((url, index) => {
+			const audio = new Audio();
+			audio.src = audioPrefix + url + audioSuffix;
+			audio.preload = 'auto'; // Hint to browser to load the full file
+
+			// Check if the file is ready to play through completely
+			audio.addEventListener('canplaythrough', () => {
+			  loadedCount++;
+			  if (loadedCount === audioUrls.length) {
+				console.log("All tracks ready for lag-free playback!");
+			  }
+			}, { once: true }); // Prevent event firing multiple times
+
+			loadedAudios.push(audio);
+		  });
+		  audioUrls.forEach((url, index) => {
+			const audio = new Audio();
+			audio.src = audioPrefix + url + "_2" + audioSuffix;
+			audio.preload = 'auto'; // Hint to browser to load the full file
+
+			// Check if the file is ready to play through completely
+			audio.addEventListener('canplaythrough', () => {
+			  loadedCount++;
+			  if (loadedCount === audioUrls.length) {
+				console.log("All tracks ready for lag-free playback!");
+			  }
+			}, { once: true }); // Prevent event firing multiple times
+
+			loadedAudios.push(audio);
+		  });
+		}
+		window.addEventListener('load', preloadAudioList);
 		
 	</script>
 </html>
