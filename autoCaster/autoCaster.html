@@ -64,6 +64,7 @@
 			{
 				display:flex;
 				flex-direction:row;
+				align-items:center;
 			}
 			
 			.checkbox label
@@ -75,6 +76,13 @@
 			{
 				width:3vh;
 				height:3vh;
+			}
+			
+			.checkbox #manualDelay
+			{
+				height:3vh;
+				width:20vh;
+				font-size:3vh;
 			}
 		</style>
 		<div id="centralContent">
@@ -124,10 +132,13 @@
 						<input type="checkbox" id="pushToTalk" name="pushToTalk" value="pushToTalk">
 						<label for="pushToTalk">Push to Talk</label>
 					</div>
+					
 				</div>
 			</div>
-			<label for="maualDelay">Manual Delay</label>
-			<input type = "number" id="manualDelay" name="manualDelay" value="0.35">
+			<div class="checkbox">
+				<label for="maualDelay">Manual Delay  :</label>
+				<input type = "number" id="manualDelay" name="manualDelay" value="0.35">
+			</div>
 		</div>
 
 	</body>
@@ -279,41 +290,69 @@
 		
 		let audioContext;
 		let microphoneStream;
+		let outputElement;
 
 		async function startFeedbackLoop() {
-		  try {
-			// 1. Request access to the microphone
-			microphoneStream = await navigator.mediaDevices.getUserMedia({ 
-			  audio: {
-				echoCancellation: false, // Set to true if using speakers to prevent screeching
-				noiseSuppression: true,
-				autoGainControl: true
-			  } 
-			});
+			try {
+				microphoneStream = await navigator.mediaDevices.getUserMedia({
+					audio: {
+						echoCancellation: false,
+						noiseSuppression: true,
+						autoGainControl: true
+					}
+				});
 
-			// 2. Initialize the Web Audio Context
-			audioContext = new (window.AudioContext || window.webkitAudioContext)();
+				audioContext = new AudioContext();
 
-			// 3. Create an audio source from the microphone stream
-			const source = audioContext.createMediaStreamSource(microphoneStream);
+				// Select output device
+				let selectedDeviceId = null;
 
-			// 4. Connect the microphone source directly to the speakers (destination)
-			source.connect(audioContext.destination);
-			
-			console.log("Streaming microphone to speakers...");
-		  } catch (error) {
-			console.error("Error accessing microphone:", error);
-		  }
+				if (navigator.mediaDevices.selectAudioOutput) {
+					const device = await navigator.mediaDevices.selectAudioOutput();
+					selectedDeviceId = device.deviceId;
+					console.log("Selected:", device.label);
+				}
+
+				// Create output stream
+				const source = audioContext.createMediaStreamSource(microphoneStream);
+				const destination = audioContext.createMediaStreamDestination();
+
+				source.connect(destination);
+
+				// Create audio element to play the stream
+				outputElement = new Audio();
+				outputElement.srcObject = destination.stream;
+
+				// Route to selected device
+				if (selectedDeviceId && outputElement.setSinkId) {
+					await outputElement.setSinkId(selectedDeviceId);
+				}
+
+				await audioContext.resume();
+				await outputElement.play();
+
+				console.log("Microphone routed successfully!");
+
+			} catch (error) {
+				console.error("Audio error:", error);
+			}
 		}
 
 		function stopFeedbackLoop() {
-		  if (microphoneStream) {
-			microphoneStream.getTracks().forEach(track => track.stop());
-		  }
-		  if (audioContext) {
-			audioContext.close();
-		  }
-		  console.log("Streaming stopped.");
+			if (microphoneStream) {
+				microphoneStream.getTracks().forEach(track => track.stop());
+			}
+
+			if (audioContext) {
+				audioContext.close();
+			}
+
+			if (outputElement) {
+				outputElement.pause();
+				outputElement.srcObject = null;
+			}
+
+			console.log("Streaming stopped.");
 		}
 		
 		const audioUrls = [
