@@ -126,6 +126,8 @@
 					</div>
 				</div>
 			</div>
+			<label for="maualDelay">Manual Delay</label>
+			<input type = "number" id="manualDelay" name="manualDelay" value="0.35">
 		</div>
 
 	</body>
@@ -137,6 +139,7 @@
 		const voiceVariant = document.getElementById("voiceVariant");
 		const pushToTalk = document.getElementById("pushToTalk");
 		const myAudio = document.getElementById("myAudio");
+		const manualDelay = document.getElementById("manualDelay");
 		const audioPrefix = "audio/Volleyball clips - ";
 		const audioSuffix = ".wav";
 		
@@ -236,11 +239,11 @@
 					console.log(myAudio.duration);
 					if(Number.isNaN(myAudio.duration))
 					{
-						await sleep(900);
+						await sleep(7700 * manualDelay.value);
 					}
 					else
 					{
-						await sleep(myAudio.duration * 1000 * 0.35);
+						await sleep(myAudio.duration * 1000 * manualDelay.value);
 					}
 					
 				
@@ -252,11 +255,11 @@
 					console.log(myAudio.duration);
 					if(Number.isNaN(myAudio.duration))
 					{
-						await sleep(900);
+						await sleep(7700 * manualDelay.value);
 					}
 					else
 					{
-						await sleep(myAudio.duration * 1000 * 0.35);
+						await sleep(myAudio.duration * 1000 * manualDelay.value);
 					}
 				
 					if(homeScore == 20 || awayScore == 20)
