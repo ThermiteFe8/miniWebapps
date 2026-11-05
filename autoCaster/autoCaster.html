@@ -290,69 +290,50 @@
 		
 		let audioContext;
 		let microphoneStream;
-		let outputElement;
+		let source;
 
 		async function startFeedbackLoop() {
 			try {
+				// Must be triggered by a user interaction
 				microphoneStream = await navigator.mediaDevices.getUserMedia({
 					audio: {
 						echoCancellation: false,
-						noiseSuppression: true,
-						autoGainControl: true
+						noiseSuppression: false,
+						autoGainControl: false
 					}
 				});
 
 				audioContext = new AudioContext();
 
-				// Select output device
-				let selectedDeviceId = null;
-
-				if (navigator.mediaDevices.selectAudioOutput) {
-					const device = await navigator.mediaDevices.selectAudioOutput();
-					selectedDeviceId = device.deviceId;
-					console.log("Selected:", device.label);
-				}
-
-				// Create output stream
-				const source = audioContext.createMediaStreamSource(microphoneStream);
-				const destination = audioContext.createMediaStreamDestination();
-
-				source.connect(destination);
-
-				// Create audio element to play the stream
-				outputElement = new Audio();
-				outputElement.srcObject = destination.stream;
-
-				// Route to selected device
-				if (selectedDeviceId && outputElement.setSinkId) {
-					await outputElement.setSinkId(selectedDeviceId);
-				}
-
+				// Ensure the context is running
 				await audioContext.resume();
-				await outputElement.play();
 
-				console.log("Microphone routed successfully!");
+				// Connect microphone directly to default output
+				source = audioContext.createMediaStreamSource(microphoneStream);
+				source.connect(audioContext.destination);
+
+				console.log("Microphone passthrough active!");
 
 			} catch (error) {
-				console.error("Audio error:", error);
+				console.error("Audio initialization failed:", error);
 			}
 		}
 
 		function stopFeedbackLoop() {
+			if (source) {
+				source.disconnect();
+				source = null;
+			}
+
 			if (microphoneStream) {
 				microphoneStream.getTracks().forEach(track => track.stop());
+				microphoneStream = null;
 			}
 
 			if (audioContext) {
 				audioContext.close();
+				audioContext = null;
 			}
-
-			if (outputElement) {
-				outputElement.pause();
-				outputElement.srcObject = null;
-			}
-
-			console.log("Streaming stopped.");
 		}
 		
 		const audioUrls = [
