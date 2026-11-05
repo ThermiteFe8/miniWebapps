@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Sports Caster</title>
+    </head>
+	<body>
+		<style>
+			#scoreContainer
+			{
+				display:flex;
+				flex-direction:row;
+				font-size:15vh;
+				gap:4vh;
+				margin-top:2vh;
+				margin-bottom:2vh;
+			}
+			#scoreContainer p
+			{
+				margin-top:0;
+				margin-bottom:0;
+			}
+			#centralContent
+			{
+				display:flex;
+				flex-direction:column;
+				margin-left:auto;
+				margin-right:auto;
+				align-items:center;
+			}
+			
+			#buttonContainer
+			{
+				display:grid;
+				gap:1vh;
+				grid-template-columns: repeat(3, 1fr); 
+			}
+			
+			button
+			{
+				height:14vh;
+				width:14vh;
+				font-size:4vh;
+				text-align:center;
+			}
+			
+			#bottomOptions
+			{
+				margin-top:5vh;
+				display:flex;
+				align-items:center;
+				justify-content:center;
+			}
+			
+			#checkboxStack
+			{
+				display:flex;
+				flex-direction:column;
+			}
+			
+			.checkbox
+			{
+				display:flex;
+				flex-direction:row;
+			}
+			
+			.checkbox label
+			{
+				font-size:3vh;
+			}
+			
+			.checkbox input
+			{
+				width:3vh;
+				height:3vh;
+			}
+		</style>
+		<div id="centralContent">
+			<div id="scoreContainer">
+				<p id="homeDisplay">0</p>
+				<p>-</p>
+				<p id="awayDisplay">0</p>
+			</div>
+			
+			<div id="buttonContainer">
+				<button onclick="addHome()">Home +1</button>
+				<button onclick="micToggle()">Speak</button>
+				<button onclick="addAway()">Away +1</button>
+				
+				<button onclick="playAudio('Out')">Out</button>
+				<button onclick="playAudio('Deuce')">Deuce</button>
+				<button onclick="playAudio('Try Again')">Try Again</button>
+				
+				<button onclick="playAudio('Ace')">Ace</button>
+				<button onclick="playAudio('Game Point')">Game Point</button>
+				<button onclick="playAudio('Match Point')">Match Point</button>
+				
+				<button onclick="playAudio('Game')">Game</button>
+				<button onclick="playAudio('Foul')">Foul</button>
+				<button onclick="playAudio('Time Out')">Time-Out</button>
+			</div>
+			
+			<audio id="myAudio">
+				<source src="audio/Volleyball clips - 0.wav">
+				Your browser does not support the audio element.
+			</audio>
+			
+			<div id="bottomOptions">
+				<button onclick="resetScore()">Reset Score</button>
+				<div id="checkboxStack">
+					<div class="checkbox">
+						<input type="checkbox" id="autoSpeak" name="autoSpeak" value="autoSpeak">
+						<label for="autoSpeak">Auto Speak</label>
+					</div>
+					
+					<div class="checkbox">
+						<input type="checkbox" id="voiceVariant" name="voiceVariant" value="voiceVariant">
+						<label for="voiceVariant">Voice Variant</label>
+					</div>
+					
+					<div class="checkbox">
+						<input type="checkbox" id="pushToTalk" name="pushToTalk" value="pushToTalk">
+						<label for="pushToTalk">Push to Talk</label>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</body>
+	
+	<script>
+		const homeDisplay = document.getElementById("homeDisplay");
+		const awayDisplay = document.getElementById("awayDisplay");
+		const autoSpeak = document.getElementById("autoSpeak");
+		const voiceVariant = document.getElementById("voiceVariant");
+		const pushToTalk = document.getElementById("pushToTalk");
+		const myAudio = document.getElementById("myAudio");
+		const audioPrefix = "audio/Volleyball clips - ";
+		const audioSuffix = ".wav";
+		
+		const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+		
+		let homeScore = 0;
+		let awayScore = 0;
+		let micOn = false;
+		
+		function micToggle()
+		{
+			micOn = !micOn;
+			if(micOn == true)
+			{
+				startFeedbackLoop();
+			}
+			else
+			{
+				stopFeedbackLoop();
+			}
+		}
+		
+		
+		function playAudio(inputName)
+		{
+			let tempString = audioPrefix + inputName;
+			if(voiceVariant.checked == true)
+			{
+				tempString = tempString + "_2";
+			}
+			tempString = tempString + audioSuffix;
+			myAudio.src = tempString;
+			console.log(tempString);
+			myAudio.play().catch(error => {
+		console.log("Playback blocked until user interacts with the page:", error);
+			});
+		}
+		
+		function addHome()
+		{
+			homeScore++;
+			scoreHandler();
+		}
+		
+		function addAway()
+		{
+			awayScore++;
+			scoreHandler();
+		}
+		
+		function resetScore()
+		{
+			homeScore = 0;
+			awayScore = 0;
+			scoreHandler();
+		}
+		
+		function isPlaying() {
+			return !myAudio.paused && !myAudio.ended;
+		}
+		
+		async function scoreHandler()
+		{
+			homeDisplay.innerHTML = homeScore.toString();
+			awayDisplay.innerHTML = awayScore.toString();
+			if(autoSpeak.checked)
+			{
+				if(homeScore >= 20 && awayScore >= 20)
+				{
+					let difference = homeScore - awayScore;
+					if(difference == 0)
+					{
+						playAudio("Deuce");
+					}
+					else if(difference >=2 || difference <= -2)
+					{
+						playAudio("Game");
+					}
+					else if(difference == 1)
+					{
+						playAudio("advantage home team");
+					}
+					else if(difference == -1)
+					{
+						playAudio("advantage away team");
+					}
+				}
+				else
+				{
+					if(homeScore > 21)
+						homeScore = 21;
+					if(awayScore > 21)
+						awayScore = 21;
+					playAudio(homeScore.toString());
+					
+					await sleep(100);
+					console.log(myAudio.duration);
+					await sleep(myAudio.duration * 1000 * 0.35);
+				
+					
+					
+					playAudio(awayScore.toString());
+					
+					await sleep(100);
+					console.log(myAudio.duration);
+					await sleep(myAudio.duration * 1000 * 0.35);
+				
+					if(homeScore == 20 || awayScore == 20)
+					{
+						playAudio("Match Point");
+					}
+					
+					if(homeScore >= 21 || awayScore >= 21)
+					{
+						playAudio("Game");
+					}
+					
+					
+				}
+			}
+		}
+		
+		let audioContext;
+		let microphoneStream;
+
+		async function startFeedbackLoop() {
+		  try {
+			// 1. Request access to the microphone
+			microphoneStream = await navigator.mediaDevices.getUserMedia({ 
+			  audio: {
+				echoCancellation: false, // Set to true if using speakers to prevent screeching
+				noiseSuppression: true,
+				autoGainControl: true
+			  } 
+			});
+
+			// 2. Initialize the Web Audio Context
+			audioContext = new (window.AudioContext || window.webkitAudioContext)();
+
+			// 3. Create an audio source from the microphone stream
+			const source = audioContext.createMediaStreamSource(microphoneStream);
+
+			// 4. Connect the microphone source directly to the speakers (destination)
+			source.connect(audioContext.destination);
+			
+			console.log("Streaming microphone to speakers...");
+		  } catch (error) {
+			console.error("Error accessing microphone:", error);
+		  }
+		}
+
+		function stopFeedbackLoop() {
+		  if (microphoneStream) {
+			microphoneStream.getTracks().forEach(track => track.stop());
+		  }
+		  if (audioContext) {
+			audioContext.close();
+		  }
+		  console.log("Streaming stopped.");
+		}
+		
+	</script>
+</html>
